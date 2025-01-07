@@ -8,6 +8,12 @@ enum GameMsgId {
   USER_LOGIN_CMD = 0;
   //服务端登录结果id
   USER_LOGIN_RESULT = 1;
+
+  //在线玩家信息
+  ONLINE_USER_CMD = 2;
+
+  //在线玩家响应id
+  ONLINE_USER_RESULT = 3;
 }
 //登录请求
 message UserLoginCmd {
@@ -15,4 +21,29 @@ message UserLoginCmd {
   uint32 userId = 1;
   //英雄形象
   string heroAvatar = 2;
+}
+
+//登录响应
+message  UserLoginResult {
+  //用户id
+  uint32 userId = 1;
+  //英雄形象
+  string heroAvatar = 2;
+}
+
+//在线用户请求
+message  OnlineUserCmd {
+
+}
+//在线用户响应
+message  OnlineUserResult {
+  //用户信息集合,相当于java中的 UserInfo[] userInfo
+  repeated UserInfo userInfo = 1;
+
+  message UserInfo {
+    //用户id
+    uint32 userId = 1;
+    //英雄形象
+    string heroAvatar = 2;
+  }
 }

@@ -14,6 +14,7 @@ import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import org.herostory.handler.DefaultMessageDecoder;
+import org.herostory.handler.DefaultMessageEncoder;
 import org.herostory.handler.DefaultMessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,11 +41,13 @@ public class ServerMain {
                 ChannelPipeline pipeline = socketChannel.pipeline();
                 pipeline.addLast(
                         new HttpServerCodec(),
-                        new HttpObjectAggregator(65535),
-                        new WebSocketServerProtocolHandler("/websocket"),
-                        new LoggingHandler(LogLevel.INFO),
-                        new DefaultMessageDecoder(),
-                        new DefaultMessageHandler()
+                        new HttpObjectAggregator(65535), //默认消息大小
+                        new WebSocketServerProtocolHandler("/websocket"), //websocket协议
+                        //打印netty 日志，用于调试，默认打印INFO级别
+//                        new LoggingHandler(LogLevel.INFO),
+                        new DefaultMessageDecoder(), //默认消息解码器
+                        new DefaultMessageEncoder(), //默认消息编码器
+                        new DefaultMessageHandler() //默认消息处理器
                 );
             }
         });

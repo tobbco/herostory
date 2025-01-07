@@ -1,5 +1,6 @@
 package org.herostory.handler;
 
+import com.google.protobuf.GeneratedMessage;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -29,10 +30,13 @@ public class DefaultMessageDecoder extends ChannelInboundHandlerAdapter {
             byte[] bodyBytes = new byte[readable];
             //将内容读取到字节数组中
             content.readBytes(bodyBytes);
-            GameMessageProto.UserLoginCmd cmd = null;
+            GeneratedMessage cmd = null;
             switch (cmdId) {
                 case GameMessageProto.GameMsgId.USER_LOGIN_CMD_VALUE:
                     cmd = GameMessageProto.UserLoginCmd.parseFrom(bodyBytes);
+                    break;
+                case GameMessageProto.GameMsgId.ONLINE_USER_CMD_VALUE:
+                    cmd = GameMessageProto.OnlineUserCmd.parseFrom(bodyBytes);
                     break;
             }
             if (null != cmd) {

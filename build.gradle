@@ -16,7 +16,8 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.36'
     implementation 'ch.qos.logback:logback-classic:1.4.12'
     implementation 'com.google.protobuf:protobuf-java:4.29.1'
-
+    annotationProcessor 'org.projectlombok:lombok:1.18.36' //使用lombok必须添加，否则启动项目会报错
+    compileOnly 'org.projectlombok:lombok:1.18.36' //项目编译时使用，否则会报错
 }
 
 allprojects {
