@@ -35,9 +35,9 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
             HeroChannel.getChannelHeroMap().put(userId, new Hero(userId, heroAvatar));
             //将登录的用户id设置到通道中
             channelHandlerContext.channel().attr(AttributeKey.valueOf(HeroChannel.USER_ID_KEY)).set(userId);
-            GameMessageProto.UserLoginResult loginResult = builder.build();
+            GameMessageProto.UserLoginResult result = builder.build();
             //广播登录结果到所有客户端,但是有个问题，只会将当前登录的用户广播到已经登录的用户，但是当前用户不会显示已经登录的其他用户
-            HeroChannel.getChannelGroup().writeAndFlush(loginResult);
+            HeroChannel.getChannelGroup().writeAndFlush(result);
         } else if (o instanceof GameMessageProto.OnlineUserCmd) {
             //在线用户请求
             GameMessageProto.OnlineUserResult.Builder builder = GameMessageProto.OnlineUserResult.newBuilder();
@@ -53,6 +53,21 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
             }
             GameMessageProto.OnlineUserResult result = builder.build();
             channelHandlerContext.writeAndFlush(result);
+        } else if (o instanceof GameMessageProto.UserMoveCmd cmd) {
+            //英雄移动请求
+            AttributeKey<Integer> attributeKey = AttributeKey.valueOf(HeroChannel.USER_ID_KEY);
+            Integer userId = channelHandlerContext.channel().attr(attributeKey).get();
+            if (null == userId) {
+                return;
+            }
+
+            GameMessageProto.UserMoveResult.Builder builder = GameMessageProto.UserMoveResult.newBuilder();
+            builder.setMoveUserId(userId);
+            builder.setMoveToPosX(cmd.getMoveToPosX());
+            builder.setMoveToPosY(cmd.getMoveToPosY());
+            GameMessageProto.UserMoveResult result = builder.build();
+            //将该英雄移动结果广播到所有客户端
+            HeroChannel.getChannelGroup().writeAndFlush(result);
         }
     }
 }

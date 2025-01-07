@@ -14,6 +14,11 @@ enum GameMsgId {
 
   //在线玩家响应id
   ONLINE_USER_RESULT = 3;
+
+  //用户移动请求id
+  USER_MOVE_CMD = 4;
+  //用户移动响应
+  USER_MOVE_RESULT = 5;
 }
 //登录请求
 message UserLoginCmd {
@@ -47,3 +52,18 @@ message  OnlineUserResult {
     string heroAvatar = 2;
   }
 }
+
+message UserMoveCmd {
+
+  //用户坐标
+  float moveToPosX = 1;
+  float moveToPosY = 2;
+  }
+
+  message UserMoveResult {
+    //用户id
+    uint32 moveUserId = 1;
+    //用户坐标
+    float moveToPosX = 2;
+    float moveToPosY = 3;
+  }

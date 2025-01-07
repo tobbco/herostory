@@ -38,6 +38,9 @@ public class DefaultMessageDecoder extends ChannelInboundHandlerAdapter {
                 case GameMessageProto.GameMsgId.ONLINE_USER_CMD_VALUE:
                     cmd = GameMessageProto.OnlineUserCmd.parseFrom(bodyBytes);
                     break;
+                case GameMessageProto.GameMsgId.USER_MOVE_CMD_VALUE:
+                    cmd = GameMessageProto.UserMoveCmd.parseFrom(bodyBytes);
+                    break;
             }
             if (null != cmd) {
                 ctx.fireChannelRead(cmd);

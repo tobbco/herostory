@@ -28,11 +28,16 @@ public class DefaultMessageEncoder extends ChannelOutboundHandlerAdapter {
             cmdId = GameMessageProto.GameMsgId.USER_LOGIN_RESULT_VALUE;
         } else if (msg instanceof GameMessageProto.OnlineUserResult) {
             cmdId = GameMessageProto.GameMsgId.ONLINE_USER_RESULT_VALUE;
+        } else if (msg instanceof GameMessageProto.UserMoveResult) {
+            cmdId = GameMessageProto.GameMsgId.USER_MOVE_RESULT_VALUE;
         }
         byte[] byteArray = ((GeneratedMessage)msg).toByteArray();
         ByteBuf content = ctx.alloc().buffer();
+        //写出消息头，前2字节为消息长度，默认设置为0
         content.writeShort(0);
+        //写出消息头，后2字节为消息类型
         content.writeShort(cmdId);
+        //写出内容
         content.writeBytes(byteArray);
         super.write(ctx, new BinaryWebSocketFrame(content), promise);
     }
