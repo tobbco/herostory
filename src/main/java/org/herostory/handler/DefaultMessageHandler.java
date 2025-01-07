@@ -2,6 +2,7 @@ package org.herostory.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.util.AttributeKey;
 import org.herostory.bean.Hero;
 import org.herostory.channel.HeroChannel;
 import org.herostory.protobuf.bean.GameMessageProto;
@@ -30,7 +31,10 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
             GameMessageProto.UserLoginResult.Builder builder = GameMessageProto.UserLoginResult.newBuilder();
             builder.setUserId(userId);
             builder.setHeroAvatar(heroAvatar);
+            //将登录结果封装成到全局登录用户中
             HeroChannel.getChannelHeroMap().put(userId, new Hero(userId, heroAvatar));
+            //将登录的用户id设置到通道中
+            channelHandlerContext.channel().attr(AttributeKey.valueOf(HeroChannel.USER_ID_KEY)).set(userId);
             GameMessageProto.UserLoginResult loginResult = builder.build();
             //广播登录结果到所有客户端,但是有个问题，只会将当前登录的用户广播到已经登录的用户，但是当前用户不会显示已经登录的其他用户
             HeroChannel.getChannelGroup().writeAndFlush(loginResult);
@@ -38,6 +42,9 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
             //在线用户请求
             GameMessageProto.OnlineUserResult.Builder builder = GameMessageProto.OnlineUserResult.newBuilder();
             for (Hero hero : HeroChannel.getChannelHeroMap().values()) {
+                if (null == hero) {
+                    continue;
+                }
                 GameMessageProto.OnlineUserResult.UserInfo userInfo = GameMessageProto.OnlineUserResult.UserInfo.newBuilder()
                         .setUserId(hero.getUserId())
                         .setHeroAvatar(hero.getHeroAvatar())

@@ -17,6 +17,9 @@ public class HeroChannel {
         // 私有构造函数，防止外部实例化
     }
 
+
+    public static final String USER_ID_KEY = "userId";
+
     private static class SingletonHolder {
         private static final ChannelGroup channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
         private static final ConcurrentHashMap<Integer, Hero> channelHeroMap = new ConcurrentHashMap<>();
