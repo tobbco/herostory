@@ -1,20 +1,26 @@
 package org.herostory;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.*;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelPipeline;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
+import org.herostory.handler.DefaultMessageDecoder;
+import org.herostory.handler.DefaultMessageHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-/**
- * @description:
- * @author：yexianchao
- * @date: 2025/1/6/006
- */
+
 public class ServerMain {
+    private static final Logger logger = LoggerFactory.getLogger(ServerMain.class);
     public static final Integer PORT = 12345;
 
     public static void main(String[] args) {
@@ -35,20 +41,25 @@ public class ServerMain {
                 pipeline.addLast(
                         new HttpServerCodec(),
                         new HttpObjectAggregator(65535),
-                        new WebSocketServerProtocolHandler("/ws")
+                        new WebSocketServerProtocolHandler("/websocket"),
+                        new LoggingHandler(LogLevel.INFO),
+                        new DefaultMessageDecoder(),
+                        new DefaultMessageHandler()
                 );
             }
         });
         try {
             ChannelFuture future = bootstrap.bind(PORT).sync();
             if (future.isSuccess()) {
-                System.out.println("服务启动成功,端口: " + PORT);
+                logger.info("服务端启动成功,PORT: {}", PORT);
             }
-            Channel channel = future.channel();
-            channel.closeFuture();
+            future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            logger.error("服务端启动异常", e);
+        } finally {
+            workerGroup.shutdownGracefully();
+            bossGroup.shutdownGracefully();
+            logger.info("服务端关闭");
         }
-
     }
 }

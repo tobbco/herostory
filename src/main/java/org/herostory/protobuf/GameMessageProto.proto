@@ -1,0 +1,18 @@
+syntax = "proto3";
+package org.herostory.protobuf;
+option java_package = "org.herostory.protobuf.bean";
+
+//消息id
+enum GameMsgId {
+  //客户端登录请求id
+  USER_LOGIN_CMD = 0;
+  //服务端登录结果id
+  USER_LOGIN_RESULT = 1;
+}
+//登录请求
+message UserLoginCmd {
+  //用户id
+  uint32 userId = 1;
+  //英雄形象
+  string heroAvatar = 2;
+}
