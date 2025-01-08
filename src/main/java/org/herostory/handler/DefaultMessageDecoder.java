@@ -1,12 +1,11 @@
 package org.herostory.handler;
 
-import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.Message;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
-import org.herostory.protobuf.bean.GameMessageProto;
+import org.herostory.CmdRecognizer;
 import org.slf4j.Logger;
 
 
@@ -24,7 +23,11 @@ public class DefaultMessageDecoder extends ChannelInboundHandlerAdapter {
             content.readShort();
             //读取2个字节，获取消息类型
             int cmdId = content.readShort();
-            logger.info("cmdId:{}", cmdId);
+            Message.Builder builder = CmdRecognizer.getBuilderByCmdId(cmdId);
+            if (null == builder) {
+                logger.error("未识别的消息指令,cmdId: {}", cmdId);
+                return;
+            }
             //获取可读字节数
             int readable = content.readableBytes();
             //读取消息体
@@ -32,24 +35,16 @@ public class DefaultMessageDecoder extends ChannelInboundHandlerAdapter {
             //将内容读取到字节数组中
             content.readBytes(bodyBytes);
 
-            Message.Builder builder = null;
-            switch (cmdId) {
-                case GameMessageProto.GameMsgId.USER_LOGIN_CMD_VALUE:
-                    builder = GameMessageProto.UserLoginCmd.newBuilder();
-                    break;
-                case GameMessageProto.GameMsgId.ONLINE_USER_CMD_VALUE:
-                    builder = GameMessageProto.OnlineUserCmd.newBuilder();
-                    break;
-                case GameMessageProto.GameMsgId.USER_MOVE_CMD_VALUE:
-                    builder = GameMessageProto.UserMoveCmd.newBuilder();
-                    break;
-            }
-            if (null != builder) {
-                Message message = builder.mergeFrom(bodyBytes).build();
+            //清空
+            builder.clear();
+            Message message = builder.mergeFrom(bodyBytes).build();
+            if (null != message) {
                 ctx.fireChannelRead(message);
             }
         } catch (Exception e) {
             logger.error("消息解码异常", e);
         }
     }
+
+
 }
