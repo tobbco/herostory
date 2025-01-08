@@ -82,6 +82,14 @@ public final class GameMessageProto {
      * <code>USER_MOVE_RESULT = 5;</code>
      */
     USER_MOVE_RESULT(5),
+    /**
+     * <pre>
+     * 用户断开连接响应id
+     * </pre>
+     *
+     * <code>USER_DISCONNECT_RESULT = 6;</code>
+     */
+    USER_DISCONNECT_RESULT(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -142,6 +150,14 @@ public final class GameMessageProto {
      * <code>USER_MOVE_RESULT = 5;</code>
      */
     public static final int USER_MOVE_RESULT_VALUE = 5;
+    /**
+     * <pre>
+     * 用户断开连接响应id
+     * </pre>
+     *
+     * <code>USER_DISCONNECT_RESULT = 6;</code>
+     */
+    public static final int USER_DISCONNECT_RESULT_VALUE = 6;
 
 
     public final int getNumber() {
@@ -174,6 +190,7 @@ public final class GameMessageProto {
         case 3: return ONLINE_USER_RESULT;
         case 4: return USER_MOVE_CMD;
         case 5: return USER_MOVE_RESULT;
+        case 6: return USER_DISCONNECT_RESULT;
         default: return null;
       }
     }
@@ -4535,6 +4552,468 @@ public final class GameMessageProto {
 
   }
 
+  public interface UserDisconnectResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserDisconnectResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 用户id
+     * </pre>
+     *
+     * <code>uint32 quitUserId = 1;</code>
+     * @return The quitUserId.
+     */
+    int getQuitUserId();
+  }
+  /**
+   * <pre>
+   * 用户断开连接响应
+   * </pre>
+   *
+   * Protobuf type {@code org.herostory.protobuf.UserDisconnectResult}
+   */
+  public static final class UserDisconnectResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserDisconnectResult)
+      UserDisconnectResultOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        UserDisconnectResult.class.getName());
+    }
+    // Use UserDisconnectResult.newBuilder() to construct.
+    private UserDisconnectResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UserDisconnectResult() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.class, org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.Builder.class);
+    }
+
+    public static final int QUITUSERID_FIELD_NUMBER = 1;
+    private int quitUserId_ = 0;
+    /**
+     * <pre>
+     * 用户id
+     * </pre>
+     *
+     * <code>uint32 quitUserId = 1;</code>
+     * @return The quitUserId.
+     */
+    @java.lang.Override
+    public int getQuitUserId() {
+      return quitUserId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (quitUserId_ != 0) {
+        output.writeUInt32(1, quitUserId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (quitUserId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, quitUserId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult)) {
+        return super.equals(obj);
+      }
+      org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult other = (org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult) obj;
+
+      if (getQuitUserId()
+          != other.getQuitUserId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + QUITUSERID_FIELD_NUMBER;
+      hash = (53 * hash) + getQuitUserId();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 用户断开连接响应
+     * </pre>
+     *
+     * Protobuf type {@code org.herostory.protobuf.UserDisconnectResult}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserDisconnectResult)
+        org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.class, org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.Builder.class);
+      }
+
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        quitUserId_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult result = new org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.quitUserId_ = quitUserId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.getDefaultInstance()) return this;
+        if (other.getQuitUserId() != 0) {
+          setQuitUserId(other.getQuitUserId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                quitUserId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int quitUserId_ ;
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>uint32 quitUserId = 1;</code>
+       * @return The quitUserId.
+       */
+      @java.lang.Override
+      public int getQuitUserId() {
+        return quitUserId_;
+      }
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>uint32 quitUserId = 1;</code>
+       * @param value The quitUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuitUserId(int value) {
+
+        quitUserId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>uint32 quitUserId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuitUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        quitUserId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserDisconnectResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserDisconnectResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult();
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserDisconnectResult>
+        PARSER = new com.google.protobuf.AbstractParser<UserDisconnectResult>() {
+      @java.lang.Override
+      public UserDisconnectResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserDisconnectResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserDisconnectResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_herostory_protobuf_UserLoginCmd_descriptor;
   private static final 
@@ -4570,6 +5049,11 @@ public final class GameMessageProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_herostory_protobuf_UserMoveResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4590,11 +5074,13 @@ public final class GameMessageProto {
       "veCmd\022\022\n\nmoveToPosX\030\001 \001(\002\022\022\n\nmoveToPosY\030" +
       "\002 \001(\002\"L\n\016UserMoveResult\022\022\n\nmoveUserId\030\001 " +
       "\001(\r\022\022\n\nmoveToPosX\030\002 \001(\002\022\022\n\nmoveToPosY\030\003 " +
-      "\001(\002*\214\001\n\tGameMsgId\022\022\n\016USER_LOGIN_CMD\020\000\022\025\n" +
-      "\021USER_LOGIN_RESULT\020\001\022\023\n\017ONLINE_USER_CMD\020" +
-      "\002\022\026\n\022ONLINE_USER_RESULT\020\003\022\021\n\rUSER_MOVE_C" +
-      "MD\020\004\022\024\n\020USER_MOVE_RESULT\020\005B\035\n\033org.herost" +
-      "ory.protobuf.beanb\006proto3"
+      "\001(\002\"*\n\024UserDisconnectResult\022\022\n\nquitUserI" +
+      "d\030\001 \001(\r*\250\001\n\tGameMsgId\022\022\n\016USER_LOGIN_CMD\020" +
+      "\000\022\025\n\021USER_LOGIN_RESULT\020\001\022\023\n\017ONLINE_USER_" +
+      "CMD\020\002\022\026\n\022ONLINE_USER_RESULT\020\003\022\021\n\rUSER_MO" +
+      "VE_CMD\020\004\022\024\n\020USER_MOVE_RESULT\020\005\022\032\n\026USER_D" +
+      "ISCONNECT_RESULT\020\006B\035\n\033org.herostory.prot" +
+      "obuf.beanb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4642,6 +5128,12 @@ public final class GameMessageProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_herostory_protobuf_UserMoveResult_descriptor,
         new java.lang.String[] { "MoveUserId", "MoveToPosX", "MoveToPosY", });
+    internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor,
+        new java.lang.String[] { "QuitUserId", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

@@ -19,6 +19,8 @@ enum GameMsgId {
   USER_MOVE_CMD = 4;
   //用户移动响应
   USER_MOVE_RESULT = 5;
+  //用户断开连接响应id
+  USER_DISCONNECT_RESULT = 6;
 }
 //登录请求
 message UserLoginCmd {
@@ -58,12 +60,18 @@ message UserMoveCmd {
   //用户坐标
   float moveToPosX = 1;
   float moveToPosY = 2;
-  }
+}
 
-  message UserMoveResult {
-    //用户id
-    uint32 moveUserId = 1;
-    //用户坐标
-    float moveToPosX = 2;
-    float moveToPosY = 3;
-  }
+message UserMoveResult {
+  //用户id
+  uint32 moveUserId = 1;
+  //用户坐标
+  float moveToPosX = 2;
+  float moveToPosY = 3;
+}
+
+//用户断开连接响应
+message  UserDisconnectResult {
+  //用户id
+  uint32 quitUserId = 1;
+}

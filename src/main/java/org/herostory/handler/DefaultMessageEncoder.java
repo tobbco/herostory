@@ -30,6 +30,8 @@ public class DefaultMessageEncoder extends ChannelOutboundHandlerAdapter {
             cmdId = GameMessageProto.GameMsgId.ONLINE_USER_RESULT_VALUE;
         } else if (msg instanceof GameMessageProto.UserMoveResult) {
             cmdId = GameMessageProto.GameMsgId.USER_MOVE_RESULT_VALUE;
+        } else if (msg instanceof GameMessageProto.UserDisconnectResult) {
+            cmdId = GameMessageProto.GameMsgId.USER_DISCONNECT_RESULT_VALUE;
         }
         byte[] byteArray = ((GeneratedMessage)msg).toByteArray();
         ByteBuf content = ctx.alloc().buffer();
