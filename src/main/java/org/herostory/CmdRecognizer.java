@@ -2,6 +2,7 @@ package org.herostory;
 
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.Message;
+import org.herostory.constants.HeroConstant;
 import org.herostory.protobuf.bean.GameMessageProto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +44,7 @@ public final class CmdRecognizer {
                 }
                 try {
                     //通过反射获取默认实例
-                    GeneratedMessage defaultInstance = (GeneratedMessage) declaredClass.getDeclaredMethod("getDefaultInstance").invoke(declaredClass);
+                    GeneratedMessage defaultInstance = (GeneratedMessage) declaredClass.getDeclaredMethod(HeroConstant.GET_DEFAULT_INSTANCE_METHOD_NAME).invoke(declaredClass);
                     logger.info("CMD关联 {}<=>{}", cmdId.getNumber(), declaredClass.getName());
                     //将命令ID与默认实例映射到cmdBuilderMap中
                     cmdBuilderMap.put(cmdId.getNumber(), defaultInstance);

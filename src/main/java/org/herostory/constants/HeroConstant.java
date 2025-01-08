@@ -14,4 +14,9 @@ public class HeroConstant {
      * 处理方法名
      */
     public static final String HANDLE_METHOD_NAME = "handle";
+
+    /**
+     * 调用协议中的默认实例方法名
+     */
+    public static final String GET_DEFAULT_INSTANCE_METHOD_NAME = "getDefaultInstance";
 }
