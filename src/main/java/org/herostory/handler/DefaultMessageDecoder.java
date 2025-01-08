@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 
 
 public class DefaultMessageDecoder extends ChannelInboundHandlerAdapter {
-    private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(DefaultMessageDecoder.class);
+    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(DefaultMessageDecoder.class);
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
@@ -23,7 +23,7 @@ public class DefaultMessageDecoder extends ChannelInboundHandlerAdapter {
             content.readShort();
             //读取2个字节，获取消息类型
             int cmdId = content.readShort();
-            LOGGER.info("cmdId:{}", cmdId);
+            logger.info("cmdId:{}", cmdId);
             //获取可读字节数
             int readable = content.readableBytes();
             //读取消息体
@@ -46,7 +46,7 @@ public class DefaultMessageDecoder extends ChannelInboundHandlerAdapter {
                 ctx.fireChannelRead(cmd);
             }
         } catch (Exception e) {
-            LOGGER.error("消息解码异常", e);
+            logger.error("消息解码异常", e);
         }
     }
 }

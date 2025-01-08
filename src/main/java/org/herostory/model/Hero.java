@@ -1,4 +1,4 @@
-package org.herostory.bean;
+package org.herostory.model;
 
 
 import lombok.AllArgsConstructor;

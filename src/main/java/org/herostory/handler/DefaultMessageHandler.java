@@ -1,17 +1,16 @@
 package org.herostory.handler;
 
+import com.google.protobuf.GeneratedMessage;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.channel.group.ChannelGroup;
-import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.util.AttributeKey;
-import io.netty.util.concurrent.GlobalEventExecutor;
-import org.herostory.bean.Hero;
+import org.herostory.BroadCaster;
 import org.herostory.constants.HeroConstant;
+import org.herostory.handler.cmd.CmdHandlerFactory;
+import org.herostory.handler.cmd.ICmdHandler;
+import org.herostory.model.HeroStore;
 import org.herostory.protobuf.bean.GameMessageProto;
 import org.slf4j.Logger;
-
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 默认消息处理器
@@ -19,79 +18,52 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
     private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(DefaultMessageHandler.class);
 
-    private static final ChannelGroup _channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
-    private static final ConcurrentHashMap<Integer, Hero> channelHeroMap = new ConcurrentHashMap<>();
-
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
-        _channelGroup.add(ctx.channel());
+        BroadCaster.addChannel(ctx.channel());
     }
 
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         super.handlerRemoved(ctx);
-        _channelGroup.remove(ctx.channel());
-        AttributeKey<Integer> attributeKey = AttributeKey.valueOf(HeroConstant.USER_ID_KEY);
+        BroadCaster.removeChannel(ctx.channel());
+        AttributeKey<Integer> attributeKey = AttributeKey.valueOf(HeroConstant.HERO_ID_KEY);
         Integer userId = ctx.channel().attr(attributeKey).get();
         if (null == userId) {
             return;
         }
-        channelHeroMap.remove(userId);
+        HeroStore.removeHero(userId);
         GameMessageProto.UserDisconnectResult.Builder builder = GameMessageProto.UserDisconnectResult.newBuilder();
         builder.setQuitUserId(userId);
         GameMessageProto.UserDisconnectResult result = builder.build();
-        _channelGroup.writeAndFlush(result);
+        BroadCaster.broadcast(result);
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object o) {
-        LOGGER.info("the client message was received procedure: {}", o);
-
-        if (o instanceof GameMessageProto.UserLoginCmd cmd) {
-            //如果是登录请求
-            int userId = cmd.getUserId();
-            String heroAvatar = cmd.getHeroAvatar();
-            GameMessageProto.UserLoginResult.Builder builder = GameMessageProto.UserLoginResult.newBuilder();
-            builder.setUserId(userId);
-            builder.setHeroAvatar(heroAvatar);
-            //将登录结果封装成到全局登录用户中
-            channelHeroMap.put(userId, new Hero(userId, heroAvatar));
-            //将登录的用户id设置到通道中
-            channelHandlerContext.channel().attr(AttributeKey.valueOf(HeroConstant.USER_ID_KEY)).set(userId);
-            GameMessageProto.UserLoginResult result = builder.build();
-            //广播登录结果到所有客户端,但是有个问题，只会将当前登录的用户广播到已经登录的用户，但是当前用户不会显示已经登录的其他用户
-            _channelGroup.writeAndFlush(result);
-        } else if (o instanceof GameMessageProto.OnlineUserCmd) {
-            //在线用户请求
-            GameMessageProto.OnlineUserResult.Builder builder = GameMessageProto.OnlineUserResult.newBuilder();
-            for (Hero hero : channelHeroMap.values()) {
-                if (null == hero) {
-                    continue;
-                }
-                GameMessageProto.OnlineUserResult.UserInfo userInfo = GameMessageProto.OnlineUserResult.UserInfo.newBuilder()
-                        .setUserId(hero.getUserId())
-                        .setHeroAvatar(hero.getHeroAvatar())
-                        .build();
-                builder.addUserInfo(userInfo);
-            }
-            GameMessageProto.OnlineUserResult result = builder.build();
-            channelHandlerContext.writeAndFlush(result);
-        } else if (o instanceof GameMessageProto.UserMoveCmd cmd) {
-            //英雄移动请求
-            AttributeKey<Integer> attributeKey = AttributeKey.valueOf(HeroConstant.USER_ID_KEY);
-            Integer userId = channelHandlerContext.channel().attr(attributeKey).get();
-            if (null == userId) {
-                return;
-            }
-
-            GameMessageProto.UserMoveResult.Builder builder = GameMessageProto.UserMoveResult.newBuilder();
-            builder.setMoveUserId(userId);
-            builder.setMoveToPosX(cmd.getMoveToPosX());
-            builder.setMoveToPosY(cmd.getMoveToPosY());
-            GameMessageProto.UserMoveResult result = builder.build();
-            //将该英雄移动结果广播到所有客户端
-            _channelGroup.writeAndFlush(result);
+    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object message) {
+        Class<?> messageClazz = message.getClass();
+        LOGGER.info("接收到的消息,messageClazz: {},message: {}", messageClazz.getName(), message);
+        ICmdHandler<? extends GeneratedMessage> cmdHandler = CmdHandlerFactory.getCmdHandler(messageClazz);
+        if (null == cmdHandler || !(message instanceof GeneratedMessage)) {
+            LOGGER.error("未找到命令处理器,messageClazz: {},handle: {}, message: {}", messageClazz.getName(), cmdHandler, message);
+            return;
         }
+        cmdHandler.handle(channelHandlerContext, cast(message));
+    }
+
+    /**
+     * 类型转换
+     * SuppressWarnings("unchecked"):否则会警告: [unchecked] 未经检查的转换
+     * @param <T> 转换的类型
+     * @param o   对象
+     * @return 转换类型后的对象
+     */
+    @SuppressWarnings("unchecked")
+    private static <T extends GeneratedMessage> T cast(Object o) {
+        if (null == o) {
+            return null;
+        }
+        return (T) o;
     }
 }
