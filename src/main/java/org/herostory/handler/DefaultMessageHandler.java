@@ -43,10 +43,10 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object message) {
         Class<?> messageClazz = message.getClass();
-        LOGGER.info("接收到的消息,messageClazz: {},message: {}", messageClazz.getName(), message);
+        LOGGER.info("接收到的消息,messageClazz: {},message: {}", messageClazz.getSimpleName(), message);
         ICmdHandler<? extends GeneratedMessage> cmdHandler = CmdHandlerFactory.getCmdHandler(messageClazz);
         if (null == cmdHandler || !(message instanceof GeneratedMessage)) {
-            LOGGER.error("未找到命令处理器,messageClazz: {},handle: {}, message: {}", messageClazz.getName(), cmdHandler, message);
+            LOGGER.error("未找到命令处理器,messageClazz: {},handle: {}, message: {}", messageClazz.getSimpleName(), cmdHandler, message);
             return;
         }
         cmdHandler.handle(channelHandlerContext, cast(message));

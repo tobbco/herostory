@@ -23,7 +23,7 @@ public class DefaultMessageEncoder extends ChannelOutboundHandlerAdapter {
             return;
         }
         //根据消息获取消息指令
-        int cmdId = CmdRecognizer.getCmdIdByClass(msg);
+        int cmdId = CmdRecognizer.getCmdIdByClass(msg.getClass());
         if (cmdId < 0) {
             logger.error("未能解析的消息类型,message class: {}", msg.getClass().getName());
             return;
