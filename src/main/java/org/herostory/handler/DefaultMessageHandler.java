@@ -5,9 +5,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;
 import org.herostory.BroadCaster;
+import org.herostory.MainThreadProcess;
 import org.herostory.constants.HeroConstant;
-import org.herostory.handler.cmd.CmdHandlerFactory;
-import org.herostory.handler.cmd.ICmdHandler;
 import org.herostory.model.HeroStore;
 import org.herostory.protobuf.bean.GameMessageProto;
 import org.slf4j.Logger;
@@ -16,7 +15,7 @@ import org.slf4j.Logger;
  * 默认消息处理器
  */
 public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
-    private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(DefaultMessageHandler.class);
+    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(DefaultMessageHandler.class);
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -33,6 +32,7 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
         if (null == userId) {
             return;
         }
+        logger.info("{} 断开连接", userId);
         HeroStore.removeHero(userId);
         GameMessageProto.UserDisconnectResult.Builder builder = GameMessageProto.UserDisconnectResult.newBuilder();
         builder.setQuitUserId(userId);
@@ -42,28 +42,10 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object message) {
-        Class<?> messageClazz = message.getClass();
-        LOGGER.info("接收到的消息,messageClazz: {},message: {}", messageClazz.getSimpleName(), message);
-        ICmdHandler<? extends GeneratedMessage> cmdHandler = CmdHandlerFactory.getCmdHandler(messageClazz);
-        if (null == cmdHandler || !(message instanceof GeneratedMessage)) {
-            LOGGER.error("未找到命令处理器,messageClazz: {},handle: {}, message: {}", messageClazz.getSimpleName(), cmdHandler, message);
-            return;
+        if (message instanceof GeneratedMessage generatedMessage) {
+            MainThreadProcess.getInstance().process(channelHandlerContext, generatedMessage);
         }
-        cmdHandler.handle(channelHandlerContext, cast(message));
     }
 
-    /**
-     * 类型转换
-     * SuppressWarnings("unchecked"):否则会警告: [unchecked] 未经检查的转换
-     * @param <T> 转换的类型
-     * @param o   对象
-     * @return 转换类型后的对象
-     */
-    @SuppressWarnings("unchecked")
-    private static <T extends GeneratedMessage> T cast(Object o) {
-        if (null == o) {
-            return null;
-        }
-        return (T) o;
-    }
+
 }

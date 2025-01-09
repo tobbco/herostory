@@ -1,6 +1,5 @@
 package org.herostory.handler.cmd;
 
-import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
 import org.herostory.BroadCaster;
@@ -9,17 +8,20 @@ import org.herostory.constants.HeroConstant;
 import org.herostory.model.Hero;
 import org.herostory.model.HeroStore;
 import org.herostory.protobuf.bean.GameMessageProto;
+import org.slf4j.Logger;
 
 /**
  * 英雄攻击命令处理器
  */
 public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.UserAttackCmd> {
+    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(HeroAttackCmdHandler.class);
+
     @Override
     public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.UserAttackCmd cmd) {
         if (null == cmd) {
             return;
         }
-
+        logger.info("攻击英雄 {}", cmd);
         AttributeKey<Integer> attributeKey = AttributeKey.valueOf(HeroConstant.HERO_ID_KEY);
         //获取当前通道绑定的用户ID
         Integer userId = channelHandlerContext.channel().attr(attributeKey).get();

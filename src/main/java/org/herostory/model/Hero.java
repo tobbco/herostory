@@ -46,7 +46,7 @@ public class Hero {
      * @param toPosY    终点位置y坐标
      * @param startTime 开始移动的时间 时间戳 单位:毫秒 System.currentTimeMillis()
      */
-    public synchronized void move(float fromPosX, float fromPosY, float toPosX, float toPosY, long startTime) {
+    public  void move(float fromPosX, float fromPosY, float toPosX, float toPosY, long startTime) {
         this.moveState.setFromPosX(fromPosX);
         this.moveState.setFromPosY(fromPosY);
         this.moveState.setToPosX(toPosX);
@@ -54,7 +54,7 @@ public class Hero {
         this.moveState.setStartTime(startTime);
     }
 
-    public synchronized void subHp(int val) {
+    public  void subHp(int val) {
         if (isDead()) {
             throw new HeroDeadException("英雄：" + this.userId + "已死亡");
         }
