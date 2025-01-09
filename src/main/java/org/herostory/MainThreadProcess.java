@@ -16,7 +16,7 @@ public final class MainThreadProcess {
     /**
      * 单线程池
      */
-    private static final ExecutorService executorService = Executors.newSingleThreadExecutor();
+    private static final ExecutorService executorService = Executors.newSingleThreadExecutor((r) -> new Thread(r, "MainThreadProcess"));
 
     /**
      * 使用静态内部类实现单例模式
@@ -56,7 +56,11 @@ public final class MainThreadProcess {
                 logger.error("未找到响应的消息指令 {}", messageClass.getName());
                 return;
             }
-            cmdHandler.handle(ctx, cast(message));
+            try {
+                cmdHandler.handle(ctx, cast(message));
+            } catch (Exception e) {
+                logger.error("处理业务异常", e);
+            }
         });
     }
 
