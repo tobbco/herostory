@@ -43,6 +43,9 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.UserAt
                 .build();
         Hero hero = HeroStore.getHero(cmd.getTargetUserId());
         try {
+            if (null== hero) {
+                return;
+            }
             hero.subHp(HeroConstant.DEFAULT_SUBTRACT_HP);
             if (hero.isDead()) {
                 deadBroadcast(cmd.getTargetUserId());
