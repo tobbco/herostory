@@ -4,9 +4,9 @@ option java_package = "org.herostory.protobuf.bean";
 
 //消息id
 enum GameMsgId {
-  //客户端登录请求id
+  //客户端进入请求id
   USER_LOGIN_CMD = 0;
-  //服务端登录结果id
+  //服务端进入结果id
   USER_LOGIN_RESULT = 1;
 
   //在线玩家信息
@@ -33,6 +33,10 @@ enum GameMsgId {
   USER_SUBTRACT_HP_RESULT = 11;
   //用户死亡响应id
   USER_DIE_RESULT = 12;
+  //英雄登录请求id
+  HERO_LOGIN_CMD = 13;
+  //英雄登录响应id
+  HERO_LOGIN_RESULT = 14;
 }
 //登录请求
 message UserLoginCmd {
@@ -151,4 +155,19 @@ message UserDieResult {
   // 死亡用户 Id
   uint32 targetUserId = 1;
 }
+message HeroLoginCmd {
+  // 用户名称
+  string userName = 1;
+  // 用户密码
+  string password = 2;
+}
 
+message HeroLoginResult {
+  // 用户 Id,
+  // 如果是 -1 则说明登录失败
+  uint32 userId = 1;
+  // 用户名称
+  string userName = 2;
+  // 英雄形象
+  string heroAvatar = 3;
+}

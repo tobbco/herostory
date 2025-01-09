@@ -11,7 +11,7 @@ import org.herostory.protobuf.bean.GameMessageProto;
 /**
  * 英雄登录命令处理器
  */
-public class HeroLoginCmdHandler implements ICmdHandler<GameMessageProto.UserLoginCmd>{
+public class HeroEntryCmdHandler implements ICmdHandler<GameMessageProto.UserLoginCmd>{
 
     @Override
     public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.UserLoginCmd cmd) {
