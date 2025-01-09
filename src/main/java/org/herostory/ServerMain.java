@@ -11,8 +11,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
+import org.herostory.constants.HeroConstant;
 import org.herostory.handler.DefaultMessageDecoder;
 import org.herostory.handler.DefaultMessageEncoder;
 import org.herostory.handler.DefaultMessageHandler;
@@ -55,6 +54,7 @@ public class ServerMain {
             ChannelFuture future = bootstrap.bind(PORT).sync();
             if (future.isSuccess()) {
                 logger.info("服务端启动成功,PORT: {}", PORT);
+                logger.info("游戏前端页面访问地址:\n{}", String.format(HeroConstant.TEST_GAME_URL_STEP020, PORT));
             }
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {

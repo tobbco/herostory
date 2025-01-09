@@ -35,12 +35,32 @@ public class Hero {
      */
     private Integer hp = 100;
 
+
+    private MoveState moveState = new MoveState();
+
+    /**
+     * 英雄移动
+     * @param fromPosX  起始位置x坐标
+     * @param fromPosY  起始位置y坐标
+     * @param toPosX    终点位置x坐标
+     * @param toPosY    终点位置y坐标
+     * @param startTime 开始移动的时间 时间戳 单位:毫秒 System.currentTimeMillis()
+     */
+    public synchronized void move(float fromPosX, float fromPosY, float toPosX, float toPosY, long startTime) {
+        this.moveState.setFromPosX(fromPosX);
+        this.moveState.setFromPosY(fromPosY);
+        this.moveState.setToPosX(toPosX);
+        this.moveState.setToPosY(toPosY);
+        this.moveState.setStartTime(startTime);
+    }
+
     public synchronized void subHp(int val) {
         if (isDead()) {
             throw new HeroDeadException("英雄：" + this.userId + "已死亡");
         }
         this.hp -= val;
     }
+
     public synchronized boolean isDead() {
         return this.hp <= 0;
     }

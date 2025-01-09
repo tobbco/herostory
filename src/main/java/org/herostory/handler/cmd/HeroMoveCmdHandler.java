@@ -4,6 +4,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
 import org.herostory.BroadCaster;
 import org.herostory.constants.HeroConstant;
+import org.herostory.model.Hero;
+import org.herostory.model.HeroStore;
 import org.herostory.protobuf.bean.GameMessageProto;
 
 /**
@@ -20,10 +22,20 @@ public class HeroMoveCmdHandler implements ICmdHandler<GameMessageProto.UserMove
         if (null == userId) {
             return;
         }
+        Hero hero = HeroStore.getHero(userId);
+        if (null == hero) {
+            return;
+        }
+        //英雄移动
+        long startTime = System.currentTimeMillis();
+        hero.move(cmd.getMoveFromPosX(), cmd.getMoveFromPosY(), cmd.getMoveToPosX(), cmd.getMoveToPosY(), startTime);
         GameMessageProto.UserMoveResult.Builder builder = GameMessageProto.UserMoveResult.newBuilder();
         builder.setMoveUserId(userId);
+        builder.setMoveFromPosX(cmd.getMoveFromPosX());
+        builder.setMoveFromPosY(cmd.getMoveFromPosY());
         builder.setMoveToPosX(cmd.getMoveToPosX());
         builder.setMoveToPosY(cmd.getMoveToPosY());
+        builder.setMoveStartTime(startTime);
         GameMessageProto.UserMoveResult result = builder.build();
         //将该英雄移动结果广播到所有客户端
         BroadCaster.broadcast(result);

@@ -23,4 +23,13 @@ public class HeroConstant {
      * 默认减血量
      */
     public static final Integer DEFAULT_SUBTRACT_HP = 10;
+
+    /**
+     * 测试游戏地址
+     */
+    public static final String TEST_GAME_URL_STEP010 = "http://cdn0001.afrxvk.cn/hero_story/demo/step010/index.html?serverAddr=127.0.0.1:%s&userId=1";
+    /**
+     * 解决了游戏页面刷新英雄移动问题
+     */
+    public static final String TEST_GAME_URL_STEP020 = "http://cdn0001.afrxvk.cn/hero_story/demo/step020/index.html?serverAddr=127.0.0.1:%s&userId=1";
 }

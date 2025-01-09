@@ -2127,6 +2127,33 @@ public final class GameMessageProto {
        */
       com.google.protobuf.ByteString
           getHeroAvatarBytes();
+
+      /**
+       * <pre>
+       * 移动状态
+       * </pre>
+       *
+       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * @return Whether the moveState field is set.
+       */
+      boolean hasMoveState();
+      /**
+       * <pre>
+       * 移动状态
+       * </pre>
+       *
+       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * @return The moveState.
+       */
+      org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getMoveState();
+      /**
+       * <pre>
+       * 移动状态
+       * </pre>
+       *
+       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       */
+      org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder getMoveStateOrBuilder();
     }
     /**
      * Protobuf type {@code org.herostory.protobuf.OnlineUserResult.UserInfo}
@@ -2166,6 +2193,846 @@ public final class GameMessageProto {
                 org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder.class);
       }
 
+      public interface MoveStateOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 起始位置 X
+         * </pre>
+         *
+         * <code>float fromPosX = 1;</code>
+         * @return The fromPosX.
+         */
+        float getFromPosX();
+
+        /**
+         * <pre>
+         * 起始位置 Y
+         * </pre>
+         *
+         * <code>float fromPosY = 2;</code>
+         * @return The fromPosY.
+         */
+        float getFromPosY();
+
+        /**
+         * <pre>
+         * 移动到位置 X
+         * </pre>
+         *
+         * <code>float toPosX = 3;</code>
+         * @return The toPosX.
+         */
+        float getToPosX();
+
+        /**
+         * <pre>
+         * 移动到位置 Y
+         * </pre>
+         *
+         * <code>float toPosY = 4;</code>
+         * @return The toPosY.
+         */
+        float getToPosY();
+
+        /**
+         * <pre>
+         * 启程时间戳
+         * </pre>
+         *
+         * <code>uint64 startTime = 5;</code>
+         * @return The startTime.
+         */
+        long getStartTime();
+      }
+      /**
+       * <pre>
+       * 移动状态
+       * </pre>
+       *
+       * Protobuf type {@code org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState}
+       */
+      public static final class MoveState extends
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
+          MoveStateOrBuilder {
+      private static final long serialVersionUID = 0L;
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 29,
+            /* patch= */ 1,
+            /* suffix= */ "",
+            MoveState.class.getName());
+        }
+        // Use MoveState.newBuilder() to construct.
+        private MoveState(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+        private MoveState() {
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder.class);
+        }
+
+        public static final int FROMPOSX_FIELD_NUMBER = 1;
+        private float fromPosX_ = 0F;
+        /**
+         * <pre>
+         * 起始位置 X
+         * </pre>
+         *
+         * <code>float fromPosX = 1;</code>
+         * @return The fromPosX.
+         */
+        @java.lang.Override
+        public float getFromPosX() {
+          return fromPosX_;
+        }
+
+        public static final int FROMPOSY_FIELD_NUMBER = 2;
+        private float fromPosY_ = 0F;
+        /**
+         * <pre>
+         * 起始位置 Y
+         * </pre>
+         *
+         * <code>float fromPosY = 2;</code>
+         * @return The fromPosY.
+         */
+        @java.lang.Override
+        public float getFromPosY() {
+          return fromPosY_;
+        }
+
+        public static final int TOPOSX_FIELD_NUMBER = 3;
+        private float toPosX_ = 0F;
+        /**
+         * <pre>
+         * 移动到位置 X
+         * </pre>
+         *
+         * <code>float toPosX = 3;</code>
+         * @return The toPosX.
+         */
+        @java.lang.Override
+        public float getToPosX() {
+          return toPosX_;
+        }
+
+        public static final int TOPOSY_FIELD_NUMBER = 4;
+        private float toPosY_ = 0F;
+        /**
+         * <pre>
+         * 移动到位置 Y
+         * </pre>
+         *
+         * <code>float toPosY = 4;</code>
+         * @return The toPosY.
+         */
+        @java.lang.Override
+        public float getToPosY() {
+          return toPosY_;
+        }
+
+        public static final int STARTTIME_FIELD_NUMBER = 5;
+        private long startTime_ = 0L;
+        /**
+         * <pre>
+         * 启程时间戳
+         * </pre>
+         *
+         * <code>uint64 startTime = 5;</code>
+         * @return The startTime.
+         */
+        @java.lang.Override
+        public long getStartTime() {
+          return startTime_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                            throws java.io.IOException {
+          if (java.lang.Float.floatToRawIntBits(fromPosX_) != 0) {
+            output.writeFloat(1, fromPosX_);
+          }
+          if (java.lang.Float.floatToRawIntBits(fromPosY_) != 0) {
+            output.writeFloat(2, fromPosY_);
+          }
+          if (java.lang.Float.floatToRawIntBits(toPosX_) != 0) {
+            output.writeFloat(3, toPosX_);
+          }
+          if (java.lang.Float.floatToRawIntBits(toPosY_) != 0) {
+            output.writeFloat(4, toPosY_);
+          }
+          if (startTime_ != 0L) {
+            output.writeUInt64(5, startTime_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (java.lang.Float.floatToRawIntBits(fromPosX_) != 0) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(1, fromPosX_);
+          }
+          if (java.lang.Float.floatToRawIntBits(fromPosY_) != 0) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(2, fromPosY_);
+          }
+          if (java.lang.Float.floatToRawIntBits(toPosX_) != 0) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(3, toPosX_);
+          }
+          if (java.lang.Float.floatToRawIntBits(toPosY_) != 0) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(4, toPosY_);
+          }
+          if (startTime_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeUInt64Size(5, startTime_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+           return true;
+          }
+          if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState)) {
+            return super.equals(obj);
+          }
+          org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState other = (org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState) obj;
+
+          if (java.lang.Float.floatToIntBits(getFromPosX())
+              != java.lang.Float.floatToIntBits(
+                  other.getFromPosX())) return false;
+          if (java.lang.Float.floatToIntBits(getFromPosY())
+              != java.lang.Float.floatToIntBits(
+                  other.getFromPosY())) return false;
+          if (java.lang.Float.floatToIntBits(getToPosX())
+              != java.lang.Float.floatToIntBits(
+                  other.getToPosX())) return false;
+          if (java.lang.Float.floatToIntBits(getToPosY())
+              != java.lang.Float.floatToIntBits(
+                  other.getToPosY())) return false;
+          if (getStartTime()
+              != other.getStartTime()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + FROMPOSX_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getFromPosX());
+          hash = (37 * hash) + FROMPOSY_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getFromPosY());
+          hash = (37 * hash) + TOPOSX_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getToPosX());
+          hash = (37 * hash) + TOPOSY_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getToPosY());
+          hash = (37 * hash) + STARTTIME_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getStartTime());
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage
+              .parseWithIOException(PARSER, input);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage
+              .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage
+              .parseWithIOException(PARSER, input);
+        }
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() { return newBuilder(); }
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * Protobuf type {@code org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
+            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor
+              getDescriptor() {
+            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder.class);
+          }
+
+          // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.newBuilder()
+          private Builder() {
+
+          }
+
+          private Builder(
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+
+          }
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            fromPosX_ = 0F;
+            fromPosY_ = 0F;
+            toPosX_ = 0F;
+            toPosY_ = 0F;
+            startTime_ = 0L;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor
+              getDescriptorForType() {
+            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor;
+          }
+
+          @java.lang.Override
+          public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getDefaultInstanceForType() {
+            return org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState build() {
+            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState buildPartial() {
+            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState result = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState(this);
+            if (bitField0_ != 0) { buildPartial0(result); }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.fromPosX_ = fromPosX_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.fromPosY_ = fromPosY_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.toPosX_ = toPosX_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.toPosY_ = toPosY_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.startTime_ = startTime_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState) {
+              return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState)other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState other) {
+            if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance()) return this;
+            if (other.getFromPosX() != 0F) {
+              setFromPosX(other.getFromPosX());
+            }
+            if (other.getFromPosY() != 0F) {
+              setFromPosY(other.getFromPosY());
+            }
+            if (other.getToPosX() != 0F) {
+              setToPosX(other.getToPosX());
+            }
+            if (other.getToPosY() != 0F) {
+              setToPosY(other.getToPosY());
+            }
+            if (other.getStartTime() != 0L) {
+              setStartTime(other.getStartTime());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 13: {
+                    fromPosX_ = input.readFloat();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 13
+                  case 21: {
+                    fromPosY_ = input.readFloat();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 21
+                  case 29: {
+                    toPosX_ = input.readFloat();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 29
+                  case 37: {
+                    toPosY_ = input.readFloat();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 37
+                  case 40: {
+                    startTime_ = input.readUInt64();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 40
+                  default: {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+          private int bitField0_;
+
+          private float fromPosX_ ;
+          /**
+           * <pre>
+           * 起始位置 X
+           * </pre>
+           *
+           * <code>float fromPosX = 1;</code>
+           * @return The fromPosX.
+           */
+          @java.lang.Override
+          public float getFromPosX() {
+            return fromPosX_;
+          }
+          /**
+           * <pre>
+           * 起始位置 X
+           * </pre>
+           *
+           * <code>float fromPosX = 1;</code>
+           * @param value The fromPosX to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFromPosX(float value) {
+
+            fromPosX_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * 起始位置 X
+           * </pre>
+           *
+           * <code>float fromPosX = 1;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearFromPosX() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            fromPosX_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          private float fromPosY_ ;
+          /**
+           * <pre>
+           * 起始位置 Y
+           * </pre>
+           *
+           * <code>float fromPosY = 2;</code>
+           * @return The fromPosY.
+           */
+          @java.lang.Override
+          public float getFromPosY() {
+            return fromPosY_;
+          }
+          /**
+           * <pre>
+           * 起始位置 Y
+           * </pre>
+           *
+           * <code>float fromPosY = 2;</code>
+           * @param value The fromPosY to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFromPosY(float value) {
+
+            fromPosY_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * 起始位置 Y
+           * </pre>
+           *
+           * <code>float fromPosY = 2;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearFromPosY() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            fromPosY_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          private float toPosX_ ;
+          /**
+           * <pre>
+           * 移动到位置 X
+           * </pre>
+           *
+           * <code>float toPosX = 3;</code>
+           * @return The toPosX.
+           */
+          @java.lang.Override
+          public float getToPosX() {
+            return toPosX_;
+          }
+          /**
+           * <pre>
+           * 移动到位置 X
+           * </pre>
+           *
+           * <code>float toPosX = 3;</code>
+           * @param value The toPosX to set.
+           * @return This builder for chaining.
+           */
+          public Builder setToPosX(float value) {
+
+            toPosX_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * 移动到位置 X
+           * </pre>
+           *
+           * <code>float toPosX = 3;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearToPosX() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            toPosX_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          private float toPosY_ ;
+          /**
+           * <pre>
+           * 移动到位置 Y
+           * </pre>
+           *
+           * <code>float toPosY = 4;</code>
+           * @return The toPosY.
+           */
+          @java.lang.Override
+          public float getToPosY() {
+            return toPosY_;
+          }
+          /**
+           * <pre>
+           * 移动到位置 Y
+           * </pre>
+           *
+           * <code>float toPosY = 4;</code>
+           * @param value The toPosY to set.
+           * @return This builder for chaining.
+           */
+          public Builder setToPosY(float value) {
+
+            toPosY_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * 移动到位置 Y
+           * </pre>
+           *
+           * <code>float toPosY = 4;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearToPosY() {
+            bitField0_ = (bitField0_ & ~0x00000008);
+            toPosY_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          private long startTime_ ;
+          /**
+           * <pre>
+           * 启程时间戳
+           * </pre>
+           *
+           * <code>uint64 startTime = 5;</code>
+           * @return The startTime.
+           */
+          @java.lang.Override
+          public long getStartTime() {
+            return startTime_;
+          }
+          /**
+           * <pre>
+           * 启程时间戳
+           * </pre>
+           *
+           * <code>uint64 startTime = 5;</code>
+           * @param value The startTime to set.
+           * @return This builder for chaining.
+           */
+          public Builder setStartTime(long value) {
+
+            startTime_ = value;
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * 启程时间戳
+           * </pre>
+           *
+           * <code>uint64 startTime = 5;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearStartTime() {
+            bitField0_ = (bitField0_ & ~0x00000010);
+            startTime_ = 0L;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
+        }
+
+        // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
+        private static final org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState DEFAULT_INSTANCE;
+        static {
+          DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState();
+        }
+
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<MoveState>
+            PARSER = new com.google.protobuf.AbstractParser<MoveState>() {
+          @java.lang.Override
+          public MoveState parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+        public static com.google.protobuf.Parser<MoveState> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<MoveState> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+
+      }
+
+      private int bitField0_;
       public static final int USERID_FIELD_NUMBER = 1;
       private int userId_ = 0;
       /**
@@ -2228,6 +3095,44 @@ public final class GameMessageProto {
         }
       }
 
+      public static final int MOVESTATE_FIELD_NUMBER = 3;
+      private org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState moveState_;
+      /**
+       * <pre>
+       * 移动状态
+       * </pre>
+       *
+       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * @return Whether the moveState field is set.
+       */
+      @java.lang.Override
+      public boolean hasMoveState() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <pre>
+       * 移动状态
+       * </pre>
+       *
+       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * @return The moveState.
+       */
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getMoveState() {
+        return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+      }
+      /**
+       * <pre>
+       * 移动状态
+       * </pre>
+       *
+       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       */
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder getMoveStateOrBuilder() {
+        return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -2248,6 +3153,9 @@ public final class GameMessageProto {
         if (!com.google.protobuf.GeneratedMessage.isStringEmpty(heroAvatar_)) {
           com.google.protobuf.GeneratedMessage.writeString(output, 2, heroAvatar_);
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(3, getMoveState());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -2263,6 +3171,10 @@ public final class GameMessageProto {
         }
         if (!com.google.protobuf.GeneratedMessage.isStringEmpty(heroAvatar_)) {
           size += com.google.protobuf.GeneratedMessage.computeStringSize(2, heroAvatar_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, getMoveState());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -2283,6 +3195,11 @@ public final class GameMessageProto {
             != other.getUserId()) return false;
         if (!getHeroAvatar()
             .equals(other.getHeroAvatar())) return false;
+        if (hasMoveState() != other.hasMoveState()) return false;
+        if (hasMoveState()) {
+          if (!getMoveState()
+              .equals(other.getMoveState())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -2298,6 +3215,10 @@ public final class GameMessageProto {
         hash = (53 * hash) + getUserId();
         hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
         hash = (53 * hash) + getHeroAvatar().hashCode();
+        if (hasMoveState()) {
+          hash = (37 * hash) + MOVESTATE_FIELD_NUMBER;
+          hash = (53 * hash) + getMoveState().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2417,13 +3338,19 @@ public final class GameMessageProto {
 
         // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage
+                  .alwaysUseFieldBuilders) {
+            getMoveStateFieldBuilder();
+          }
         }
         @java.lang.Override
         public Builder clear() {
@@ -2431,6 +3358,11 @@ public final class GameMessageProto {
           bitField0_ = 0;
           userId_ = 0;
           heroAvatar_ = "";
+          moveState_ = null;
+          if (moveStateBuilder_ != null) {
+            moveStateBuilder_.dispose();
+            moveStateBuilder_ = null;
+          }
           return this;
         }
 
@@ -2470,6 +3402,14 @@ public final class GameMessageProto {
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.heroAvatar_ = heroAvatar_;
           }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.moveState_ = moveStateBuilder_ == null
+                ? moveState_
+                : moveStateBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -2491,6 +3431,9 @@ public final class GameMessageProto {
             heroAvatar_ = other.heroAvatar_;
             bitField0_ |= 0x00000002;
             onChanged();
+          }
+          if (other.hasMoveState()) {
+            mergeMoveState(other.getMoveState());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -2528,6 +3471,13 @@ public final class GameMessageProto {
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+                case 26: {
+                  input.readMessage(
+                      getMoveStateFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -2679,6 +3629,163 @@ public final class GameMessageProto {
           bitField0_ |= 0x00000002;
           onChanged();
           return this;
+        }
+
+        private org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState moveState_;
+        private com.google.protobuf.SingleFieldBuilder<
+            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder> moveStateBuilder_;
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * @return Whether the moveState field is set.
+         */
+        public boolean hasMoveState() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * @return The moveState.
+         */
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getMoveState() {
+          if (moveStateBuilder_ == null) {
+            return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+          } else {
+            return moveStateBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         */
+        public Builder setMoveState(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState value) {
+          if (moveStateBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            moveState_ = value;
+          } else {
+            moveStateBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         */
+        public Builder setMoveState(
+            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder builderForValue) {
+          if (moveStateBuilder_ == null) {
+            moveState_ = builderForValue.build();
+          } else {
+            moveStateBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         */
+        public Builder mergeMoveState(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState value) {
+          if (moveStateBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0) &&
+              moveState_ != null &&
+              moveState_ != org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance()) {
+              getMoveStateBuilder().mergeFrom(value);
+            } else {
+              moveState_ = value;
+            }
+          } else {
+            moveStateBuilder_.mergeFrom(value);
+          }
+          if (moveState_ != null) {
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         */
+        public Builder clearMoveState() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          moveState_ = null;
+          if (moveStateBuilder_ != null) {
+            moveStateBuilder_.dispose();
+            moveStateBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         */
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder getMoveStateBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getMoveStateFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         */
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder getMoveStateOrBuilder() {
+          if (moveStateBuilder_ != null) {
+            return moveStateBuilder_.getMessageOrBuilder();
+          } else {
+            return moveState_ == null ?
+                org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+          }
+        }
+        /**
+         * <pre>
+         * 移动状态
+         * </pre>
+         *
+         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder> 
+            getMoveStateFieldBuilder() {
+          if (moveStateBuilder_ == null) {
+            moveStateBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder>(
+                    getMoveState(),
+                    getParentForChildren(),
+                    isClean());
+            moveState_ = null;
+          }
+          return moveStateBuilder_;
         }
 
         // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineUserResult.UserInfo)
@@ -3508,21 +4615,45 @@ public final class GameMessageProto {
 
     /**
      * <pre>
+     * 起始位置 X
+     * </pre>
+     *
+     * <code>float moveFromPosX = 1;</code>
+     * @return The moveFromPosX.
+     */
+    float getMoveFromPosX();
+
+    /**
+     * <pre>
+     * 起始位置 Y
+     * </pre>
+     *
+     * <code>float moveFromPosY = 2;</code>
+     * @return The moveFromPosY.
+     */
+    float getMoveFromPosY();
+
+    /**
+     * <pre>
      * 用户坐标
      * </pre>
      *
-     * <code>float moveToPosX = 1;</code>
+     * <code>float moveToPosX = 3;</code>
      * @return The moveToPosX.
      */
     float getMoveToPosX();
 
     /**
-     * <code>float moveToPosY = 2;</code>
+     * <code>float moveToPosY = 4;</code>
      * @return The moveToPosY.
      */
     float getMoveToPosY();
   }
   /**
+   * <pre>
+   * 用户移动请求，从哪到哪
+   * </pre>
+   *
    * Protobuf type {@code org.herostory.protobuf.UserMoveCmd}
    */
   public static final class UserMoveCmd extends
@@ -3559,14 +4690,44 @@ public final class GameMessageProto {
               org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.Builder.class);
     }
 
-    public static final int MOVETOPOSX_FIELD_NUMBER = 1;
+    public static final int MOVEFROMPOSX_FIELD_NUMBER = 1;
+    private float moveFromPosX_ = 0F;
+    /**
+     * <pre>
+     * 起始位置 X
+     * </pre>
+     *
+     * <code>float moveFromPosX = 1;</code>
+     * @return The moveFromPosX.
+     */
+    @java.lang.Override
+    public float getMoveFromPosX() {
+      return moveFromPosX_;
+    }
+
+    public static final int MOVEFROMPOSY_FIELD_NUMBER = 2;
+    private float moveFromPosY_ = 0F;
+    /**
+     * <pre>
+     * 起始位置 Y
+     * </pre>
+     *
+     * <code>float moveFromPosY = 2;</code>
+     * @return The moveFromPosY.
+     */
+    @java.lang.Override
+    public float getMoveFromPosY() {
+      return moveFromPosY_;
+    }
+
+    public static final int MOVETOPOSX_FIELD_NUMBER = 3;
     private float moveToPosX_ = 0F;
     /**
      * <pre>
      * 用户坐标
      * </pre>
      *
-     * <code>float moveToPosX = 1;</code>
+     * <code>float moveToPosX = 3;</code>
      * @return The moveToPosX.
      */
     @java.lang.Override
@@ -3574,10 +4735,10 @@ public final class GameMessageProto {
       return moveToPosX_;
     }
 
-    public static final int MOVETOPOSY_FIELD_NUMBER = 2;
+    public static final int MOVETOPOSY_FIELD_NUMBER = 4;
     private float moveToPosY_ = 0F;
     /**
-     * <code>float moveToPosY = 2;</code>
+     * <code>float moveToPosY = 4;</code>
      * @return The moveToPosY.
      */
     @java.lang.Override
@@ -3599,11 +4760,17 @@ public final class GameMessageProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (java.lang.Float.floatToRawIntBits(moveFromPosX_) != 0) {
+        output.writeFloat(1, moveFromPosX_);
+      }
+      if (java.lang.Float.floatToRawIntBits(moveFromPosY_) != 0) {
+        output.writeFloat(2, moveFromPosY_);
+      }
       if (java.lang.Float.floatToRawIntBits(moveToPosX_) != 0) {
-        output.writeFloat(1, moveToPosX_);
+        output.writeFloat(3, moveToPosX_);
       }
       if (java.lang.Float.floatToRawIntBits(moveToPosY_) != 0) {
-        output.writeFloat(2, moveToPosY_);
+        output.writeFloat(4, moveToPosY_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3614,13 +4781,21 @@ public final class GameMessageProto {
       if (size != -1) return size;
 
       size = 0;
+      if (java.lang.Float.floatToRawIntBits(moveFromPosX_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(1, moveFromPosX_);
+      }
+      if (java.lang.Float.floatToRawIntBits(moveFromPosY_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, moveFromPosY_);
+      }
       if (java.lang.Float.floatToRawIntBits(moveToPosX_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, moveToPosX_);
+          .computeFloatSize(3, moveToPosX_);
       }
       if (java.lang.Float.floatToRawIntBits(moveToPosY_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, moveToPosY_);
+          .computeFloatSize(4, moveToPosY_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3637,6 +4812,12 @@ public final class GameMessageProto {
       }
       org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd other = (org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd) obj;
 
+      if (java.lang.Float.floatToIntBits(getMoveFromPosX())
+          != java.lang.Float.floatToIntBits(
+              other.getMoveFromPosX())) return false;
+      if (java.lang.Float.floatToIntBits(getMoveFromPosY())
+          != java.lang.Float.floatToIntBits(
+              other.getMoveFromPosY())) return false;
       if (java.lang.Float.floatToIntBits(getMoveToPosX())
           != java.lang.Float.floatToIntBits(
               other.getMoveToPosX())) return false;
@@ -3654,6 +4835,12 @@ public final class GameMessageProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MOVEFROMPOSX_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getMoveFromPosX());
+      hash = (37 * hash) + MOVEFROMPOSY_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getMoveFromPosY());
       hash = (37 * hash) + MOVETOPOSX_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getMoveToPosX());
@@ -3758,6 +4945,10 @@ public final class GameMessageProto {
       return builder;
     }
     /**
+     * <pre>
+     * 用户移动请求，从哪到哪
+     * </pre>
+     *
      * Protobuf type {@code org.herostory.protobuf.UserMoveCmd}
      */
     public static final class Builder extends
@@ -3791,6 +4982,8 @@ public final class GameMessageProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        moveFromPosX_ = 0F;
+        moveFromPosY_ = 0F;
         moveToPosX_ = 0F;
         moveToPosY_ = 0F;
         return this;
@@ -3827,9 +5020,15 @@ public final class GameMessageProto {
       private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.moveToPosX_ = moveToPosX_;
+          result.moveFromPosX_ = moveFromPosX_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.moveFromPosY_ = moveFromPosY_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.moveToPosX_ = moveToPosX_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.moveToPosY_ = moveToPosY_;
         }
       }
@@ -3846,6 +5045,12 @@ public final class GameMessageProto {
 
       public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd other) {
         if (other == org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.getDefaultInstance()) return this;
+        if (other.getMoveFromPosX() != 0F) {
+          setMoveFromPosX(other.getMoveFromPosX());
+        }
+        if (other.getMoveFromPosY() != 0F) {
+          setMoveFromPosY(other.getMoveFromPosY());
+        }
         if (other.getMoveToPosX() != 0F) {
           setMoveToPosX(other.getMoveToPosX());
         }
@@ -3879,15 +5084,25 @@ public final class GameMessageProto {
                 done = true;
                 break;
               case 13: {
-                moveToPosX_ = input.readFloat();
+                moveFromPosX_ = input.readFloat();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 13
               case 21: {
-                moveToPosY_ = input.readFloat();
+                moveFromPosY_ = input.readFloat();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 21
+              case 29: {
+                moveToPosX_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
+              case 37: {
+                moveToPosY_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 37
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3905,13 +5120,101 @@ public final class GameMessageProto {
       }
       private int bitField0_;
 
+      private float moveFromPosX_ ;
+      /**
+       * <pre>
+       * 起始位置 X
+       * </pre>
+       *
+       * <code>float moveFromPosX = 1;</code>
+       * @return The moveFromPosX.
+       */
+      @java.lang.Override
+      public float getMoveFromPosX() {
+        return moveFromPosX_;
+      }
+      /**
+       * <pre>
+       * 起始位置 X
+       * </pre>
+       *
+       * <code>float moveFromPosX = 1;</code>
+       * @param value The moveFromPosX to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMoveFromPosX(float value) {
+
+        moveFromPosX_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 起始位置 X
+       * </pre>
+       *
+       * <code>float moveFromPosX = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMoveFromPosX() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        moveFromPosX_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float moveFromPosY_ ;
+      /**
+       * <pre>
+       * 起始位置 Y
+       * </pre>
+       *
+       * <code>float moveFromPosY = 2;</code>
+       * @return The moveFromPosY.
+       */
+      @java.lang.Override
+      public float getMoveFromPosY() {
+        return moveFromPosY_;
+      }
+      /**
+       * <pre>
+       * 起始位置 Y
+       * </pre>
+       *
+       * <code>float moveFromPosY = 2;</code>
+       * @param value The moveFromPosY to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMoveFromPosY(float value) {
+
+        moveFromPosY_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 起始位置 Y
+       * </pre>
+       *
+       * <code>float moveFromPosY = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMoveFromPosY() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        moveFromPosY_ = 0F;
+        onChanged();
+        return this;
+      }
+
       private float moveToPosX_ ;
       /**
        * <pre>
        * 用户坐标
        * </pre>
        *
-       * <code>float moveToPosX = 1;</code>
+       * <code>float moveToPosX = 3;</code>
        * @return The moveToPosX.
        */
       @java.lang.Override
@@ -3923,14 +5226,14 @@ public final class GameMessageProto {
        * 用户坐标
        * </pre>
        *
-       * <code>float moveToPosX = 1;</code>
+       * <code>float moveToPosX = 3;</code>
        * @param value The moveToPosX to set.
        * @return This builder for chaining.
        */
       public Builder setMoveToPosX(float value) {
 
         moveToPosX_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3939,11 +5242,11 @@ public final class GameMessageProto {
        * 用户坐标
        * </pre>
        *
-       * <code>float moveToPosX = 1;</code>
+       * <code>float moveToPosX = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMoveToPosX() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         moveToPosX_ = 0F;
         onChanged();
         return this;
@@ -3951,7 +5254,7 @@ public final class GameMessageProto {
 
       private float moveToPosY_ ;
       /**
-       * <code>float moveToPosY = 2;</code>
+       * <code>float moveToPosY = 4;</code>
        * @return The moveToPosY.
        */
       @java.lang.Override
@@ -3959,23 +5262,23 @@ public final class GameMessageProto {
         return moveToPosY_;
       }
       /**
-       * <code>float moveToPosY = 2;</code>
+       * <code>float moveToPosY = 4;</code>
        * @param value The moveToPosY to set.
        * @return This builder for chaining.
        */
       public Builder setMoveToPosY(float value) {
 
         moveToPosY_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>float moveToPosY = 2;</code>
+       * <code>float moveToPosY = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMoveToPosY() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         moveToPosY_ = 0F;
         onChanged();
         return this;
@@ -4038,7 +5341,7 @@ public final class GameMessageProto {
 
     /**
      * <pre>
-     * 用户id
+     * 移动用户 Id
      * </pre>
      *
      * <code>uint32 moveUserId = 1;</code>
@@ -4048,19 +5351,53 @@ public final class GameMessageProto {
 
     /**
      * <pre>
-     * 用户坐标
+     * 起始位置 X
      * </pre>
      *
-     * <code>float moveToPosX = 2;</code>
+     * <code>float moveFromPosX = 2;</code>
+     * @return The moveFromPosX.
+     */
+    float getMoveFromPosX();
+
+    /**
+     * <pre>
+     * 起始位置 Y
+     * </pre>
+     *
+     * <code>float moveFromPosY = 3;</code>
+     * @return The moveFromPosY.
+     */
+    float getMoveFromPosY();
+
+    /**
+     * <pre>
+     * 移动到位置 X
+     * </pre>
+     *
+     * <code>float moveToPosX = 4;</code>
      * @return The moveToPosX.
      */
     float getMoveToPosX();
 
     /**
-     * <code>float moveToPosY = 3;</code>
+     * <pre>
+     * 移动到位置 Y
+     * </pre>
+     *
+     * <code>float moveToPosY = 5;</code>
      * @return The moveToPosY.
      */
     float getMoveToPosY();
+
+    /**
+     * <pre>
+     * 启程时间戳
+     * </pre>
+     *
+     * <code>uint64 moveStartTime = 6;</code>
+     * @return The moveStartTime.
+     */
+    long getMoveStartTime();
   }
   /**
    * Protobuf type {@code org.herostory.protobuf.UserMoveResult}
@@ -4103,7 +5440,7 @@ public final class GameMessageProto {
     private int moveUserId_ = 0;
     /**
      * <pre>
-     * 用户id
+     * 移动用户 Id
      * </pre>
      *
      * <code>uint32 moveUserId = 1;</code>
@@ -4114,14 +5451,44 @@ public final class GameMessageProto {
       return moveUserId_;
     }
 
-    public static final int MOVETOPOSX_FIELD_NUMBER = 2;
+    public static final int MOVEFROMPOSX_FIELD_NUMBER = 2;
+    private float moveFromPosX_ = 0F;
+    /**
+     * <pre>
+     * 起始位置 X
+     * </pre>
+     *
+     * <code>float moveFromPosX = 2;</code>
+     * @return The moveFromPosX.
+     */
+    @java.lang.Override
+    public float getMoveFromPosX() {
+      return moveFromPosX_;
+    }
+
+    public static final int MOVEFROMPOSY_FIELD_NUMBER = 3;
+    private float moveFromPosY_ = 0F;
+    /**
+     * <pre>
+     * 起始位置 Y
+     * </pre>
+     *
+     * <code>float moveFromPosY = 3;</code>
+     * @return The moveFromPosY.
+     */
+    @java.lang.Override
+    public float getMoveFromPosY() {
+      return moveFromPosY_;
+    }
+
+    public static final int MOVETOPOSX_FIELD_NUMBER = 4;
     private float moveToPosX_ = 0F;
     /**
      * <pre>
-     * 用户坐标
+     * 移动到位置 X
      * </pre>
      *
-     * <code>float moveToPosX = 2;</code>
+     * <code>float moveToPosX = 4;</code>
      * @return The moveToPosX.
      */
     @java.lang.Override
@@ -4129,15 +5496,34 @@ public final class GameMessageProto {
       return moveToPosX_;
     }
 
-    public static final int MOVETOPOSY_FIELD_NUMBER = 3;
+    public static final int MOVETOPOSY_FIELD_NUMBER = 5;
     private float moveToPosY_ = 0F;
     /**
-     * <code>float moveToPosY = 3;</code>
+     * <pre>
+     * 移动到位置 Y
+     * </pre>
+     *
+     * <code>float moveToPosY = 5;</code>
      * @return The moveToPosY.
      */
     @java.lang.Override
     public float getMoveToPosY() {
       return moveToPosY_;
+    }
+
+    public static final int MOVESTARTTIME_FIELD_NUMBER = 6;
+    private long moveStartTime_ = 0L;
+    /**
+     * <pre>
+     * 启程时间戳
+     * </pre>
+     *
+     * <code>uint64 moveStartTime = 6;</code>
+     * @return The moveStartTime.
+     */
+    @java.lang.Override
+    public long getMoveStartTime() {
+      return moveStartTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4157,11 +5543,20 @@ public final class GameMessageProto {
       if (moveUserId_ != 0) {
         output.writeUInt32(1, moveUserId_);
       }
+      if (java.lang.Float.floatToRawIntBits(moveFromPosX_) != 0) {
+        output.writeFloat(2, moveFromPosX_);
+      }
+      if (java.lang.Float.floatToRawIntBits(moveFromPosY_) != 0) {
+        output.writeFloat(3, moveFromPosY_);
+      }
       if (java.lang.Float.floatToRawIntBits(moveToPosX_) != 0) {
-        output.writeFloat(2, moveToPosX_);
+        output.writeFloat(4, moveToPosX_);
       }
       if (java.lang.Float.floatToRawIntBits(moveToPosY_) != 0) {
-        output.writeFloat(3, moveToPosY_);
+        output.writeFloat(5, moveToPosY_);
+      }
+      if (moveStartTime_ != 0L) {
+        output.writeUInt64(6, moveStartTime_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4176,13 +5571,25 @@ public final class GameMessageProto {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, moveUserId_);
       }
+      if (java.lang.Float.floatToRawIntBits(moveFromPosX_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, moveFromPosX_);
+      }
+      if (java.lang.Float.floatToRawIntBits(moveFromPosY_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, moveFromPosY_);
+      }
       if (java.lang.Float.floatToRawIntBits(moveToPosX_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, moveToPosX_);
+          .computeFloatSize(4, moveToPosX_);
       }
       if (java.lang.Float.floatToRawIntBits(moveToPosY_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, moveToPosY_);
+          .computeFloatSize(5, moveToPosY_);
+      }
+      if (moveStartTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, moveStartTime_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4201,12 +5608,20 @@ public final class GameMessageProto {
 
       if (getMoveUserId()
           != other.getMoveUserId()) return false;
+      if (java.lang.Float.floatToIntBits(getMoveFromPosX())
+          != java.lang.Float.floatToIntBits(
+              other.getMoveFromPosX())) return false;
+      if (java.lang.Float.floatToIntBits(getMoveFromPosY())
+          != java.lang.Float.floatToIntBits(
+              other.getMoveFromPosY())) return false;
       if (java.lang.Float.floatToIntBits(getMoveToPosX())
           != java.lang.Float.floatToIntBits(
               other.getMoveToPosX())) return false;
       if (java.lang.Float.floatToIntBits(getMoveToPosY())
           != java.lang.Float.floatToIntBits(
               other.getMoveToPosY())) return false;
+      if (getMoveStartTime()
+          != other.getMoveStartTime()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4220,12 +5635,21 @@ public final class GameMessageProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MOVEUSERID_FIELD_NUMBER;
       hash = (53 * hash) + getMoveUserId();
+      hash = (37 * hash) + MOVEFROMPOSX_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getMoveFromPosX());
+      hash = (37 * hash) + MOVEFROMPOSY_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getMoveFromPosY());
       hash = (37 * hash) + MOVETOPOSX_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getMoveToPosX());
       hash = (37 * hash) + MOVETOPOSY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getMoveToPosY());
+      hash = (37 * hash) + MOVESTARTTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMoveStartTime());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4358,8 +5782,11 @@ public final class GameMessageProto {
         super.clear();
         bitField0_ = 0;
         moveUserId_ = 0;
+        moveFromPosX_ = 0F;
+        moveFromPosY_ = 0F;
         moveToPosX_ = 0F;
         moveToPosY_ = 0F;
+        moveStartTime_ = 0L;
         return this;
       }
 
@@ -4397,10 +5824,19 @@ public final class GameMessageProto {
           result.moveUserId_ = moveUserId_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.moveToPosX_ = moveToPosX_;
+          result.moveFromPosX_ = moveFromPosX_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.moveFromPosY_ = moveFromPosY_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.moveToPosX_ = moveToPosX_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.moveToPosY_ = moveToPosY_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.moveStartTime_ = moveStartTime_;
         }
       }
 
@@ -4419,11 +5855,20 @@ public final class GameMessageProto {
         if (other.getMoveUserId() != 0) {
           setMoveUserId(other.getMoveUserId());
         }
+        if (other.getMoveFromPosX() != 0F) {
+          setMoveFromPosX(other.getMoveFromPosX());
+        }
+        if (other.getMoveFromPosY() != 0F) {
+          setMoveFromPosY(other.getMoveFromPosY());
+        }
         if (other.getMoveToPosX() != 0F) {
           setMoveToPosX(other.getMoveToPosX());
         }
         if (other.getMoveToPosY() != 0F) {
           setMoveToPosY(other.getMoveToPosY());
+        }
+        if (other.getMoveStartTime() != 0L) {
+          setMoveStartTime(other.getMoveStartTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4457,15 +5902,30 @@ public final class GameMessageProto {
                 break;
               } // case 8
               case 21: {
-                moveToPosX_ = input.readFloat();
+                moveFromPosX_ = input.readFloat();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 21
               case 29: {
-                moveToPosY_ = input.readFloat();
+                moveFromPosY_ = input.readFloat();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 29
+              case 37: {
+                moveToPosX_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 37
+              case 45: {
+                moveToPosY_ = input.readFloat();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 45
+              case 48: {
+                moveStartTime_ = input.readUInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4486,7 +5946,7 @@ public final class GameMessageProto {
       private int moveUserId_ ;
       /**
        * <pre>
-       * 用户id
+       * 移动用户 Id
        * </pre>
        *
        * <code>uint32 moveUserId = 1;</code>
@@ -4498,7 +5958,7 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户id
+       * 移动用户 Id
        * </pre>
        *
        * <code>uint32 moveUserId = 1;</code>
@@ -4514,7 +5974,7 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户id
+       * 移动用户 Id
        * </pre>
        *
        * <code>uint32 moveUserId = 1;</code>
@@ -4527,13 +5987,101 @@ public final class GameMessageProto {
         return this;
       }
 
+      private float moveFromPosX_ ;
+      /**
+       * <pre>
+       * 起始位置 X
+       * </pre>
+       *
+       * <code>float moveFromPosX = 2;</code>
+       * @return The moveFromPosX.
+       */
+      @java.lang.Override
+      public float getMoveFromPosX() {
+        return moveFromPosX_;
+      }
+      /**
+       * <pre>
+       * 起始位置 X
+       * </pre>
+       *
+       * <code>float moveFromPosX = 2;</code>
+       * @param value The moveFromPosX to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMoveFromPosX(float value) {
+
+        moveFromPosX_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 起始位置 X
+       * </pre>
+       *
+       * <code>float moveFromPosX = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMoveFromPosX() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        moveFromPosX_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float moveFromPosY_ ;
+      /**
+       * <pre>
+       * 起始位置 Y
+       * </pre>
+       *
+       * <code>float moveFromPosY = 3;</code>
+       * @return The moveFromPosY.
+       */
+      @java.lang.Override
+      public float getMoveFromPosY() {
+        return moveFromPosY_;
+      }
+      /**
+       * <pre>
+       * 起始位置 Y
+       * </pre>
+       *
+       * <code>float moveFromPosY = 3;</code>
+       * @param value The moveFromPosY to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMoveFromPosY(float value) {
+
+        moveFromPosY_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 起始位置 Y
+       * </pre>
+       *
+       * <code>float moveFromPosY = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMoveFromPosY() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        moveFromPosY_ = 0F;
+        onChanged();
+        return this;
+      }
+
       private float moveToPosX_ ;
       /**
        * <pre>
-       * 用户坐标
+       * 移动到位置 X
        * </pre>
        *
-       * <code>float moveToPosX = 2;</code>
+       * <code>float moveToPosX = 4;</code>
        * @return The moveToPosX.
        */
       @java.lang.Override
@@ -4542,30 +6090,30 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户坐标
+       * 移动到位置 X
        * </pre>
        *
-       * <code>float moveToPosX = 2;</code>
+       * <code>float moveToPosX = 4;</code>
        * @param value The moveToPosX to set.
        * @return This builder for chaining.
        */
       public Builder setMoveToPosX(float value) {
 
         moveToPosX_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 用户坐标
+       * 移动到位置 X
        * </pre>
        *
-       * <code>float moveToPosX = 2;</code>
+       * <code>float moveToPosX = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMoveToPosX() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         moveToPosX_ = 0F;
         onChanged();
         return this;
@@ -4573,7 +6121,11 @@ public final class GameMessageProto {
 
       private float moveToPosY_ ;
       /**
-       * <code>float moveToPosY = 3;</code>
+       * <pre>
+       * 移动到位置 Y
+       * </pre>
+       *
+       * <code>float moveToPosY = 5;</code>
        * @return The moveToPosY.
        */
       @java.lang.Override
@@ -4581,24 +6133,76 @@ public final class GameMessageProto {
         return moveToPosY_;
       }
       /**
-       * <code>float moveToPosY = 3;</code>
+       * <pre>
+       * 移动到位置 Y
+       * </pre>
+       *
+       * <code>float moveToPosY = 5;</code>
        * @param value The moveToPosY to set.
        * @return This builder for chaining.
        */
       public Builder setMoveToPosY(float value) {
 
         moveToPosY_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>float moveToPosY = 3;</code>
+       * <pre>
+       * 移动到位置 Y
+       * </pre>
+       *
+       * <code>float moveToPosY = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMoveToPosY() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         moveToPosY_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private long moveStartTime_ ;
+      /**
+       * <pre>
+       * 启程时间戳
+       * </pre>
+       *
+       * <code>uint64 moveStartTime = 6;</code>
+       * @return The moveStartTime.
+       */
+      @java.lang.Override
+      public long getMoveStartTime() {
+        return moveStartTime_;
+      }
+      /**
+       * <pre>
+       * 启程时间戳
+       * </pre>
+       *
+       * <code>uint64 moveStartTime = 6;</code>
+       * @param value The moveStartTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMoveStartTime(long value) {
+
+        moveStartTime_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 启程时间戳
+       * </pre>
+       *
+       * <code>uint64 moveStartTime = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMoveStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        moveStartTime_ = 0L;
         onChanged();
         return this;
       }
@@ -8139,6 +9743,11 @@ public final class GameMessageProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_herostory_protobuf_UserMoveCmd_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -8196,31 +9805,38 @@ public final class GameMessageProto {
       "protobuf\"2\n\014UserLoginCmd\022\016\n\006userId\030\001 \001(\r" +
       "\022\022\n\nheroAvatar\030\002 \001(\t\"5\n\017UserLoginResult\022" +
       "\016\n\006userId\030\001 \001(\r\022\022\n\nheroAvatar\030\002 \001(\t\"\017\n\rO" +
-      "nlineUserCmd\"\207\001\n\020OnlineUserResult\022C\n\010use" +
+      "nlineUserCmd\"\274\002\n\020OnlineUserResult\022C\n\010use" +
       "rInfo\030\001 \003(\01321.org.herostory.protobuf.Onl" +
-      "ineUserResult.UserInfo\032.\n\010UserInfo\022\016\n\006us" +
-      "erId\030\001 \001(\r\022\022\n\nheroAvatar\030\002 \001(\t\"5\n\013UserMo" +
-      "veCmd\022\022\n\nmoveToPosX\030\001 \001(\002\022\022\n\nmoveToPosY\030" +
-      "\002 \001(\002\"L\n\016UserMoveResult\022\022\n\nmoveUserId\030\001 " +
-      "\001(\r\022\022\n\nmoveToPosX\030\002 \001(\002\022\022\n\nmoveToPosY\030\003 " +
-      "\001(\002\"*\n\024UserDisconnectResult\022\022\n\nquitUserI" +
-      "d\030\001 \001(\r\"\r\n\013UserStopCmd\"L\n\016UserStopResult" +
-      "\022\022\n\nstopUserId\030\001 \001(\r\022\022\n\nstopAtPosX\030\002 \001(\002" +
-      "\022\022\n\nstopAtPosY\030\003 \001(\002\"%\n\rUserAttackCmd\022\024\n" +
-      "\014targetUserId\030\001 \001(\r\"<\n\020UserAttackResult\022" +
-      "\022\n\nattkUserId\030\001 \001(\r\022\024\n\014targetUserId\030\002 \001(" +
-      "\r\"@\n\024UserSubtractHpResult\022\024\n\014targetUserI" +
-      "d\030\001 \001(\r\022\022\n\nsubtractHp\030\002 \001(\r\"%\n\rUserDieRe" +
-      "sult\022\024\n\014targetUserId\030\001 \001(\r*\260\002\n\tGameMsgId" +
-      "\022\022\n\016USER_LOGIN_CMD\020\000\022\025\n\021USER_LOGIN_RESUL" +
-      "T\020\001\022\023\n\017ONLINE_USER_CMD\020\002\022\026\n\022ONLINE_USER_" +
-      "RESULT\020\003\022\021\n\rUSER_MOVE_CMD\020\004\022\024\n\020USER_MOVE" +
-      "_RESULT\020\005\022\032\n\026USER_DISCONNECT_RESULT\020\006\022\021\n" +
-      "\rUSER_STOP_CMD\020\007\022\024\n\020USER_STOP_RESULT\020\010\022\023" +
-      "\n\017USER_ATTACK_CMD\020\t\022\026\n\022USER_ATTACK_RESUL" +
-      "T\020\n\022\033\n\027USER_SUBTRACT_HP_RESULT\020\013\022\023\n\017USER" +
-      "_DIE_RESULT\020\014B\035\n\033org.herostory.protobuf." +
-      "beanb\006proto3"
+      "ineUserResult.UserInfo\032\342\001\n\010UserInfo\022\016\n\006u" +
+      "serId\030\001 \001(\r\022\022\n\nheroAvatar\030\002 \001(\t\022N\n\tmoveS" +
+      "tate\030\003 \001(\0132;.org.herostory.protobuf.Onli" +
+      "neUserResult.UserInfo.MoveState\032b\n\tMoveS" +
+      "tate\022\020\n\010fromPosX\030\001 \001(\002\022\020\n\010fromPosY\030\002 \001(\002" +
+      "\022\016\n\006toPosX\030\003 \001(\002\022\016\n\006toPosY\030\004 \001(\002\022\021\n\tstar" +
+      "tTime\030\005 \001(\004\"a\n\013UserMoveCmd\022\024\n\014moveFromPo" +
+      "sX\030\001 \001(\002\022\024\n\014moveFromPosY\030\002 \001(\002\022\022\n\nmoveTo" +
+      "PosX\030\003 \001(\002\022\022\n\nmoveToPosY\030\004 \001(\002\"\217\001\n\016UserM" +
+      "oveResult\022\022\n\nmoveUserId\030\001 \001(\r\022\024\n\014moveFro" +
+      "mPosX\030\002 \001(\002\022\024\n\014moveFromPosY\030\003 \001(\002\022\022\n\nmov" +
+      "eToPosX\030\004 \001(\002\022\022\n\nmoveToPosY\030\005 \001(\002\022\025\n\rmov" +
+      "eStartTime\030\006 \001(\004\"*\n\024UserDisconnectResult" +
+      "\022\022\n\nquitUserId\030\001 \001(\r\"\r\n\013UserStopCmd\"L\n\016U" +
+      "serStopResult\022\022\n\nstopUserId\030\001 \001(\r\022\022\n\nsto" +
+      "pAtPosX\030\002 \001(\002\022\022\n\nstopAtPosY\030\003 \001(\002\"%\n\rUse" +
+      "rAttackCmd\022\024\n\014targetUserId\030\001 \001(\r\"<\n\020User" +
+      "AttackResult\022\022\n\nattkUserId\030\001 \001(\r\022\024\n\014targ" +
+      "etUserId\030\002 \001(\r\"@\n\024UserSubtractHpResult\022\024" +
+      "\n\014targetUserId\030\001 \001(\r\022\022\n\nsubtractHp\030\002 \001(\r" +
+      "\"%\n\rUserDieResult\022\024\n\014targetUserId\030\001 \001(\r*" +
+      "\260\002\n\tGameMsgId\022\022\n\016USER_LOGIN_CMD\020\000\022\025\n\021USE" +
+      "R_LOGIN_RESULT\020\001\022\023\n\017ONLINE_USER_CMD\020\002\022\026\n" +
+      "\022ONLINE_USER_RESULT\020\003\022\021\n\rUSER_MOVE_CMD\020\004" +
+      "\022\024\n\020USER_MOVE_RESULT\020\005\022\032\n\026USER_DISCONNEC" +
+      "T_RESULT\020\006\022\021\n\rUSER_STOP_CMD\020\007\022\024\n\020USER_ST" +
+      "OP_RESULT\020\010\022\023\n\017USER_ATTACK_CMD\020\t\022\026\n\022USER" +
+      "_ATTACK_RESULT\020\n\022\033\n\027USER_SUBTRACT_HP_RES" +
+      "ULT\020\013\022\023\n\017USER_DIE_RESULT\020\014B\035\n\033org.herost" +
+      "ory.protobuf.beanb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8255,19 +9871,25 @@ public final class GameMessageProto {
     internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor,
-        new java.lang.String[] { "UserId", "HeroAvatar", });
+        new java.lang.String[] { "UserId", "HeroAvatar", "MoveState", });
+    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor =
+      internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor.getNestedTypes().get(0);
+    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor,
+        new java.lang.String[] { "FromPosX", "FromPosY", "ToPosX", "ToPosY", "StartTime", });
     internal_static_org_herostory_protobuf_UserMoveCmd_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_org_herostory_protobuf_UserMoveCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_herostory_protobuf_UserMoveCmd_descriptor,
-        new java.lang.String[] { "MoveToPosX", "MoveToPosY", });
+        new java.lang.String[] { "MoveFromPosX", "MoveFromPosY", "MoveToPosX", "MoveToPosY", });
     internal_static_org_herostory_protobuf_UserMoveResult_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_org_herostory_protobuf_UserMoveResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_herostory_protobuf_UserMoveResult_descriptor,
-        new java.lang.String[] { "MoveUserId", "MoveToPosX", "MoveToPosY", });
+        new java.lang.String[] { "MoveUserId", "MoveFromPosX", "MoveFromPosY", "MoveToPosX", "MoveToPosY", "MoveStartTime", });
     internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable = new

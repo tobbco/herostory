@@ -64,22 +64,50 @@ message  OnlineUserResult {
     uint32 userId = 1;
     //英雄形象
     string heroAvatar = 2;
+    // 移动状态
+    MoveState moveState = 3;
+
+    // 移动状态
+    message MoveState {
+      // 起始位置 X
+      float fromPosX = 1;
+      // 起始位置 Y
+      float fromPosY = 2;
+      // 移动到位置 X
+      float toPosX = 3;
+      // 移动到位置 Y
+      float toPosY = 4;
+      // 启程时间戳
+      uint64 startTime = 5;
+    }
+
   }
 }
 
+//用户移动请求，从哪到哪
 message UserMoveCmd {
-
+  // 起始位置 X
+  float moveFromPosX = 1;
+  // 起始位置 Y
+  float moveFromPosY = 2;
   //用户坐标
-  float moveToPosX = 1;
-  float moveToPosY = 2;
+  float moveToPosX = 3;
+  float moveToPosY = 4;
 }
 
 message UserMoveResult {
-  //用户id
+  // 移动用户 Id
   uint32 moveUserId = 1;
-  //用户坐标
-  float moveToPosX = 2;
-  float moveToPosY = 3;
+  // 起始位置 X
+  float moveFromPosX = 2;
+  // 起始位置 Y
+  float moveFromPosY = 3;
+  // 移动到位置 X
+  float moveToPosX = 4;
+  // 移动到位置 Y
+  float moveToPosY = 5;
+  // 启程时间戳
+  uint64 moveStartTime = 6;
 }
 
 //用户断开连接响应
@@ -123,3 +151,4 @@ message UserDieResult {
   // 死亡用户 Id
   uint32 targetUserId = 1;
 }
+
