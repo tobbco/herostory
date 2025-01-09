@@ -31,7 +31,7 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.UserAt
                 .setAttkUserId(userId)
                 .setTargetUserId(cmd.getTargetUserId())
                 .build();
-        //广播攻击结果到所有客户端
+        //广播攻击结果到所有客户端 是否有必要？测试移除此行代码是没有问题的。
         BroadCaster.broadcast(attackResult);
 
         //构建减血结果
