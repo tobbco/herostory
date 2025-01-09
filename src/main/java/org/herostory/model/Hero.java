@@ -1,11 +1,16 @@
 package org.herostory.model;
 
 
+import com.mongodb.client.model.Filters;
 import io.netty.channel.Channel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.conversions.Bson;
 import org.herostory.HeroDeadException;
+import org.herostory.db.mongo.MongoDBUtils;
+
+import java.util.List;
 
 /**
  * 英雄
@@ -40,13 +45,14 @@ public class Hero {
 
     /**
      * 英雄移动
+     *
      * @param fromPosX  起始位置x坐标
      * @param fromPosY  起始位置y坐标
      * @param toPosX    终点位置x坐标
      * @param toPosY    终点位置y坐标
      * @param startTime 开始移动的时间 时间戳 单位:毫秒 System.currentTimeMillis()
      */
-    public  void move(float fromPosX, float fromPosY, float toPosX, float toPosY, long startTime) {
+    public void move(float fromPosX, float fromPosY, float toPosX, float toPosY, long startTime) {
         this.moveState.setFromPosX(fromPosX);
         this.moveState.setFromPosY(fromPosY);
         this.moveState.setToPosX(toPosX);
@@ -54,7 +60,7 @@ public class Hero {
         this.moveState.setStartTime(startTime);
     }
 
-    public  void subHp(int val) {
+    public void subHp(int val) {
         if (isDead()) {
             throw new HeroDeadException("英雄：" + this.userId + "已死亡");
         }
@@ -63,5 +69,19 @@ public class Hero {
 
     public synchronized boolean isDead() {
         return this.hp <= 0;
+    }
+
+    public static Hero login(String username, String password) {
+        Bson bson = Filters.and(Filters.eq("username", username));
+        List<Hero> heroList =
+                MongoDBUtils.findDocuments("hero", bson, Hero.class);
+        if (heroList.isEmpty()) {
+            Hero hero = new Hero();
+            hero.setUserId(MongoDBUtils.getNextSequence("hero"));
+            hero.setHeroAvatar("");
+            MongoDBUtils.insertDocument("hero", hero);
+            return hero;
+        }
+        return heroList.get(0);
     }
 }

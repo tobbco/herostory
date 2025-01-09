@@ -12,6 +12,7 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import org.herostory.constants.HeroConstant;
+import org.herostory.db.mongo.MongoDBUtils;
 import org.herostory.handler.DefaultMessageDecoder;
 import org.herostory.handler.DefaultMessageEncoder;
 import org.herostory.handler.DefaultMessageHandler;
@@ -24,6 +25,9 @@ public class ServerMain {
     public static final Integer PORT = 12345;
 
     public static void main(String[] args) {
+        //初始化mongodb链接
+        MongoDBUtils.connect();
+
         //负责接收客户端连接
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         //负责处理客户端连接
@@ -54,7 +58,7 @@ public class ServerMain {
             ChannelFuture future = bootstrap.bind(PORT).sync();
             if (future.isSuccess()) {
                 logger.info("服务端启动成功,PORT: {}", PORT);
-                logger.info("游戏前端页面访问地址:\n{}", String.format(HeroConstant.TEST_GAME_URL_STEP020, PORT));
+                logger.info("游戏前端页面访问地址:\n{}", String.format(HeroConstant.TEST_GAME_URL_STEP030, PORT));
             }
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {

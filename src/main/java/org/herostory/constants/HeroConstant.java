@@ -32,4 +32,8 @@ public class HeroConstant {
      * 解决了游戏页面刷新英雄移动问题
      */
     public static final String TEST_GAME_URL_STEP020 = "http://cdn0001.afrxvk.cn/hero_story/demo/step020/index.html?serverAddr=127.0.0.1:%s&userId=1";
+    /**
+     * 数据库查询英雄
+     */
+    public static final String TEST_GAME_URL_STEP030 = "http://cdn0001.afrxvk.cn/hero_story/demo/step030/index.html?serverAddr=127.0.0.1:%s&userId=1";
 }
