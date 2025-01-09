@@ -1,11 +1,14 @@
 <configuration>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-
+    <!-- 设置org.mongodb.driver.client包下的日志级别为DEBUG additivity="false" -->
+    <logger name="org.mongodb.driver" level="debug"  additivity="false">
+        <appender-ref ref="Console"/>
+    </logger>
     <root level="info">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="Console" />
     </root>
 </configuration>

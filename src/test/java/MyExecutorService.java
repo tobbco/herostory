@@ -3,12 +3,12 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class MyExecutorService {
 
-    private final BlockingQueue queue;
+    private final BlockingQueue<Runnable> queue;
 
-    private Thread thread;
+    private final Thread thread;
 
     public MyExecutorService() {
-        queue = new LinkedBlockingQueue();
+        queue = new LinkedBlockingQueue<Runnable>();
         thread = new Thread(() -> {
             while (true) {
                 try {
