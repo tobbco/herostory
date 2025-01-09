@@ -17,7 +17,6 @@ public class DefaultMessageEncoder extends ChannelOutboundHandlerAdapter {
 
     @Override
     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
-        logger.info("DefaultMessageEncoder.write msg = {}", msg);
         if (null == ctx || !(msg instanceof GeneratedMessage)) {
             super.write(ctx, msg, promise);
             return;

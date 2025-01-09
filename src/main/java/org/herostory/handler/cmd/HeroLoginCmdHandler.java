@@ -22,7 +22,7 @@ public class HeroLoginCmdHandler implements ICmdHandler<GameMessageProto.UserLog
         builder.setUserId(userId);
         builder.setHeroAvatar(heroAvatar);
         //将登录结果封装成到全局登录用户中
-        HeroStore.addHero(userId, heroAvatar);
+        HeroStore.addHero(userId, heroAvatar,channelHandlerContext.channel());
         //将登录的用户id设置到通道中
         channelHandlerContext.channel().attr(AttributeKey.valueOf(HeroConstant.HERO_ID_KEY)).set(userId);
         GameMessageProto.UserLoginResult result = builder.build();

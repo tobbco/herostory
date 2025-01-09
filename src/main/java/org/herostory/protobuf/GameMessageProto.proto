@@ -21,6 +21,18 @@ enum GameMsgId {
   USER_MOVE_RESULT = 5;
   //用户断开连接响应id
   USER_DISCONNECT_RESULT = 6;
+  //用户停止移动请求id
+  USER_STOP_CMD = 7;
+  //用户停止移动响应id
+  USER_STOP_RESULT = 8;
+  //用户攻击请求id
+  USER_ATTACK_CMD = 9;
+  //用户攻击响应id
+  USER_ATTACK_RESULT = 10;
+  //用户减血请求id
+  USER_SUBTRACT_HP_RESULT = 11;
+  //用户死亡响应id
+  USER_DIE_RESULT = 12;
 }
 //登录请求
 message UserLoginCmd {
@@ -74,4 +86,40 @@ message UserMoveResult {
 message  UserDisconnectResult {
   //用户id
   uint32 quitUserId = 1;
+}
+
+message UserStopCmd {
+}
+
+message UserStopResult {
+  // 停驻用户 Id
+  uint32 stopUserId = 1;
+  // 停驻在位置 X
+  float stopAtPosX = 2;
+  // 停驻在位置 Y
+  float stopAtPosY = 3;
+}
+
+message UserAttackCmd {
+  // 被攻击的用户 Id
+  uint32 targetUserId = 1;
+}
+
+message UserAttackResult {
+  // 发动攻击的用户 Id
+  uint32 attkUserId = 1;
+  // 目标用户 Id
+  uint32 targetUserId = 2;
+}
+
+message UserSubtractHpResult {
+  // 目标用户 Id
+  uint32 targetUserId = 1;
+  // 减血量
+  uint32 subtractHp = 2;
+}
+
+message UserDieResult {
+  // 死亡用户 Id
+  uint32 targetUserId = 1;
 }

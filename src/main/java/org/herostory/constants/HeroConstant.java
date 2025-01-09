@@ -19,4 +19,8 @@ public class HeroConstant {
      * 调用协议中的默认实例方法名
      */
     public static final String GET_DEFAULT_INSTANCE_METHOD_NAME = "getDefaultInstance";
+    /**
+     * 默认减血量
+     */
+    public static final Integer DEFAULT_SUBTRACT_HP = 10;
 }

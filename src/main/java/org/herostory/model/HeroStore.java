@@ -1,6 +1,6 @@
 package org.herostory.model;
 
-import org.herostory.constants.HeroConstant;
+import io.netty.channel.Channel;
 
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,7 +14,8 @@ public final class HeroStore {
     /**
      * 存储英雄信息的映射表，键为英雄ID，值为英雄对象。
      */
-    private static final ConcurrentHashMap<Integer, Hero> channelHeroMap = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<Integer, Hero> heroMap = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<Integer, Channel> channelHeroMap = new ConcurrentHashMap<>();
     private HeroStore() {
         throw new UnsupportedOperationException();
     }
@@ -24,13 +25,14 @@ public final class HeroStore {
      *
      * @param heroId     英雄的唯一标识符
      * @param heroAvatar 英雄对象
+     * @param channel 通道
      */
-    public static void addHero(Integer heroId, String heroAvatar) {
+    public static void addHero(Integer heroId, String heroAvatar, Channel channel) {
         if (heroId == null || heroAvatar == null) {
             return;
         }
-        Hero hero = new Hero(heroId, heroAvatar);
-        channelHeroMap.put(heroId, hero);
+        Hero hero = new Hero(heroId, heroAvatar,channel);
+        heroMap.put(heroId, hero);
     }
 
     /**
@@ -42,7 +44,7 @@ public final class HeroStore {
         if (hero == null) {
             return;
         }
-        channelHeroMap.put(hero.getUserId(), hero);
+        heroMap.put(hero.getUserId(), hero);
     }
 
     /**
@@ -54,7 +56,7 @@ public final class HeroStore {
         if (heroId == null) {
             return null;
         }
-        return channelHeroMap.get(heroId);
+        return heroMap.get(heroId);
     }
 
     /**
@@ -65,7 +67,7 @@ public final class HeroStore {
         if (heroId == null) {
             return;
         }
-        channelHeroMap.remove(heroId);
+        heroMap.remove(heroId);
     }
 
     /**
@@ -77,7 +79,7 @@ public final class HeroStore {
         if (hero == null || hero.getUserId() == null) {
             return;
         }
-        channelHeroMap.remove(hero.getUserId());
+        heroMap.remove(hero.getUserId());
     }
 
     /**
@@ -85,7 +87,7 @@ public final class HeroStore {
      * @return 英雄信息集合
      */
     public static Collection<Hero> heroes() {
-        return channelHeroMap.values();
+        return heroMap.values();
     }
 
 }
