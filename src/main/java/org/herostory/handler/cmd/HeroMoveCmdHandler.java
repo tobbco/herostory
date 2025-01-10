@@ -13,9 +13,9 @@ import org.herostory.protobuf.bean.GameMessageProto;
  * @author：yexianchao
  * @date: 2025/1/8/008
  */
-public class HeroMoveCmdHandler implements ICmdHandler<GameMessageProto.UserMoveCmd>{
+public class HeroMoveCmdHandler implements ICmdHandler<GameMessageProto.HeroMoveCmd>{
     @Override
-    public  void handle(ChannelHandlerContext channelHandlerContext,GameMessageProto.UserMoveCmd cmd) {
+    public  void handle(ChannelHandlerContext channelHandlerContext,GameMessageProto.HeroMoveCmd cmd) {
         //英雄移动请求
         AttributeKey<Integer> attributeKey = AttributeKey.valueOf(HeroConstant.HERO_ID_KEY);
         Integer userId = channelHandlerContext.channel().attr(attributeKey).get();
@@ -29,14 +29,14 @@ public class HeroMoveCmdHandler implements ICmdHandler<GameMessageProto.UserMove
         //英雄移动
         long startTime = System.currentTimeMillis();
         hero.move(cmd.getMoveFromPosX(), cmd.getMoveFromPosY(), cmd.getMoveToPosX(), cmd.getMoveToPosY(), startTime);
-        GameMessageProto.UserMoveResult.Builder builder = GameMessageProto.UserMoveResult.newBuilder();
+        GameMessageProto.HeroMoveResult.Builder builder = GameMessageProto.HeroMoveResult.newBuilder();
         builder.setMoveUserId(userId);
         builder.setMoveFromPosX(cmd.getMoveFromPosX());
         builder.setMoveFromPosY(cmd.getMoveFromPosY());
         builder.setMoveToPosX(cmd.getMoveToPosX());
         builder.setMoveToPosY(cmd.getMoveToPosY());
         builder.setMoveStartTime(startTime);
-        GameMessageProto.UserMoveResult result = builder.build();
+        GameMessageProto.HeroMoveResult result = builder.build();
         //将该英雄移动结果广播到所有客户端
         BroadCaster.broadcast(result);
     }

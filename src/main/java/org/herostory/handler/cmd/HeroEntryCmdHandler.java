@@ -16,10 +16,10 @@ import java.util.List;
 /**
  * 英雄登录命令处理器
  */
-public class HeroEntryCmdHandler implements ICmdHandler<GameMessageProto.UserLoginCmd>{
+public class HeroEntryCmdHandler implements ICmdHandler<GameMessageProto.HeroEntryCmd>{
 
     @Override
-    public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.UserLoginCmd cmd) {
+    public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.HeroEntryCmd cmd) {
         if (null == cmd) {
             return;
         }
@@ -32,10 +32,10 @@ public class HeroEntryCmdHandler implements ICmdHandler<GameMessageProto.UserLog
         }
         Hero hero = heroList.get(0);
         String heroAvatar = hero.getHeroAvatar();
-        GameMessageProto.UserLoginResult.Builder builder = GameMessageProto.UserLoginResult.newBuilder();
+        GameMessageProto.HeroEntryResult.Builder builder = GameMessageProto.HeroEntryResult.newBuilder();
         builder.setUserId(userId);
         builder.setHeroAvatar(heroAvatar);
-        GameMessageProto.UserLoginResult result = builder.build();
+        GameMessageProto.HeroEntryResult result = builder.build();
         //广播登录结果到所有客户端,但是有个问题，只会将当前登录的用户广播到已经登录的用户，但是当前用户不会显示已经登录的其他用户
         BroadCaster.broadcast(result);
     }

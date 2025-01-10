@@ -8,19 +8,19 @@ import org.herostory.protobuf.bean.GameMessageProto;
 /**
  * 获取已经登录的用户
  */
-public class HeroOnlineCmdHandler implements ICmdHandler<GameMessageProto.OnlineUserCmd> {
+public class HeroOnlineCmdHandler implements ICmdHandler<GameMessageProto.OnlineHeroCmd> {
     @Override
-    public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.OnlineUserCmd cmd) {
+    public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.OnlineHeroCmd cmd) {
         //在线用户请求
-        GameMessageProto.OnlineUserResult.Builder builder = GameMessageProto.OnlineUserResult.newBuilder();
+        GameMessageProto.OnlineHeroResult.Builder builder = GameMessageProto.OnlineHeroResult.newBuilder();
         for (Hero hero : HeroStore.heroes()) {
             if (null == hero) {
                 continue;
             }
-            GameMessageProto.OnlineUserResult.UserInfo userInfo = GameMessageProto.OnlineUserResult.UserInfo.newBuilder()
+            GameMessageProto.OnlineHeroResult.HeroInfo userInfo = GameMessageProto.OnlineHeroResult.HeroInfo.newBuilder()
                     .setUserId(hero.getUserId())
                     .setHeroAvatar(hero.getHeroAvatar())
-                    .setMoveState(GameMessageProto.OnlineUserResult.UserInfo.MoveState.newBuilder()
+                    .setMoveState(GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.newBuilder()
                             .setFromPosX(hero.getMoveState().getFromPosX())
                             .setFromPosY(hero.getMoveState().getFromPosY())
                             .setToPosX(hero.getMoveState().getToPosX())
@@ -30,7 +30,7 @@ public class HeroOnlineCmdHandler implements ICmdHandler<GameMessageProto.Online
                     .build();
             builder.addUserInfo(userInfo);
         }
-        GameMessageProto.OnlineUserResult result = builder.build();
+        GameMessageProto.OnlineHeroResult result = builder.build();
         channelHandlerContext.writeAndFlush(result);
     }
 }

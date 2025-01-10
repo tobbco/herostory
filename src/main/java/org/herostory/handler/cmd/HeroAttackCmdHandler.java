@@ -13,11 +13,11 @@ import org.slf4j.Logger;
 /**
  * 英雄攻击命令处理器
  */
-public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.UserAttackCmd> {
+public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.HeroAttackCmd> {
     private static final Logger logger = org.slf4j.LoggerFactory.getLogger(HeroAttackCmdHandler.class);
 
     @Override
-    public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.UserAttackCmd cmd) {
+    public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.HeroAttackCmd cmd) {
         if (null == cmd) {
             return;
         }
@@ -29,7 +29,7 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.UserAt
             return;
         }
         //构建攻击结果
-        GameMessageProto.UserAttackResult attackResult = GameMessageProto.UserAttackResult.newBuilder()
+        GameMessageProto.HeroAttackResult attackResult = GameMessageProto.HeroAttackResult.newBuilder()
                 .setAttkUserId(userId)
                 .setTargetUserId(cmd.getTargetUserId())
                 .build();
@@ -37,7 +37,7 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.UserAt
         BroadCaster.broadcast(attackResult);
 
         //构建减血结果
-        GameMessageProto.UserSubtractHpResult subtractHpResult = GameMessageProto.UserSubtractHpResult.newBuilder()
+        GameMessageProto.HeroSubtractHpResult subtractHpResult = GameMessageProto.HeroSubtractHpResult.newBuilder()
                 .setTargetUserId(cmd.getTargetUserId())
                 .setSubtractHp(HeroConstant.DEFAULT_SUBTRACT_HP)
                 .build();
@@ -64,7 +64,7 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.UserAt
      */
     private void deadBroadcast(Integer targetUserId) {
         //构建英雄死亡结果
-        GameMessageProto.UserDieResult dieResult = GameMessageProto.UserDieResult.newBuilder()
+        GameMessageProto.HeroDieResult dieResult = GameMessageProto.HeroDieResult.newBuilder()
                 .setTargetUserId(targetUserId)
                 .build();
         BroadCaster.broadcast(dieResult);

@@ -34,9 +34,9 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
         }
         logger.info("{} 断开连接", userId);
         HeroStore.removeHero(userId);
-        GameMessageProto.UserDisconnectResult.Builder builder = GameMessageProto.UserDisconnectResult.newBuilder();
+        GameMessageProto.HeroDisconnectResult.Builder builder = GameMessageProto.HeroDisconnectResult.newBuilder();
         builder.setQuitUserId(userId);
-        GameMessageProto.UserDisconnectResult result = builder.build();
+        GameMessageProto.HeroDisconnectResult result = builder.build();
         BroadCaster.broadcast(result);
     }
 

@@ -8,8 +8,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bson.conversions.Bson;
 import org.herostory.HeroDeadException;
+import org.herostory.UsernamePasswordException;
 import org.herostory.db.mongo.MongoDBUtils;
 
+import java.beans.Transient;
 import java.util.List;
 
 /**
@@ -22,15 +24,20 @@ public class Hero {
     public Hero(Integer userId, String heroAvatar, Channel channel) {
         this.userId = userId;
         this.heroAvatar = heroAvatar;
-        this.channel = channel;
     }
-
-    private Channel channel;
 
     /**
      * 用户id
      */
     private Integer userId;
+    /**
+     * 用户名
+     */
+    private String username;
+    /**
+     * 密码
+     */
+    private String password;
     /**
      * 英雄形象
      */
@@ -78,9 +85,14 @@ public class Hero {
         if (heroList.isEmpty()) {
             Hero hero = new Hero();
             hero.setUserId(MongoDBUtils.getNextSequence("hero"));
-            hero.setHeroAvatar("");
+            hero.setUsername(username);
+            hero.setPassword(password);
             MongoDBUtils.insertDocument("hero", hero);
             return hero;
+        }else {
+            if (!heroList.get(0).getPassword().equals(password)) {
+                throw new UsernamePasswordException("用户名或密码错误");
+            }
         }
         return heroList.get(0);
     }

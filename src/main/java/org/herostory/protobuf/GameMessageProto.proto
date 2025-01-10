@@ -1,53 +1,57 @@
 syntax = "proto3";
 package org.herostory.protobuf;
 option java_package = "org.herostory.protobuf.bean";
-
+// 因为游戏前端使用的是写好的内容,所以内容上沿用的是userId或者userInfo
 //消息id
-enum GameMsgId {
+enum GameCmdId {
   //客户端进入请求id
-  USER_LOGIN_CMD = 0;
+  HERO_ENTRY_CMD = 0;
   //服务端进入结果id
-  USER_LOGIN_RESULT = 1;
+  HERO_ENTRY_RESULT = 1;
 
   //在线玩家信息
-  ONLINE_USER_CMD = 2;
+  ONLINE_HERO_CMD = 2;
 
   //在线玩家响应id
-  ONLINE_USER_RESULT = 3;
+  ONLINE_HERO_RESULT = 3;
 
   //用户移动请求id
-  USER_MOVE_CMD = 4;
+  HERO_MOVE_CMD = 4;
   //用户移动响应
-  USER_MOVE_RESULT = 5;
+  HERO_MOVE_RESULT = 5;
   //用户断开连接响应id
-  USER_DISCONNECT_RESULT = 6;
+  HERO_DISCONNECT_RESULT = 6;
   //用户停止移动请求id
-  USER_STOP_CMD = 7;
+  HERO_STOP_CMD = 7;
   //用户停止移动响应id
-  USER_STOP_RESULT = 8;
+  HERO_STOP_RESULT = 8;
   //用户攻击请求id
-  USER_ATTACK_CMD = 9;
+  HERO_ATTACK_CMD = 9;
   //用户攻击响应id
-  USER_ATTACK_RESULT = 10;
+  HERO_ATTACK_RESULT = 10;
   //用户减血请求id
-  USER_SUBTRACT_HP_RESULT = 11;
+  HERO_SUBTRACT_HP_RESULT = 11;
   //用户死亡响应id
-  USER_DIE_RESULT = 12;
+  HERO_DIE_RESULT = 12;
   //英雄登录请求id
   HERO_LOGIN_CMD = 13;
   //英雄登录响应id
   HERO_LOGIN_RESULT = 14;
+  //选择英雄请求id
+  SELECT_HERO_CMD = 15;
+  //选择英雄响应id
+  SELECT_HERO_RESULT = 16;
 }
-//登录请求
-message UserLoginCmd {
+//英雄入口请求
+message HeroEntryCmd {
   //用户id
   uint32 userId = 1;
   //英雄形象
   string heroAvatar = 2;
 }
 
-//登录响应
-message  UserLoginResult {
+//英雄入口响应
+message  HeroEntryResult {
   //用户id
   uint32 userId = 1;
   //英雄形象
@@ -55,15 +59,16 @@ message  UserLoginResult {
 }
 
 //在线用户请求
-message  OnlineUserCmd {
+message  OnlineHeroCmd {
 
 }
 //在线用户响应
-message  OnlineUserResult {
-  //用户信息集合,相当于java中的 UserInfo[] userInfo
-  repeated UserInfo userInfo = 1;
+message  OnlineHeroResult {
+  //英雄信息集合,相当于java中的 HeroInfo[] userInfo
+  repeated HeroInfo userInfo = 1;
 
-  message UserInfo {
+  //英雄信息
+  message HeroInfo {
     //用户id
     uint32 userId = 1;
     //英雄形象
@@ -89,7 +94,7 @@ message  OnlineUserResult {
 }
 
 //用户移动请求，从哪到哪
-message UserMoveCmd {
+message HeroMoveCmd {
   // 起始位置 X
   float moveFromPosX = 1;
   // 起始位置 Y
@@ -99,7 +104,7 @@ message UserMoveCmd {
   float moveToPosY = 4;
 }
 
-message UserMoveResult {
+message HeroMoveResult {
   // 移动用户 Id
   uint32 moveUserId = 1;
   // 起始位置 X
@@ -115,15 +120,15 @@ message UserMoveResult {
 }
 
 //用户断开连接响应
-message  UserDisconnectResult {
+message  HeroDisconnectResult {
   //用户id
   uint32 quitUserId = 1;
 }
 
-message UserStopCmd {
+message HeroStopCmd {
 }
 
-message UserStopResult {
+message HeroStopResult {
   // 停驻用户 Id
   uint32 stopUserId = 1;
   // 停驻在位置 X
@@ -132,26 +137,26 @@ message UserStopResult {
   float stopAtPosY = 3;
 }
 
-message UserAttackCmd {
+message HeroAttackCmd {
   // 被攻击的用户 Id
   uint32 targetUserId = 1;
 }
 
-message UserAttackResult {
+message HeroAttackResult {
   // 发动攻击的用户 Id
   uint32 attkUserId = 1;
   // 目标用户 Id
   uint32 targetUserId = 2;
 }
 
-message UserSubtractHpResult {
+message HeroSubtractHpResult {
   // 目标用户 Id
   uint32 targetUserId = 1;
   // 减血量
   uint32 subtractHp = 2;
 }
 
-message UserDieResult {
+message HeroDieResult {
   // 死亡用户 Id
   uint32 targetUserId = 1;
 }
@@ -170,4 +175,15 @@ message HeroLoginResult {
   string userName = 2;
   // 英雄形象
   string heroAvatar = 3;
+}
+
+message SelectHeroCmd {
+  // 英雄形象
+  string heroAvatar = 1;
+}
+
+message SelectHeroResult {
+  // 英雄形象,
+  // 如果是空字符串则说明失败
+  string heroAvatar = 1;
 }

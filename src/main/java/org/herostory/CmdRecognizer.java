@@ -35,7 +35,7 @@ public final class CmdRecognizer {
             //将类名转为小写
             String clazzName = declaredClass.getSimpleName().toLowerCase();
             //获取命令ID
-            for (GameMessageProto.GameMsgId cmdId : GameMessageProto.GameMsgId.values()) {
+            for (GameMessageProto.GameCmdId cmdId : GameMessageProto.GameCmdId.values()) {
                 //将名称去除_且转为小写,例如USER_LOGIN_CMD转为userlogincmd
                 String cmdName = cmdId.name().replace("_", "").toLowerCase();
                 if (!clazzName.startsWith(cmdName)) {

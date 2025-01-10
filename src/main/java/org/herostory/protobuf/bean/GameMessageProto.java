@@ -27,117 +27,118 @@ public final class GameMessageProto {
   }
   /**
    * <pre>
+   * 因为游戏前端使用的是写好的内容,所以内容上沿用的是userId或者userInfo
    * 消息id
    * </pre>
    *
-   * Protobuf enum {@code org.herostory.protobuf.GameMsgId}
+   * Protobuf enum {@code org.herostory.protobuf.GameCmdId}
    */
-  public enum GameMsgId
+  public enum GameCmdId
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
      * 客户端进入请求id
      * </pre>
      *
-     * <code>USER_LOGIN_CMD = 0;</code>
+     * <code>HERO_ENTRY_CMD = 0;</code>
      */
-    USER_LOGIN_CMD(0),
+    HERO_ENTRY_CMD(0),
     /**
      * <pre>
      * 服务端进入结果id
      * </pre>
      *
-     * <code>USER_LOGIN_RESULT = 1;</code>
+     * <code>HERO_ENTRY_RESULT = 1;</code>
      */
-    USER_LOGIN_RESULT(1),
+    HERO_ENTRY_RESULT(1),
     /**
      * <pre>
      * 在线玩家信息
      * </pre>
      *
-     * <code>ONLINE_USER_CMD = 2;</code>
+     * <code>ONLINE_HERO_CMD = 2;</code>
      */
-    ONLINE_USER_CMD(2),
+    ONLINE_HERO_CMD(2),
     /**
      * <pre>
      * 在线玩家响应id
      * </pre>
      *
-     * <code>ONLINE_USER_RESULT = 3;</code>
+     * <code>ONLINE_HERO_RESULT = 3;</code>
      */
-    ONLINE_USER_RESULT(3),
+    ONLINE_HERO_RESULT(3),
     /**
      * <pre>
      * 用户移动请求id
      * </pre>
      *
-     * <code>USER_MOVE_CMD = 4;</code>
+     * <code>HERO_MOVE_CMD = 4;</code>
      */
-    USER_MOVE_CMD(4),
+    HERO_MOVE_CMD(4),
     /**
      * <pre>
      * 用户移动响应
      * </pre>
      *
-     * <code>USER_MOVE_RESULT = 5;</code>
+     * <code>HERO_MOVE_RESULT = 5;</code>
      */
-    USER_MOVE_RESULT(5),
+    HERO_MOVE_RESULT(5),
     /**
      * <pre>
      * 用户断开连接响应id
      * </pre>
      *
-     * <code>USER_DISCONNECT_RESULT = 6;</code>
+     * <code>HERO_DISCONNECT_RESULT = 6;</code>
      */
-    USER_DISCONNECT_RESULT(6),
+    HERO_DISCONNECT_RESULT(6),
     /**
      * <pre>
      * 用户停止移动请求id
      * </pre>
      *
-     * <code>USER_STOP_CMD = 7;</code>
+     * <code>HERO_STOP_CMD = 7;</code>
      */
-    USER_STOP_CMD(7),
+    HERO_STOP_CMD(7),
     /**
      * <pre>
      * 用户停止移动响应id
      * </pre>
      *
-     * <code>USER_STOP_RESULT = 8;</code>
+     * <code>HERO_STOP_RESULT = 8;</code>
      */
-    USER_STOP_RESULT(8),
+    HERO_STOP_RESULT(8),
     /**
      * <pre>
      * 用户攻击请求id
      * </pre>
      *
-     * <code>USER_ATTACK_CMD = 9;</code>
+     * <code>HERO_ATTACK_CMD = 9;</code>
      */
-    USER_ATTACK_CMD(9),
+    HERO_ATTACK_CMD(9),
     /**
      * <pre>
      * 用户攻击响应id
      * </pre>
      *
-     * <code>USER_ATTACK_RESULT = 10;</code>
+     * <code>HERO_ATTACK_RESULT = 10;</code>
      */
-    USER_ATTACK_RESULT(10),
+    HERO_ATTACK_RESULT(10),
     /**
      * <pre>
      * 用户减血请求id
      * </pre>
      *
-     * <code>USER_SUBTRACT_HP_RESULT = 11;</code>
+     * <code>HERO_SUBTRACT_HP_RESULT = 11;</code>
      */
-    USER_SUBTRACT_HP_RESULT(11),
+    HERO_SUBTRACT_HP_RESULT(11),
     /**
      * <pre>
      * 用户死亡响应id
      * </pre>
      *
-     * <code>USER_DIE_RESULT = 12;</code>
+     * <code>HERO_DIE_RESULT = 12;</code>
      */
-    USER_DIE_RESULT(12),
+    HERO_DIE_RESULT(12),
     /**
      * <pre>
      * 英雄登录请求id
@@ -154,6 +155,22 @@ public final class GameMessageProto {
      * <code>HERO_LOGIN_RESULT = 14;</code>
      */
     HERO_LOGIN_RESULT(14),
+    /**
+     * <pre>
+     * 选择英雄请求id
+     * </pre>
+     *
+     * <code>SELECT_HERO_CMD = 15;</code>
+     */
+    SELECT_HERO_CMD(15),
+    /**
+     * <pre>
+     * 选择英雄响应id
+     * </pre>
+     *
+     * <code>SELECT_HERO_RESULT = 16;</code>
+     */
+    SELECT_HERO_RESULT(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -164,112 +181,112 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        GameMsgId.class.getName());
+        GameCmdId.class.getName());
     }
     /**
      * <pre>
      * 客户端进入请求id
      * </pre>
      *
-     * <code>USER_LOGIN_CMD = 0;</code>
+     * <code>HERO_ENTRY_CMD = 0;</code>
      */
-    public static final int USER_LOGIN_CMD_VALUE = 0;
+    public static final int HERO_ENTRY_CMD_VALUE = 0;
     /**
      * <pre>
      * 服务端进入结果id
      * </pre>
      *
-     * <code>USER_LOGIN_RESULT = 1;</code>
+     * <code>HERO_ENTRY_RESULT = 1;</code>
      */
-    public static final int USER_LOGIN_RESULT_VALUE = 1;
+    public static final int HERO_ENTRY_RESULT_VALUE = 1;
     /**
      * <pre>
      * 在线玩家信息
      * </pre>
      *
-     * <code>ONLINE_USER_CMD = 2;</code>
+     * <code>ONLINE_HERO_CMD = 2;</code>
      */
-    public static final int ONLINE_USER_CMD_VALUE = 2;
+    public static final int ONLINE_HERO_CMD_VALUE = 2;
     /**
      * <pre>
      * 在线玩家响应id
      * </pre>
      *
-     * <code>ONLINE_USER_RESULT = 3;</code>
+     * <code>ONLINE_HERO_RESULT = 3;</code>
      */
-    public static final int ONLINE_USER_RESULT_VALUE = 3;
+    public static final int ONLINE_HERO_RESULT_VALUE = 3;
     /**
      * <pre>
      * 用户移动请求id
      * </pre>
      *
-     * <code>USER_MOVE_CMD = 4;</code>
+     * <code>HERO_MOVE_CMD = 4;</code>
      */
-    public static final int USER_MOVE_CMD_VALUE = 4;
+    public static final int HERO_MOVE_CMD_VALUE = 4;
     /**
      * <pre>
      * 用户移动响应
      * </pre>
      *
-     * <code>USER_MOVE_RESULT = 5;</code>
+     * <code>HERO_MOVE_RESULT = 5;</code>
      */
-    public static final int USER_MOVE_RESULT_VALUE = 5;
+    public static final int HERO_MOVE_RESULT_VALUE = 5;
     /**
      * <pre>
      * 用户断开连接响应id
      * </pre>
      *
-     * <code>USER_DISCONNECT_RESULT = 6;</code>
+     * <code>HERO_DISCONNECT_RESULT = 6;</code>
      */
-    public static final int USER_DISCONNECT_RESULT_VALUE = 6;
+    public static final int HERO_DISCONNECT_RESULT_VALUE = 6;
     /**
      * <pre>
      * 用户停止移动请求id
      * </pre>
      *
-     * <code>USER_STOP_CMD = 7;</code>
+     * <code>HERO_STOP_CMD = 7;</code>
      */
-    public static final int USER_STOP_CMD_VALUE = 7;
+    public static final int HERO_STOP_CMD_VALUE = 7;
     /**
      * <pre>
      * 用户停止移动响应id
      * </pre>
      *
-     * <code>USER_STOP_RESULT = 8;</code>
+     * <code>HERO_STOP_RESULT = 8;</code>
      */
-    public static final int USER_STOP_RESULT_VALUE = 8;
+    public static final int HERO_STOP_RESULT_VALUE = 8;
     /**
      * <pre>
      * 用户攻击请求id
      * </pre>
      *
-     * <code>USER_ATTACK_CMD = 9;</code>
+     * <code>HERO_ATTACK_CMD = 9;</code>
      */
-    public static final int USER_ATTACK_CMD_VALUE = 9;
+    public static final int HERO_ATTACK_CMD_VALUE = 9;
     /**
      * <pre>
      * 用户攻击响应id
      * </pre>
      *
-     * <code>USER_ATTACK_RESULT = 10;</code>
+     * <code>HERO_ATTACK_RESULT = 10;</code>
      */
-    public static final int USER_ATTACK_RESULT_VALUE = 10;
+    public static final int HERO_ATTACK_RESULT_VALUE = 10;
     /**
      * <pre>
      * 用户减血请求id
      * </pre>
      *
-     * <code>USER_SUBTRACT_HP_RESULT = 11;</code>
+     * <code>HERO_SUBTRACT_HP_RESULT = 11;</code>
      */
-    public static final int USER_SUBTRACT_HP_RESULT_VALUE = 11;
+    public static final int HERO_SUBTRACT_HP_RESULT_VALUE = 11;
     /**
      * <pre>
      * 用户死亡响应id
      * </pre>
      *
-     * <code>USER_DIE_RESULT = 12;</code>
+     * <code>HERO_DIE_RESULT = 12;</code>
      */
-    public static final int USER_DIE_RESULT_VALUE = 12;
+    public static final int HERO_DIE_RESULT_VALUE = 12;
     /**
      * <pre>
      * 英雄登录请求id
@@ -286,6 +303,22 @@ public final class GameMessageProto {
      * <code>HERO_LOGIN_RESULT = 14;</code>
      */
     public static final int HERO_LOGIN_RESULT_VALUE = 14;
+    /**
+     * <pre>
+     * 选择英雄请求id
+     * </pre>
+     *
+     * <code>SELECT_HERO_CMD = 15;</code>
+     */
+    public static final int SELECT_HERO_CMD_VALUE = 15;
+    /**
+     * <pre>
+     * 选择英雄响应id
+     * </pre>
+     *
+     * <code>SELECT_HERO_RESULT = 16;</code>
+     */
+    public static final int SELECT_HERO_RESULT_VALUE = 16;
 
 
     public final int getNumber() {
@@ -302,7 +335,7 @@ public final class GameMessageProto {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static GameMsgId valueOf(int value) {
+    public static GameCmdId valueOf(int value) {
       return forNumber(value);
     }
 
@@ -310,36 +343,38 @@ public final class GameMessageProto {
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static GameMsgId forNumber(int value) {
+    public static GameCmdId forNumber(int value) {
       switch (value) {
-        case 0: return USER_LOGIN_CMD;
-        case 1: return USER_LOGIN_RESULT;
-        case 2: return ONLINE_USER_CMD;
-        case 3: return ONLINE_USER_RESULT;
-        case 4: return USER_MOVE_CMD;
-        case 5: return USER_MOVE_RESULT;
-        case 6: return USER_DISCONNECT_RESULT;
-        case 7: return USER_STOP_CMD;
-        case 8: return USER_STOP_RESULT;
-        case 9: return USER_ATTACK_CMD;
-        case 10: return USER_ATTACK_RESULT;
-        case 11: return USER_SUBTRACT_HP_RESULT;
-        case 12: return USER_DIE_RESULT;
+        case 0: return HERO_ENTRY_CMD;
+        case 1: return HERO_ENTRY_RESULT;
+        case 2: return ONLINE_HERO_CMD;
+        case 3: return ONLINE_HERO_RESULT;
+        case 4: return HERO_MOVE_CMD;
+        case 5: return HERO_MOVE_RESULT;
+        case 6: return HERO_DISCONNECT_RESULT;
+        case 7: return HERO_STOP_CMD;
+        case 8: return HERO_STOP_RESULT;
+        case 9: return HERO_ATTACK_CMD;
+        case 10: return HERO_ATTACK_RESULT;
+        case 11: return HERO_SUBTRACT_HP_RESULT;
+        case 12: return HERO_DIE_RESULT;
         case 13: return HERO_LOGIN_CMD;
         case 14: return HERO_LOGIN_RESULT;
+        case 15: return SELECT_HERO_CMD;
+        case 16: return SELECT_HERO_RESULT;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<GameMsgId>
+    public static com.google.protobuf.Internal.EnumLiteMap<GameCmdId>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        GameMsgId> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<GameMsgId>() {
-            public GameMsgId findValueByNumber(int number) {
-              return GameMsgId.forNumber(number);
+        GameCmdId> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<GameCmdId>() {
+            public GameCmdId findValueByNumber(int number) {
+              return GameCmdId.forNumber(number);
             }
           };
 
@@ -360,9 +395,9 @@ public final class GameMessageProto {
       return org.herostory.protobuf.bean.GameMessageProto.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final GameMsgId[] VALUES = values();
+    private static final GameCmdId[] VALUES = values();
 
-    public static GameMsgId valueOf(
+    public static GameCmdId valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -376,15 +411,15 @@ public final class GameMessageProto {
 
     private final int value;
 
-    private GameMsgId(int value) {
+    private GameCmdId(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:org.herostory.protobuf.GameMsgId)
+    // @@protoc_insertion_point(enum_scope:org.herostory.protobuf.GameCmdId)
   }
 
-  public interface UserLoginCmdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserLoginCmd)
+  public interface HeroEntryCmdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroEntryCmd)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -419,15 +454,15 @@ public final class GameMessageProto {
   }
   /**
    * <pre>
-   * 登录请求
+   * 英雄入口请求
    * </pre>
    *
-   * Protobuf type {@code org.herostory.protobuf.UserLoginCmd}
+   * Protobuf type {@code org.herostory.protobuf.HeroEntryCmd}
    */
-  public static final class UserLoginCmd extends
+  public static final class HeroEntryCmd extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserLoginCmd)
-      UserLoginCmdOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroEntryCmd)
+      HeroEntryCmdOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -436,27 +471,27 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserLoginCmd.class.getName());
+        HeroEntryCmd.class.getName());
     }
-    // Use UserLoginCmd.newBuilder() to construct.
-    private UserLoginCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroEntryCmd.newBuilder() to construct.
+    private HeroEntryCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserLoginCmd() {
+    private HeroEntryCmd() {
       heroAvatar_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginCmd_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryCmd_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginCmd_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryCmd_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd.class, org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd.Builder.class);
     }
 
     public static final int USERID_FIELD_NUMBER = 1;
@@ -567,10 +602,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd other = (org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd other = (org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd) obj;
 
       if (getUserId()
           != other.getUserId()) return false;
@@ -596,44 +631,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -641,26 +676,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -673,7 +708,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -690,29 +725,29 @@ public final class GameMessageProto {
     }
     /**
      * <pre>
-     * 登录请求
+     * 英雄入口请求
      * </pre>
      *
-     * Protobuf type {@code org.herostory.protobuf.UserLoginCmd}
+     * Protobuf type {@code org.herostory.protobuf.HeroEntryCmd}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserLoginCmd)
-        org.herostory.protobuf.bean.GameMessageProto.UserLoginCmdOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroEntryCmd)
+        org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryCmd_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginCmd_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryCmd_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd.class, org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd.newBuilder()
       private Builder() {
 
       }
@@ -734,17 +769,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryCmd_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -752,14 +787,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd result = new org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd result = new org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.userId_ = userId_;
@@ -771,16 +806,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd.getDefaultInstance()) return this;
         if (other.getUserId() != 0) {
           setUserId(other.getUserId());
         }
@@ -978,23 +1013,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserLoginCmd)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroEntryCmd)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserLoginCmd)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroEntryCmd)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserLoginCmd>
-        PARSER = new com.google.protobuf.AbstractParser<UserLoginCmd>() {
+    private static final com.google.protobuf.Parser<HeroEntryCmd>
+        PARSER = new com.google.protobuf.AbstractParser<HeroEntryCmd>() {
       @java.lang.Override
-      public UserLoginCmd parsePartialFrom(
+      public HeroEntryCmd parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1013,24 +1048,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserLoginCmd> parser() {
+    public static com.google.protobuf.Parser<HeroEntryCmd> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserLoginCmd> getParserForType() {
+    public com.google.protobuf.Parser<HeroEntryCmd> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserLoginCmd getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroEntryCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserLoginResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserLoginResult)
+  public interface HeroEntryResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroEntryResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1065,15 +1100,15 @@ public final class GameMessageProto {
   }
   /**
    * <pre>
-   * 登录响应
+   * 英雄入口响应
    * </pre>
    *
-   * Protobuf type {@code org.herostory.protobuf.UserLoginResult}
+   * Protobuf type {@code org.herostory.protobuf.HeroEntryResult}
    */
-  public static final class UserLoginResult extends
+  public static final class HeroEntryResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserLoginResult)
-      UserLoginResultOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroEntryResult)
+      HeroEntryResultOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -1082,27 +1117,27 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserLoginResult.class.getName());
+        HeroEntryResult.class.getName());
     }
-    // Use UserLoginResult.newBuilder() to construct.
-    private UserLoginResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroEntryResult.newBuilder() to construct.
+    private HeroEntryResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserLoginResult() {
+    private HeroEntryResult() {
       heroAvatar_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginResult_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginResult_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserLoginResult.class, org.herostory.protobuf.bean.GameMessageProto.UserLoginResult.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult.Builder.class);
     }
 
     public static final int USERID_FIELD_NUMBER = 1;
@@ -1213,10 +1248,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserLoginResult)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserLoginResult other = (org.herostory.protobuf.bean.GameMessageProto.UserLoginResult) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult other = (org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult) obj;
 
       if (getUserId()
           != other.getUserId()) return false;
@@ -1242,44 +1277,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1287,26 +1322,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1319,7 +1354,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserLoginResult prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1336,29 +1371,29 @@ public final class GameMessageProto {
     }
     /**
      * <pre>
-     * 登录响应
+     * 英雄入口响应
      * </pre>
      *
-     * Protobuf type {@code org.herostory.protobuf.UserLoginResult}
+     * Protobuf type {@code org.herostory.protobuf.HeroEntryResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserLoginResult)
-        org.herostory.protobuf.bean.GameMessageProto.UserLoginResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroEntryResult)
+        org.herostory.protobuf.bean.GameMessageProto.HeroEntryResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginResult_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserLoginResult.class, org.herostory.protobuf.bean.GameMessageProto.UserLoginResult.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserLoginResult.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult.newBuilder()
       private Builder() {
 
       }
@@ -1380,17 +1415,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserLoginResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroEntryResult_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserLoginResult getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserLoginResult.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserLoginResult build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserLoginResult result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1398,14 +1433,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserLoginResult buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserLoginResult result = new org.herostory.protobuf.bean.GameMessageProto.UserLoginResult(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult result = new org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserLoginResult result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.userId_ = userId_;
@@ -1417,16 +1452,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserLoginResult) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserLoginResult)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserLoginResult other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserLoginResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult.getDefaultInstance()) return this;
         if (other.getUserId() != 0) {
           setUserId(other.getUserId());
         }
@@ -1624,23 +1659,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserLoginResult)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroEntryResult)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserLoginResult)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserLoginResult DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroEntryResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserLoginResult();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserLoginResult getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserLoginResult>
-        PARSER = new com.google.protobuf.AbstractParser<UserLoginResult>() {
+    private static final com.google.protobuf.Parser<HeroEntryResult>
+        PARSER = new com.google.protobuf.AbstractParser<HeroEntryResult>() {
       @java.lang.Override
-      public UserLoginResult parsePartialFrom(
+      public HeroEntryResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1659,24 +1694,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserLoginResult> parser() {
+    public static com.google.protobuf.Parser<HeroEntryResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserLoginResult> getParserForType() {
+    public com.google.protobuf.Parser<HeroEntryResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserLoginResult getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroEntryResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface OnlineUserCmdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineUserCmd)
+  public interface OnlineHeroCmdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineHeroCmd)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
@@ -1684,12 +1719,12 @@ public final class GameMessageProto {
    * 在线用户请求
    * </pre>
    *
-   * Protobuf type {@code org.herostory.protobuf.OnlineUserCmd}
+   * Protobuf type {@code org.herostory.protobuf.OnlineHeroCmd}
    */
-  public static final class OnlineUserCmd extends
+  public static final class OnlineHeroCmd extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineUserCmd)
-      OnlineUserCmdOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineHeroCmd)
+      OnlineHeroCmdOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -1698,26 +1733,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        OnlineUserCmd.class.getName());
+        OnlineHeroCmd.class.getName());
     }
-    // Use OnlineUserCmd.newBuilder() to construct.
-    private OnlineUserCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use OnlineHeroCmd.newBuilder() to construct.
+    private OnlineHeroCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private OnlineUserCmd() {
+    private OnlineHeroCmd() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserCmd_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroCmd_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserCmd_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroCmd_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd.class, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1753,10 +1788,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd other = (org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd) obj;
+      org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd other = (org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd) obj;
 
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -1774,44 +1809,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1819,26 +1854,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1851,7 +1886,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1871,26 +1906,26 @@ public final class GameMessageProto {
      * 在线用户请求
      * </pre>
      *
-     * Protobuf type {@code org.herostory.protobuf.OnlineUserCmd}
+     * Protobuf type {@code org.herostory.protobuf.OnlineHeroCmd}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineUserCmd)
-        org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmdOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineHeroCmd)
+        org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroCmd_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserCmd_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroCmd_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd.class, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd.newBuilder()
       private Builder() {
 
       }
@@ -1909,17 +1944,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroCmd_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd build() {
-        org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd build() {
+        org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1927,24 +1962,24 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd result = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd(this);
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd result = new org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd(this);
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1987,23 +2022,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineUserCmd)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineHeroCmd)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineUserCmd)
-    private static final org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineHeroCmd)
+    private static final org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<OnlineUserCmd>
-        PARSER = new com.google.protobuf.AbstractParser<OnlineUserCmd>() {
+    private static final com.google.protobuf.Parser<OnlineHeroCmd>
+        PARSER = new com.google.protobuf.AbstractParser<OnlineHeroCmd>() {
       @java.lang.Override
-      public OnlineUserCmd parsePartialFrom(
+      public OnlineHeroCmd parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2022,68 +2057,68 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<OnlineUserCmd> parser() {
+    public static com.google.protobuf.Parser<OnlineHeroCmd> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<OnlineUserCmd> getParserForType() {
+    public com.google.protobuf.Parser<OnlineHeroCmd> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.OnlineUserCmd getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface OnlineUserResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineUserResult)
+  public interface OnlineHeroResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineHeroResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
-    java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo> 
+    java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo> 
         getUserInfoList();
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
-    org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo getUserInfo(int index);
+    org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo getUserInfo(int index);
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
     int getUserInfoCount();
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
-    java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder> 
+    java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder> 
         getUserInfoOrBuilderList();
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
-    org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder getUserInfoOrBuilder(
+    org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder getUserInfoOrBuilder(
         int index);
   }
   /**
@@ -2091,12 +2126,12 @@ public final class GameMessageProto {
    * 在线用户响应
    * </pre>
    *
-   * Protobuf type {@code org.herostory.protobuf.OnlineUserResult}
+   * Protobuf type {@code org.herostory.protobuf.OnlineHeroResult}
    */
-  public static final class OnlineUserResult extends
+  public static final class OnlineHeroResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineUserResult)
-      OnlineUserResultOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineHeroResult)
+      OnlineHeroResultOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2105,31 +2140,31 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        OnlineUserResult.class.getName());
+        OnlineHeroResult.class.getName());
     }
-    // Use OnlineUserResult.newBuilder() to construct.
-    private OnlineUserResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use OnlineHeroResult.newBuilder() to construct.
+    private OnlineHeroResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private OnlineUserResult() {
+    private OnlineHeroResult() {
       userInfo_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.class, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.Builder.class);
     }
 
-    public interface UserInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineUserResult.UserInfo)
+    public interface HeroInfoOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineHeroResult.HeroInfo)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -2167,7 +2202,7 @@ public final class GameMessageProto {
        * 移动状态
        * </pre>
        *
-       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
        * @return Whether the moveState field is set.
        */
       boolean hasMoveState();
@@ -2176,26 +2211,30 @@ public final class GameMessageProto {
        * 移动状态
        * </pre>
        *
-       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
        * @return The moveState.
        */
-      org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getMoveState();
+      org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState getMoveState();
       /**
        * <pre>
        * 移动状态
        * </pre>
        *
-       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
        */
-      org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder getMoveStateOrBuilder();
+      org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveStateOrBuilder getMoveStateOrBuilder();
     }
     /**
-     * Protobuf type {@code org.herostory.protobuf.OnlineUserResult.UserInfo}
+     * <pre>
+     * 英雄信息
+     * </pre>
+     *
+     * Protobuf type {@code org.herostory.protobuf.OnlineHeroResult.HeroInfo}
      */
-    public static final class UserInfo extends
+    public static final class HeroInfo extends
         com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineUserResult.UserInfo)
-        UserInfoOrBuilder {
+        // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineHeroResult.HeroInfo)
+        HeroInfoOrBuilder {
     private static final long serialVersionUID = 0L;
       static {
         com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2204,31 +2243,31 @@ public final class GameMessageProto {
           /* minor= */ 29,
           /* patch= */ 1,
           /* suffix= */ "",
-          UserInfo.class.getName());
+          HeroInfo.class.getName());
       }
-      // Use UserInfo.newBuilder() to construct.
-      private UserInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // Use HeroInfo.newBuilder() to construct.
+      private HeroInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
-      private UserInfo() {
+      private HeroInfo() {
         heroAvatar_ = "";
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.class, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder.class);
       }
 
       public interface MoveStateOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
+          // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState)
           com.google.protobuf.MessageOrBuilder {
 
         /**
@@ -2286,11 +2325,11 @@ public final class GameMessageProto {
        * 移动状态
        * </pre>
        *
-       * Protobuf type {@code org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState}
+       * Protobuf type {@code org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState}
        */
       public static final class MoveState extends
           com.google.protobuf.GeneratedMessage implements
-          // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
+          // @@protoc_insertion_point(message_implements:org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState)
           MoveStateOrBuilder {
       private static final long serialVersionUID = 0L;
         static {
@@ -2311,15 +2350,15 @@ public final class GameMessageProto {
 
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor;
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_fieldAccessorTable
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder.class);
+                  org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.class, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.Builder.class);
         }
 
         public static final int FROMPOSX_FIELD_NUMBER = 1;
@@ -2465,10 +2504,10 @@ public final class GameMessageProto {
           if (obj == this) {
            return true;
           }
-          if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState)) {
+          if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState)) {
             return super.equals(obj);
           }
-          org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState other = (org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState) obj;
+          org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState other = (org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState) obj;
 
           if (java.lang.Float.floatToIntBits(getFromPosX())
               != java.lang.Float.floatToIntBits(
@@ -2515,44 +2554,44 @@ public final class GameMessageProto {
           return hash;
         }
 
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(
             java.nio.ByteBuffer data)
             throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(
             java.nio.ByteBuffer data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(byte[] data)
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(
             byte[] data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(java.io.InputStream input)
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(java.io.InputStream input)
             throws java.io.IOException {
           return com.google.protobuf.GeneratedMessage
               .parseWithIOException(PARSER, input);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -2560,26 +2599,26 @@ public final class GameMessageProto {
               .parseWithIOException(PARSER, input, extensionRegistry);
         }
 
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseDelimitedFrom(java.io.InputStream input)
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseDelimitedFrom(java.io.InputStream input)
             throws java.io.IOException {
           return com.google.protobuf.GeneratedMessage
               .parseDelimitedWithIOException(PARSER, input);
         }
 
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseDelimitedFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseDelimitedFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
           return com.google.protobuf.GeneratedMessage
               .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(
             com.google.protobuf.CodedInputStream input)
             throws java.io.IOException {
           return com.google.protobuf.GeneratedMessage
               .parseWithIOException(PARSER, input);
         }
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState parseFrom(
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState parseFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -2592,7 +2631,7 @@ public final class GameMessageProto {
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
         }
-        public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState prototype) {
+        public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
         @java.lang.Override
@@ -2612,26 +2651,26 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * Protobuf type {@code org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState}
+         * Protobuf type {@code org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState}
          */
         public static final class Builder extends
             com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
-            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder {
+            // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState)
+            org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveStateOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
-            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor;
+            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_fieldAccessorTable
+            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
-                    org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder.class);
+                    org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.class, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.Builder.class);
           }
 
-          // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.newBuilder()
+          // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.newBuilder()
           private Builder() {
 
           }
@@ -2656,17 +2695,17 @@ public final class GameMessageProto {
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor
               getDescriptorForType() {
-            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor;
+            return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_descriptor;
           }
 
           @java.lang.Override
-          public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getDefaultInstanceForType() {
-            return org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance();
+          public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState getDefaultInstanceForType() {
+            return org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.getDefaultInstance();
           }
 
           @java.lang.Override
-          public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState build() {
-            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState result = buildPartial();
+          public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState build() {
+            org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState result = buildPartial();
             if (!result.isInitialized()) {
               throw newUninitializedMessageException(result);
             }
@@ -2674,14 +2713,14 @@ public final class GameMessageProto {
           }
 
           @java.lang.Override
-          public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState buildPartial() {
-            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState result = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState(this);
+          public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState buildPartial() {
+            org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState result = new org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState(this);
             if (bitField0_ != 0) { buildPartial0(result); }
             onBuilt();
             return result;
           }
 
-          private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState result) {
+          private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState result) {
             int from_bitField0_ = bitField0_;
             if (((from_bitField0_ & 0x00000001) != 0)) {
               result.fromPosX_ = fromPosX_;
@@ -2702,16 +2741,16 @@ public final class GameMessageProto {
 
           @java.lang.Override
           public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState) {
-              return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState)other);
+            if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState) {
+              return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState)other);
             } else {
               super.mergeFrom(other);
               return this;
             }
           }
 
-          public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState other) {
-            if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance()) return this;
+          public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState other) {
+            if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.getDefaultInstance()) return this;
             if (other.getFromPosX() != 0F) {
               setFromPosX(other.getFromPosX());
             }
@@ -3015,16 +3054,16 @@ public final class GameMessageProto {
             return this;
           }
 
-          // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
+          // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState)
         }
 
-        // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState)
-        private static final org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState DEFAULT_INSTANCE;
+        // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState)
+        private static final org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState DEFAULT_INSTANCE;
         static {
-          DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState();
+          DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState();
         }
 
-        public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getDefaultInstance() {
+        public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState getDefaultInstance() {
           return DEFAULT_INSTANCE;
         }
 
@@ -3060,7 +3099,7 @@ public final class GameMessageProto {
         }
 
         @java.lang.Override
-        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getDefaultInstanceForType() {
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
 
@@ -3130,13 +3169,13 @@ public final class GameMessageProto {
       }
 
       public static final int MOVESTATE_FIELD_NUMBER = 3;
-      private org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState moveState_;
+      private org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState moveState_;
       /**
        * <pre>
        * 移动状态
        * </pre>
        *
-       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
        * @return Whether the moveState field is set.
        */
       @java.lang.Override
@@ -3148,23 +3187,23 @@ public final class GameMessageProto {
        * 移动状态
        * </pre>
        *
-       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
        * @return The moveState.
        */
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getMoveState() {
-        return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState getMoveState() {
+        return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.getDefaultInstance() : moveState_;
       }
       /**
        * <pre>
        * 移动状态
        * </pre>
        *
-       * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+       * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
        */
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder getMoveStateOrBuilder() {
-        return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveStateOrBuilder getMoveStateOrBuilder() {
+        return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.getDefaultInstance() : moveState_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -3220,10 +3259,10 @@ public final class GameMessageProto {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo)) {
+        if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo)) {
           return super.equals(obj);
         }
-        org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo other = (org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo) obj;
+        org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo other = (org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo) obj;
 
         if (getUserId()
             != other.getUserId()) return false;
@@ -3258,44 +3297,44 @@ public final class GameMessageProto {
         return hash;
       }
 
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(byte[] data)
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(java.io.InputStream input)
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
             .parseWithIOException(PARSER, input);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -3303,26 +3342,26 @@ public final class GameMessageProto {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseDelimitedFrom(java.io.InputStream input)
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
             .parseDelimitedWithIOException(PARSER, input);
       }
 
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseDelimitedFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
             .parseWithIOException(PARSER, input);
       }
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo parseFrom(
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -3335,7 +3374,7 @@ public final class GameMessageProto {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo prototype) {
+      public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       @java.lang.Override
@@ -3351,26 +3390,30 @@ public final class GameMessageProto {
         return builder;
       }
       /**
-       * Protobuf type {@code org.herostory.protobuf.OnlineUserResult.UserInfo}
+       * <pre>
+       * 英雄信息
+       * </pre>
+       *
+       * Protobuf type {@code org.herostory.protobuf.OnlineHeroResult.HeroInfo}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineUserResult.UserInfo)
-          org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder {
+          // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineHeroResult.HeroInfo)
+          org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor;
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_fieldAccessorTable
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder.class);
+                  org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.class, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder.class);
         }
 
-        // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.newBuilder()
+        // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -3403,17 +3446,17 @@ public final class GameMessageProto {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor;
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_descriptor;
         }
 
         @java.lang.Override
-        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo getDefaultInstanceForType() {
-          return org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.getDefaultInstance();
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo getDefaultInstanceForType() {
+          return org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.getDefaultInstance();
         }
 
         @java.lang.Override
-        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo build() {
-          org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo result = buildPartial();
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo build() {
+          org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -3421,14 +3464,14 @@ public final class GameMessageProto {
         }
 
         @java.lang.Override
-        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo buildPartial() {
-          org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo result = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo(this);
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo buildPartial() {
+          org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo result = new org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo(this);
           if (bitField0_ != 0) { buildPartial0(result); }
           onBuilt();
           return result;
         }
 
-        private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo result) {
+        private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo result) {
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.userId_ = userId_;
@@ -3448,16 +3491,16 @@ public final class GameMessageProto {
 
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo) {
-            return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo)other);
+          if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo) {
+            return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo other) {
-          if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.getDefaultInstance()) return this;
+        public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo other) {
+          if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.getDefaultInstance()) return this;
           if (other.getUserId() != 0) {
             setUserId(other.getUserId());
           }
@@ -3665,15 +3708,15 @@ public final class GameMessageProto {
           return this;
         }
 
-        private org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState moveState_;
+        private org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState moveState_;
         private com.google.protobuf.SingleFieldBuilder<
-            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder> moveStateBuilder_;
+            org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveStateOrBuilder> moveStateBuilder_;
         /**
          * <pre>
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          * @return Whether the moveState field is set.
          */
         public boolean hasMoveState() {
@@ -3684,12 +3727,12 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          * @return The moveState.
          */
-        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState getMoveState() {
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState getMoveState() {
           if (moveStateBuilder_ == null) {
-            return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+            return moveState_ == null ? org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.getDefaultInstance() : moveState_;
           } else {
             return moveStateBuilder_.getMessage();
           }
@@ -3699,9 +3742,9 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          */
-        public Builder setMoveState(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState value) {
+        public Builder setMoveState(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState value) {
           if (moveStateBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -3719,10 +3762,10 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          */
         public Builder setMoveState(
-            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder builderForValue) {
+            org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.Builder builderForValue) {
           if (moveStateBuilder_ == null) {
             moveState_ = builderForValue.build();
           } else {
@@ -3737,13 +3780,13 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          */
-        public Builder mergeMoveState(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState value) {
+        public Builder mergeMoveState(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState value) {
           if (moveStateBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
               moveState_ != null &&
-              moveState_ != org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance()) {
+              moveState_ != org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.getDefaultInstance()) {
               getMoveStateBuilder().mergeFrom(value);
             } else {
               moveState_ = value;
@@ -3762,7 +3805,7 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          */
         public Builder clearMoveState() {
           bitField0_ = (bitField0_ & ~0x00000004);
@@ -3779,9 +3822,9 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          */
-        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder getMoveStateBuilder() {
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.Builder getMoveStateBuilder() {
           bitField0_ |= 0x00000004;
           onChanged();
           return getMoveStateFieldBuilder().getBuilder();
@@ -3791,14 +3834,14 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          */
-        public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder getMoveStateOrBuilder() {
+        public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveStateOrBuilder getMoveStateOrBuilder() {
           if (moveStateBuilder_ != null) {
             return moveStateBuilder_.getMessageOrBuilder();
           } else {
             return moveState_ == null ?
-                org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+                org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.getDefaultInstance() : moveState_;
           }
         }
         /**
@@ -3806,14 +3849,14 @@ public final class GameMessageProto {
          * 移动状态
          * </pre>
          *
-         * <code>.org.herostory.protobuf.OnlineUserResult.UserInfo.MoveState moveState = 3;</code>
+         * <code>.org.herostory.protobuf.OnlineHeroResult.HeroInfo.MoveState moveState = 3;</code>
          */
         private com.google.protobuf.SingleFieldBuilder<
-            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder> 
+            org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveStateOrBuilder> 
             getMoveStateFieldBuilder() {
           if (moveStateBuilder_ == null) {
             moveStateBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.MoveStateOrBuilder>(
+                org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.MoveStateOrBuilder>(
                     getMoveState(),
                     getParentForChildren(),
                     isClean());
@@ -3822,23 +3865,23 @@ public final class GameMessageProto {
           return moveStateBuilder_;
         }
 
-        // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineUserResult.UserInfo)
+        // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineHeroResult.HeroInfo)
       }
 
-      // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineUserResult.UserInfo)
-      private static final org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineHeroResult.HeroInfo)
+      private static final org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo();
+        DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo();
       }
 
-      public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo getDefaultInstance() {
+      public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<UserInfo>
-          PARSER = new com.google.protobuf.AbstractParser<UserInfo>() {
+      private static final com.google.protobuf.Parser<HeroInfo>
+          PARSER = new com.google.protobuf.AbstractParser<HeroInfo>() {
         @java.lang.Override
-        public UserInfo parsePartialFrom(
+        public HeroInfo parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3857,17 +3900,17 @@ public final class GameMessageProto {
         }
       };
 
-      public static com.google.protobuf.Parser<UserInfo> parser() {
+      public static com.google.protobuf.Parser<HeroInfo> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<UserInfo> getParserForType() {
+      public com.google.protobuf.Parser<HeroInfo> getParserForType() {
         return PARSER;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo getDefaultInstanceForType() {
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
@@ -3875,36 +3918,36 @@ public final class GameMessageProto {
 
     public static final int USERINFO_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo> userInfo_;
+    private java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo> userInfo_;
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo> getUserInfoList() {
+    public java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo> getUserInfoList() {
       return userInfo_;
     }
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder> 
+    public java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder> 
         getUserInfoOrBuilderList() {
       return userInfo_;
     }
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
     @java.lang.Override
     public int getUserInfoCount() {
@@ -3912,24 +3955,24 @@ public final class GameMessageProto {
     }
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo getUserInfo(int index) {
+    public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo getUserInfo(int index) {
       return userInfo_.get(index);
     }
     /**
      * <pre>
-     * 用户信息集合,相当于java中的 UserInfo[] userInfo
+     * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
      * </pre>
      *
-     * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+     * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
      */
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder getUserInfoOrBuilder(
+    public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder getUserInfoOrBuilder(
         int index) {
       return userInfo_.get(index);
     }
@@ -3974,10 +4017,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult other = (org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult) obj;
+      org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult other = (org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult) obj;
 
       if (!getUserInfoList()
           .equals(other.getUserInfoList())) return false;
@@ -4001,44 +4044,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4046,26 +4089,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4078,7 +4121,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4098,26 +4141,26 @@ public final class GameMessageProto {
      * 在线用户响应
      * </pre>
      *
-     * Protobuf type {@code org.herostory.protobuf.OnlineUserResult}
+     * Protobuf type {@code org.herostory.protobuf.OnlineHeroResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineUserResult)
-        org.herostory.protobuf.bean.GameMessageProto.OnlineUserResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.OnlineHeroResult)
+        org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.class, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.class, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.newBuilder()
       private Builder() {
 
       }
@@ -4144,17 +4187,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineUserResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_OnlineHeroResult_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult build() {
-        org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4162,15 +4205,15 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult result = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult(this);
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult result = new org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult result) {
+      private void buildPartialRepeatedFields(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult result) {
         if (userInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             userInfo_ = java.util.Collections.unmodifiableList(userInfo_);
@@ -4182,22 +4225,22 @@ public final class GameMessageProto {
         }
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult result) {
         int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.getDefaultInstance()) return this;
         if (userInfoBuilder_ == null) {
           if (!other.userInfo_.isEmpty()) {
             if (userInfo_.isEmpty()) {
@@ -4251,9 +4294,9 @@ public final class GameMessageProto {
                 done = true;
                 break;
               case 10: {
-                org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo m =
+                org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo m =
                     input.readMessage(
-                        org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.parser(),
+                        org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.parser(),
                         extensionRegistry);
                 if (userInfoBuilder_ == null) {
                   ensureUserInfoIsMutable();
@@ -4280,26 +4323,26 @@ public final class GameMessageProto {
       }
       private int bitField0_;
 
-      private java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo> userInfo_ =
+      private java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo> userInfo_ =
         java.util.Collections.emptyList();
       private void ensureUserInfoIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          userInfo_ = new java.util.ArrayList<org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo>(userInfo_);
+          userInfo_ = new java.util.ArrayList<org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo>(userInfo_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder> userInfoBuilder_;
+          org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder> userInfoBuilder_;
 
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo> getUserInfoList() {
+      public java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo> getUserInfoList() {
         if (userInfoBuilder_ == null) {
           return java.util.Collections.unmodifiableList(userInfo_);
         } else {
@@ -4308,10 +4351,10 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public int getUserInfoCount() {
         if (userInfoBuilder_ == null) {
@@ -4322,12 +4365,12 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo getUserInfo(int index) {
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo getUserInfo(int index) {
         if (userInfoBuilder_ == null) {
           return userInfo_.get(index);
         } else {
@@ -4336,13 +4379,13 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public Builder setUserInfo(
-          int index, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo value) {
+          int index, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo value) {
         if (userInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4357,13 +4400,13 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public Builder setUserInfo(
-          int index, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder builderForValue) {
+          int index, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder builderForValue) {
         if (userInfoBuilder_ == null) {
           ensureUserInfoIsMutable();
           userInfo_.set(index, builderForValue.build());
@@ -4375,12 +4418,12 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public Builder addUserInfo(org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo value) {
+      public Builder addUserInfo(org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo value) {
         if (userInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4395,13 +4438,13 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public Builder addUserInfo(
-          int index, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo value) {
+          int index, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo value) {
         if (userInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4416,13 +4459,13 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public Builder addUserInfo(
-          org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder builderForValue) {
+          org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder builderForValue) {
         if (userInfoBuilder_ == null) {
           ensureUserInfoIsMutable();
           userInfo_.add(builderForValue.build());
@@ -4434,13 +4477,13 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public Builder addUserInfo(
-          int index, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder builderForValue) {
+          int index, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder builderForValue) {
         if (userInfoBuilder_ == null) {
           ensureUserInfoIsMutable();
           userInfo_.add(index, builderForValue.build());
@@ -4452,13 +4495,13 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public Builder addAllUserInfo(
-          java.lang.Iterable<? extends org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo> values) {
+          java.lang.Iterable<? extends org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo> values) {
         if (userInfoBuilder_ == null) {
           ensureUserInfoIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4471,10 +4514,10 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public Builder clearUserInfo() {
         if (userInfoBuilder_ == null) {
@@ -4488,10 +4531,10 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
       public Builder removeUserInfo(int index) {
         if (userInfoBuilder_ == null) {
@@ -4505,23 +4548,23 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder getUserInfoBuilder(
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder getUserInfoBuilder(
           int index) {
         return getUserInfoFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder getUserInfoOrBuilder(
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder getUserInfoOrBuilder(
           int index) {
         if (userInfoBuilder_ == null) {
           return userInfo_.get(index);  } else {
@@ -4530,12 +4573,12 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder> 
+      public java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder> 
            getUserInfoOrBuilderList() {
         if (userInfoBuilder_ != null) {
           return userInfoBuilder_.getMessageOrBuilderList();
@@ -4545,44 +4588,44 @@ public final class GameMessageProto {
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder addUserInfoBuilder() {
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder addUserInfoBuilder() {
         return getUserInfoFieldBuilder().addBuilder(
-            org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.getDefaultInstance());
+            org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.getDefaultInstance());
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder addUserInfoBuilder(
+      public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder addUserInfoBuilder(
           int index) {
         return getUserInfoFieldBuilder().addBuilder(
-            index, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.getDefaultInstance());
+            index, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.getDefaultInstance());
       }
       /**
        * <pre>
-       * 用户信息集合,相当于java中的 UserInfo[] userInfo
+       * 英雄信息集合,相当于java中的 HeroInfo[] userInfo
        * </pre>
        *
-       * <code>repeated .org.herostory.protobuf.OnlineUserResult.UserInfo userInfo = 1;</code>
+       * <code>repeated .org.herostory.protobuf.OnlineHeroResult.HeroInfo userInfo = 1;</code>
        */
-      public java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder> 
+      public java.util.List<org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder> 
            getUserInfoBuilderList() {
         return getUserInfoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder> 
+          org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder> 
           getUserInfoFieldBuilder() {
         if (userInfoBuilder_ == null) {
           userInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfo.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult.UserInfoOrBuilder>(
+              org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfo.Builder, org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult.HeroInfoOrBuilder>(
                   userInfo_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -4592,23 +4635,23 @@ public final class GameMessageProto {
         return userInfoBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineUserResult)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.OnlineHeroResult)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineUserResult)
-    private static final org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.OnlineHeroResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<OnlineUserResult>
-        PARSER = new com.google.protobuf.AbstractParser<OnlineUserResult>() {
+    private static final com.google.protobuf.Parser<OnlineHeroResult>
+        PARSER = new com.google.protobuf.AbstractParser<OnlineHeroResult>() {
       @java.lang.Override
-      public OnlineUserResult parsePartialFrom(
+      public OnlineHeroResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4627,24 +4670,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<OnlineUserResult> parser() {
+    public static com.google.protobuf.Parser<OnlineHeroResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<OnlineUserResult> getParserForType() {
+    public com.google.protobuf.Parser<OnlineHeroResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.OnlineUserResult getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.OnlineHeroResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserMoveCmdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserMoveCmd)
+  public interface HeroMoveCmdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroMoveCmd)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4688,12 +4731,12 @@ public final class GameMessageProto {
    * 用户移动请求，从哪到哪
    * </pre>
    *
-   * Protobuf type {@code org.herostory.protobuf.UserMoveCmd}
+   * Protobuf type {@code org.herostory.protobuf.HeroMoveCmd}
    */
-  public static final class UserMoveCmd extends
+  public static final class HeroMoveCmd extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserMoveCmd)
-      UserMoveCmdOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroMoveCmd)
+      HeroMoveCmdOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -4702,26 +4745,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserMoveCmd.class.getName());
+        HeroMoveCmd.class.getName());
     }
-    // Use UserMoveCmd.newBuilder() to construct.
-    private UserMoveCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroMoveCmd.newBuilder() to construct.
+    private HeroMoveCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserMoveCmd() {
+    private HeroMoveCmd() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveCmd_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveCmd_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveCmd_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveCmd_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd.class, org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd.Builder.class);
     }
 
     public static final int MOVEFROMPOSX_FIELD_NUMBER = 1;
@@ -4841,10 +4884,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd other = (org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd other = (org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd) obj;
 
       if (java.lang.Float.floatToIntBits(getMoveFromPosX())
           != java.lang.Float.floatToIntBits(
@@ -4886,44 +4929,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4931,26 +4974,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4963,7 +5006,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4983,26 +5026,26 @@ public final class GameMessageProto {
      * 用户移动请求，从哪到哪
      * </pre>
      *
-     * Protobuf type {@code org.herostory.protobuf.UserMoveCmd}
+     * Protobuf type {@code org.herostory.protobuf.HeroMoveCmd}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserMoveCmd)
-        org.herostory.protobuf.bean.GameMessageProto.UserMoveCmdOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroMoveCmd)
+        org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveCmd_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveCmd_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveCmd_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd.class, org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd.newBuilder()
       private Builder() {
 
       }
@@ -5026,17 +5069,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveCmd_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5044,14 +5087,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd result = new org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd result = new org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.moveFromPosX_ = moveFromPosX_;
@@ -5069,16 +5112,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd.getDefaultInstance()) return this;
         if (other.getMoveFromPosX() != 0F) {
           setMoveFromPosX(other.getMoveFromPosX());
         }
@@ -5318,23 +5361,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserMoveCmd)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroMoveCmd)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserMoveCmd)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroMoveCmd)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserMoveCmd>
-        PARSER = new com.google.protobuf.AbstractParser<UserMoveCmd>() {
+    private static final com.google.protobuf.Parser<HeroMoveCmd>
+        PARSER = new com.google.protobuf.AbstractParser<HeroMoveCmd>() {
       @java.lang.Override
-      public UserMoveCmd parsePartialFrom(
+      public HeroMoveCmd parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5353,24 +5396,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserMoveCmd> parser() {
+    public static com.google.protobuf.Parser<HeroMoveCmd> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserMoveCmd> getParserForType() {
+    public com.google.protobuf.Parser<HeroMoveCmd> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserMoveCmd getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroMoveCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserMoveResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserMoveResult)
+  public interface HeroMoveResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroMoveResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5434,12 +5477,12 @@ public final class GameMessageProto {
     long getMoveStartTime();
   }
   /**
-   * Protobuf type {@code org.herostory.protobuf.UserMoveResult}
+   * Protobuf type {@code org.herostory.protobuf.HeroMoveResult}
    */
-  public static final class UserMoveResult extends
+  public static final class HeroMoveResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserMoveResult)
-      UserMoveResultOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroMoveResult)
+      HeroMoveResultOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -5448,26 +5491,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserMoveResult.class.getName());
+        HeroMoveResult.class.getName());
     }
-    // Use UserMoveResult.newBuilder() to construct.
-    private UserMoveResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroMoveResult.newBuilder() to construct.
+    private HeroMoveResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserMoveResult() {
+    private HeroMoveResult() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveResult_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveResult_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserMoveResult.class, org.herostory.protobuf.bean.GameMessageProto.UserMoveResult.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult.Builder.class);
     }
 
     public static final int MOVEUSERID_FIELD_NUMBER = 1;
@@ -5635,10 +5678,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserMoveResult)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserMoveResult other = (org.herostory.protobuf.bean.GameMessageProto.UserMoveResult) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult other = (org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult) obj;
 
       if (getMoveUserId()
           != other.getMoveUserId()) return false;
@@ -5689,44 +5732,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5734,26 +5777,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5766,7 +5809,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserMoveResult prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5782,26 +5825,26 @@ public final class GameMessageProto {
       return builder;
     }
     /**
-     * Protobuf type {@code org.herostory.protobuf.UserMoveResult}
+     * Protobuf type {@code org.herostory.protobuf.HeroMoveResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserMoveResult)
-        org.herostory.protobuf.bean.GameMessageProto.UserMoveResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroMoveResult)
+        org.herostory.protobuf.bean.GameMessageProto.HeroMoveResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveResult_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserMoveResult.class, org.herostory.protobuf.bean.GameMessageProto.UserMoveResult.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserMoveResult.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult.newBuilder()
       private Builder() {
 
       }
@@ -5827,17 +5870,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserMoveResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroMoveResult_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserMoveResult getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserMoveResult.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserMoveResult build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserMoveResult result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5845,14 +5888,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserMoveResult buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserMoveResult result = new org.herostory.protobuf.bean.GameMessageProto.UserMoveResult(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult result = new org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserMoveResult result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.moveUserId_ = moveUserId_;
@@ -5876,16 +5919,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserMoveResult) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserMoveResult)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserMoveResult other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserMoveResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult.getDefaultInstance()) return this;
         if (other.getMoveUserId() != 0) {
           setMoveUserId(other.getMoveUserId());
         }
@@ -6241,23 +6284,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserMoveResult)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroMoveResult)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserMoveResult)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserMoveResult DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroMoveResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserMoveResult();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserMoveResult getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserMoveResult>
-        PARSER = new com.google.protobuf.AbstractParser<UserMoveResult>() {
+    private static final com.google.protobuf.Parser<HeroMoveResult>
+        PARSER = new com.google.protobuf.AbstractParser<HeroMoveResult>() {
       @java.lang.Override
-      public UserMoveResult parsePartialFrom(
+      public HeroMoveResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6276,24 +6319,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserMoveResult> parser() {
+    public static com.google.protobuf.Parser<HeroMoveResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserMoveResult> getParserForType() {
+    public com.google.protobuf.Parser<HeroMoveResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserMoveResult getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroMoveResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserDisconnectResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserDisconnectResult)
+  public interface HeroDisconnectResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroDisconnectResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6311,12 +6354,12 @@ public final class GameMessageProto {
    * 用户断开连接响应
    * </pre>
    *
-   * Protobuf type {@code org.herostory.protobuf.UserDisconnectResult}
+   * Protobuf type {@code org.herostory.protobuf.HeroDisconnectResult}
    */
-  public static final class UserDisconnectResult extends
+  public static final class HeroDisconnectResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserDisconnectResult)
-      UserDisconnectResultOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroDisconnectResult)
+      HeroDisconnectResultOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -6325,26 +6368,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserDisconnectResult.class.getName());
+        HeroDisconnectResult.class.getName());
     }
-    // Use UserDisconnectResult.newBuilder() to construct.
-    private UserDisconnectResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroDisconnectResult.newBuilder() to construct.
+    private HeroDisconnectResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserDisconnectResult() {
+    private HeroDisconnectResult() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDisconnectResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDisconnectResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.class, org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult.Builder.class);
     }
 
     public static final int QUITUSERID_FIELD_NUMBER = 1;
@@ -6402,10 +6445,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult other = (org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult other = (org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult) obj;
 
       if (getQuitUserId()
           != other.getQuitUserId()) return false;
@@ -6427,44 +6470,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6472,26 +6515,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6504,7 +6547,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6524,26 +6567,26 @@ public final class GameMessageProto {
      * 用户断开连接响应
      * </pre>
      *
-     * Protobuf type {@code org.herostory.protobuf.UserDisconnectResult}
+     * Protobuf type {@code org.herostory.protobuf.HeroDisconnectResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserDisconnectResult)
-        org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroDisconnectResult)
+        org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDisconnectResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDisconnectResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.class, org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult.newBuilder()
       private Builder() {
 
       }
@@ -6564,17 +6607,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDisconnectResult_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6582,14 +6625,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult result = new org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult result = new org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.quitUserId_ = quitUserId_;
@@ -6598,16 +6641,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult.getDefaultInstance()) return this;
         if (other.getQuitUserId() != 0) {
           setQuitUserId(other.getQuitUserId());
         }
@@ -6703,23 +6746,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserDisconnectResult)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroDisconnectResult)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserDisconnectResult)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroDisconnectResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserDisconnectResult>
-        PARSER = new com.google.protobuf.AbstractParser<UserDisconnectResult>() {
+    private static final com.google.protobuf.Parser<HeroDisconnectResult>
+        PARSER = new com.google.protobuf.AbstractParser<HeroDisconnectResult>() {
       @java.lang.Override
-      public UserDisconnectResult parsePartialFrom(
+      public HeroDisconnectResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6738,33 +6781,33 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserDisconnectResult> parser() {
+    public static com.google.protobuf.Parser<HeroDisconnectResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserDisconnectResult> getParserForType() {
+    public com.google.protobuf.Parser<HeroDisconnectResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserDisconnectResult getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroDisconnectResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserStopCmdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserStopCmd)
+  public interface HeroStopCmdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroStopCmd)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
-   * Protobuf type {@code org.herostory.protobuf.UserStopCmd}
+   * Protobuf type {@code org.herostory.protobuf.HeroStopCmd}
    */
-  public static final class UserStopCmd extends
+  public static final class HeroStopCmd extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserStopCmd)
-      UserStopCmdOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroStopCmd)
+      HeroStopCmdOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -6773,26 +6816,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserStopCmd.class.getName());
+        HeroStopCmd.class.getName());
     }
-    // Use UserStopCmd.newBuilder() to construct.
-    private UserStopCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroStopCmd.newBuilder() to construct.
+    private HeroStopCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserStopCmd() {
+    private HeroStopCmd() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopCmd_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopCmd_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopCmd_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopCmd_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserStopCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserStopCmd.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd.class, org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6828,10 +6871,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserStopCmd)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserStopCmd other = (org.herostory.protobuf.bean.GameMessageProto.UserStopCmd) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd other = (org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd) obj;
 
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -6849,44 +6892,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6894,26 +6937,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6926,7 +6969,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserStopCmd prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6942,26 +6985,26 @@ public final class GameMessageProto {
       return builder;
     }
     /**
-     * Protobuf type {@code org.herostory.protobuf.UserStopCmd}
+     * Protobuf type {@code org.herostory.protobuf.HeroStopCmd}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserStopCmd)
-        org.herostory.protobuf.bean.GameMessageProto.UserStopCmdOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroStopCmd)
+        org.herostory.protobuf.bean.GameMessageProto.HeroStopCmdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopCmd_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopCmd_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopCmd_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserStopCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserStopCmd.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd.class, org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserStopCmd.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd.newBuilder()
       private Builder() {
 
       }
@@ -6980,17 +7023,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopCmd_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserStopCmd getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserStopCmd.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserStopCmd build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserStopCmd result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6998,24 +7041,24 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserStopCmd buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserStopCmd result = new org.herostory.protobuf.bean.GameMessageProto.UserStopCmd(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd result = new org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd(this);
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserStopCmd) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserStopCmd)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserStopCmd other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserStopCmd.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -7058,23 +7101,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserStopCmd)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroStopCmd)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserStopCmd)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserStopCmd DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroStopCmd)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserStopCmd();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopCmd getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserStopCmd>
-        PARSER = new com.google.protobuf.AbstractParser<UserStopCmd>() {
+    private static final com.google.protobuf.Parser<HeroStopCmd>
+        PARSER = new com.google.protobuf.AbstractParser<HeroStopCmd>() {
       @java.lang.Override
-      public UserStopCmd parsePartialFrom(
+      public HeroStopCmd parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7093,24 +7136,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserStopCmd> parser() {
+    public static com.google.protobuf.Parser<HeroStopCmd> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserStopCmd> getParserForType() {
+    public com.google.protobuf.Parser<HeroStopCmd> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserStopCmd getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroStopCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserStopResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserStopResult)
+  public interface HeroStopResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroStopResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -7144,12 +7187,12 @@ public final class GameMessageProto {
     float getStopAtPosY();
   }
   /**
-   * Protobuf type {@code org.herostory.protobuf.UserStopResult}
+   * Protobuf type {@code org.herostory.protobuf.HeroStopResult}
    */
-  public static final class UserStopResult extends
+  public static final class HeroStopResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserStopResult)
-      UserStopResultOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroStopResult)
+      HeroStopResultOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -7158,26 +7201,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserStopResult.class.getName());
+        HeroStopResult.class.getName());
     }
-    // Use UserStopResult.newBuilder() to construct.
-    private UserStopResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroStopResult.newBuilder() to construct.
+    private HeroStopResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserStopResult() {
+    private HeroStopResult() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopResult_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopResult_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserStopResult.class, org.herostory.protobuf.bean.GameMessageProto.UserStopResult.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroStopResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroStopResult.Builder.class);
     }
 
     public static final int STOPUSERID_FIELD_NUMBER = 1;
@@ -7279,10 +7322,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserStopResult)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroStopResult)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserStopResult other = (org.herostory.protobuf.bean.GameMessageProto.UserStopResult) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroStopResult other = (org.herostory.protobuf.bean.GameMessageProto.HeroStopResult) obj;
 
       if (getStopUserId()
           != other.getStopUserId()) return false;
@@ -7316,44 +7359,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7361,26 +7404,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7393,7 +7436,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserStopResult prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroStopResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7409,26 +7452,26 @@ public final class GameMessageProto {
       return builder;
     }
     /**
-     * Protobuf type {@code org.herostory.protobuf.UserStopResult}
+     * Protobuf type {@code org.herostory.protobuf.HeroStopResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserStopResult)
-        org.herostory.protobuf.bean.GameMessageProto.UserStopResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroStopResult)
+        org.herostory.protobuf.bean.GameMessageProto.HeroStopResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopResult_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserStopResult.class, org.herostory.protobuf.bean.GameMessageProto.UserStopResult.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroStopResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroStopResult.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserStopResult.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroStopResult.newBuilder()
       private Builder() {
 
       }
@@ -7451,17 +7494,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserStopResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroStopResult_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserStopResult getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserStopResult.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroStopResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroStopResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserStopResult build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserStopResult result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroStopResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroStopResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7469,14 +7512,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserStopResult buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserStopResult result = new org.herostory.protobuf.bean.GameMessageProto.UserStopResult(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroStopResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroStopResult result = new org.herostory.protobuf.bean.GameMessageProto.HeroStopResult(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserStopResult result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroStopResult result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.stopUserId_ = stopUserId_;
@@ -7491,16 +7534,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserStopResult) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserStopResult)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroStopResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroStopResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserStopResult other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserStopResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroStopResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroStopResult.getDefaultInstance()) return this;
         if (other.getStopUserId() != 0) {
           setStopUserId(other.getStopUserId());
         }
@@ -7700,23 +7743,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserStopResult)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroStopResult)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserStopResult)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserStopResult DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroStopResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroStopResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserStopResult();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroStopResult();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserStopResult getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroStopResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserStopResult>
-        PARSER = new com.google.protobuf.AbstractParser<UserStopResult>() {
+    private static final com.google.protobuf.Parser<HeroStopResult>
+        PARSER = new com.google.protobuf.AbstractParser<HeroStopResult>() {
       @java.lang.Override
-      public UserStopResult parsePartialFrom(
+      public HeroStopResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7735,24 +7778,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserStopResult> parser() {
+    public static com.google.protobuf.Parser<HeroStopResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserStopResult> getParserForType() {
+    public com.google.protobuf.Parser<HeroStopResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserStopResult getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroStopResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserAttackCmdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserAttackCmd)
+  public interface HeroAttackCmdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroAttackCmd)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -7766,12 +7809,12 @@ public final class GameMessageProto {
     int getTargetUserId();
   }
   /**
-   * Protobuf type {@code org.herostory.protobuf.UserAttackCmd}
+   * Protobuf type {@code org.herostory.protobuf.HeroAttackCmd}
    */
-  public static final class UserAttackCmd extends
+  public static final class HeroAttackCmd extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserAttackCmd)
-      UserAttackCmdOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroAttackCmd)
+      HeroAttackCmdOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -7780,26 +7823,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserAttackCmd.class.getName());
+        HeroAttackCmd.class.getName());
     }
-    // Use UserAttackCmd.newBuilder() to construct.
-    private UserAttackCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroAttackCmd.newBuilder() to construct.
+    private HeroAttackCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserAttackCmd() {
+    private HeroAttackCmd() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackCmd_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackCmd_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackCmd_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackCmd_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd.class, org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd.Builder.class);
     }
 
     public static final int TARGETUSERID_FIELD_NUMBER = 1;
@@ -7857,10 +7900,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd other = (org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd other = (org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd) obj;
 
       if (getTargetUserId()
           != other.getTargetUserId()) return false;
@@ -7882,44 +7925,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7927,26 +7970,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7959,7 +8002,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7975,26 +8018,26 @@ public final class GameMessageProto {
       return builder;
     }
     /**
-     * Protobuf type {@code org.herostory.protobuf.UserAttackCmd}
+     * Protobuf type {@code org.herostory.protobuf.HeroAttackCmd}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserAttackCmd)
-        org.herostory.protobuf.bean.GameMessageProto.UserAttackCmdOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroAttackCmd)
+        org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackCmd_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackCmd_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackCmd_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd.class, org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd.class, org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd.newBuilder()
       private Builder() {
 
       }
@@ -8015,17 +8058,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackCmd_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackCmd_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8033,14 +8076,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd result = new org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd result = new org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.targetUserId_ = targetUserId_;
@@ -8049,16 +8092,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd.getDefaultInstance()) return this;
         if (other.getTargetUserId() != 0) {
           setTargetUserId(other.getTargetUserId());
         }
@@ -8154,23 +8197,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserAttackCmd)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroAttackCmd)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserAttackCmd)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroAttackCmd)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserAttackCmd>
-        PARSER = new com.google.protobuf.AbstractParser<UserAttackCmd>() {
+    private static final com.google.protobuf.Parser<HeroAttackCmd>
+        PARSER = new com.google.protobuf.AbstractParser<HeroAttackCmd>() {
       @java.lang.Override
-      public UserAttackCmd parsePartialFrom(
+      public HeroAttackCmd parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8189,24 +8232,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserAttackCmd> parser() {
+    public static com.google.protobuf.Parser<HeroAttackCmd> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserAttackCmd> getParserForType() {
+    public com.google.protobuf.Parser<HeroAttackCmd> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserAttackCmd getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroAttackCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserAttackResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserAttackResult)
+  public interface HeroAttackResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroAttackResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -8230,12 +8273,12 @@ public final class GameMessageProto {
     int getTargetUserId();
   }
   /**
-   * Protobuf type {@code org.herostory.protobuf.UserAttackResult}
+   * Protobuf type {@code org.herostory.protobuf.HeroAttackResult}
    */
-  public static final class UserAttackResult extends
+  public static final class HeroAttackResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserAttackResult)
-      UserAttackResultOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroAttackResult)
+      HeroAttackResultOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -8244,26 +8287,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserAttackResult.class.getName());
+        HeroAttackResult.class.getName());
     }
-    // Use UserAttackResult.newBuilder() to construct.
-    private UserAttackResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroAttackResult.newBuilder() to construct.
+    private HeroAttackResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserAttackResult() {
+    private HeroAttackResult() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackResult_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackResult_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserAttackResult.class, org.herostory.protobuf.bean.GameMessageProto.UserAttackResult.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult.Builder.class);
     }
 
     public static final int ATTKUSERID_FIELD_NUMBER = 1;
@@ -8343,10 +8386,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserAttackResult)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserAttackResult other = (org.herostory.protobuf.bean.GameMessageProto.UserAttackResult) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult other = (org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult) obj;
 
       if (getAttkUserId()
           != other.getAttkUserId()) return false;
@@ -8372,44 +8415,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8417,26 +8460,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8449,7 +8492,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserAttackResult prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8465,26 +8508,26 @@ public final class GameMessageProto {
       return builder;
     }
     /**
-     * Protobuf type {@code org.herostory.protobuf.UserAttackResult}
+     * Protobuf type {@code org.herostory.protobuf.HeroAttackResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserAttackResult)
-        org.herostory.protobuf.bean.GameMessageProto.UserAttackResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroAttackResult)
+        org.herostory.protobuf.bean.GameMessageProto.HeroAttackResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackResult_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserAttackResult.class, org.herostory.protobuf.bean.GameMessageProto.UserAttackResult.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserAttackResult.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult.newBuilder()
       private Builder() {
 
       }
@@ -8506,17 +8549,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserAttackResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroAttackResult_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserAttackResult getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserAttackResult.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserAttackResult build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserAttackResult result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8524,14 +8567,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserAttackResult buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserAttackResult result = new org.herostory.protobuf.bean.GameMessageProto.UserAttackResult(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult result = new org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserAttackResult result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.attkUserId_ = attkUserId_;
@@ -8543,16 +8586,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserAttackResult) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserAttackResult)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserAttackResult other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserAttackResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult.getDefaultInstance()) return this;
         if (other.getAttkUserId() != 0) {
           setAttkUserId(other.getAttkUserId());
         }
@@ -8700,23 +8743,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserAttackResult)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroAttackResult)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserAttackResult)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserAttackResult DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroAttackResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserAttackResult();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserAttackResult getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserAttackResult>
-        PARSER = new com.google.protobuf.AbstractParser<UserAttackResult>() {
+    private static final com.google.protobuf.Parser<HeroAttackResult>
+        PARSER = new com.google.protobuf.AbstractParser<HeroAttackResult>() {
       @java.lang.Override
-      public UserAttackResult parsePartialFrom(
+      public HeroAttackResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8735,24 +8778,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserAttackResult> parser() {
+    public static com.google.protobuf.Parser<HeroAttackResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserAttackResult> getParserForType() {
+    public com.google.protobuf.Parser<HeroAttackResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserAttackResult getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroAttackResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserSubtractHpResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserSubtractHpResult)
+  public interface HeroSubtractHpResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroSubtractHpResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -8776,12 +8819,12 @@ public final class GameMessageProto {
     int getSubtractHp();
   }
   /**
-   * Protobuf type {@code org.herostory.protobuf.UserSubtractHpResult}
+   * Protobuf type {@code org.herostory.protobuf.HeroSubtractHpResult}
    */
-  public static final class UserSubtractHpResult extends
+  public static final class HeroSubtractHpResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserSubtractHpResult)
-      UserSubtractHpResultOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroSubtractHpResult)
+      HeroSubtractHpResultOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -8790,26 +8833,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserSubtractHpResult.class.getName());
+        HeroSubtractHpResult.class.getName());
     }
-    // Use UserSubtractHpResult.newBuilder() to construct.
-    private UserSubtractHpResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroSubtractHpResult.newBuilder() to construct.
+    private HeroSubtractHpResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserSubtractHpResult() {
+    private HeroSubtractHpResult() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserSubtractHpResult_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroSubtractHpResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserSubtractHpResult_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroSubtractHpResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult.class, org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult.Builder.class);
     }
 
     public static final int TARGETUSERID_FIELD_NUMBER = 1;
@@ -8889,10 +8932,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult other = (org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult other = (org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult) obj;
 
       if (getTargetUserId()
           != other.getTargetUserId()) return false;
@@ -8918,44 +8961,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8963,26 +9006,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8995,7 +9038,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9011,26 +9054,26 @@ public final class GameMessageProto {
       return builder;
     }
     /**
-     * Protobuf type {@code org.herostory.protobuf.UserSubtractHpResult}
+     * Protobuf type {@code org.herostory.protobuf.HeroSubtractHpResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserSubtractHpResult)
-        org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroSubtractHpResult)
+        org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserSubtractHpResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroSubtractHpResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserSubtractHpResult_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroSubtractHpResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult.class, org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult.newBuilder()
       private Builder() {
 
       }
@@ -9052,17 +9095,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserSubtractHpResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroSubtractHpResult_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9070,14 +9113,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult result = new org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult result = new org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.targetUserId_ = targetUserId_;
@@ -9089,16 +9132,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult.getDefaultInstance()) return this;
         if (other.getTargetUserId() != 0) {
           setTargetUserId(other.getTargetUserId());
         }
@@ -9246,23 +9289,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserSubtractHpResult)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroSubtractHpResult)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserSubtractHpResult)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroSubtractHpResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserSubtractHpResult>
-        PARSER = new com.google.protobuf.AbstractParser<UserSubtractHpResult>() {
+    private static final com.google.protobuf.Parser<HeroSubtractHpResult>
+        PARSER = new com.google.protobuf.AbstractParser<HeroSubtractHpResult>() {
       @java.lang.Override
-      public UserSubtractHpResult parsePartialFrom(
+      public HeroSubtractHpResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9281,24 +9324,24 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserSubtractHpResult> parser() {
+    public static com.google.protobuf.Parser<HeroSubtractHpResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserSubtractHpResult> getParserForType() {
+    public com.google.protobuf.Parser<HeroSubtractHpResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserSubtractHpResult getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroSubtractHpResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UserDieResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.UserDieResult)
+  public interface HeroDieResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.HeroDieResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -9312,12 +9355,12 @@ public final class GameMessageProto {
     int getTargetUserId();
   }
   /**
-   * Protobuf type {@code org.herostory.protobuf.UserDieResult}
+   * Protobuf type {@code org.herostory.protobuf.HeroDieResult}
    */
-  public static final class UserDieResult extends
+  public static final class HeroDieResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.UserDieResult)
-      UserDieResultOrBuilder {
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.HeroDieResult)
+      HeroDieResultOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -9326,26 +9369,26 @@ public final class GameMessageProto {
         /* minor= */ 29,
         /* patch= */ 1,
         /* suffix= */ "",
-        UserDieResult.class.getName());
+        HeroDieResult.class.getName());
     }
-    // Use UserDieResult.newBuilder() to construct.
-    private UserDieResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use HeroDieResult.newBuilder() to construct.
+    private HeroDieResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UserDieResult() {
+    private HeroDieResult() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDieResult_descriptor;
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDieResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDieResult_fieldAccessorTable
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDieResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.herostory.protobuf.bean.GameMessageProto.UserDieResult.class, org.herostory.protobuf.bean.GameMessageProto.UserDieResult.Builder.class);
+              org.herostory.protobuf.bean.GameMessageProto.HeroDieResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroDieResult.Builder.class);
     }
 
     public static final int TARGETUSERID_FIELD_NUMBER = 1;
@@ -9403,10 +9446,10 @@ public final class GameMessageProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.UserDieResult)) {
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.HeroDieResult)) {
         return super.equals(obj);
       }
-      org.herostory.protobuf.bean.GameMessageProto.UserDieResult other = (org.herostory.protobuf.bean.GameMessageProto.UserDieResult) obj;
+      org.herostory.protobuf.bean.GameMessageProto.HeroDieResult other = (org.herostory.protobuf.bean.GameMessageProto.HeroDieResult) obj;
 
       if (getTargetUserId()
           != other.getTargetUserId()) return false;
@@ -9428,44 +9471,44 @@ public final class GameMessageProto {
       return hash;
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(byte[] data)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9473,26 +9516,26 @@ public final class GameMessageProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseDelimitedFrom(java.io.InputStream input)
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseDelimitedFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult parseFrom(
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9505,7 +9548,7 @@ public final class GameMessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.UserDieResult prototype) {
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.HeroDieResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9521,26 +9564,26 @@ public final class GameMessageProto {
       return builder;
     }
     /**
-     * Protobuf type {@code org.herostory.protobuf.UserDieResult}
+     * Protobuf type {@code org.herostory.protobuf.HeroDieResult}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.UserDieResult)
-        org.herostory.protobuf.bean.GameMessageProto.UserDieResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.HeroDieResult)
+        org.herostory.protobuf.bean.GameMessageProto.HeroDieResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDieResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDieResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDieResult_fieldAccessorTable
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDieResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.herostory.protobuf.bean.GameMessageProto.UserDieResult.class, org.herostory.protobuf.bean.GameMessageProto.UserDieResult.Builder.class);
+                org.herostory.protobuf.bean.GameMessageProto.HeroDieResult.class, org.herostory.protobuf.bean.GameMessageProto.HeroDieResult.Builder.class);
       }
 
-      // Construct using org.herostory.protobuf.bean.GameMessageProto.UserDieResult.newBuilder()
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.HeroDieResult.newBuilder()
       private Builder() {
 
       }
@@ -9561,17 +9604,17 @@ public final class GameMessageProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_UserDieResult_descriptor;
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_HeroDieResult_descriptor;
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserDieResult getDefaultInstanceForType() {
-        return org.herostory.protobuf.bean.GameMessageProto.UserDieResult.getDefaultInstance();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroDieResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.HeroDieResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserDieResult build() {
-        org.herostory.protobuf.bean.GameMessageProto.UserDieResult result = buildPartial();
+      public org.herostory.protobuf.bean.GameMessageProto.HeroDieResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroDieResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9579,14 +9622,14 @@ public final class GameMessageProto {
       }
 
       @java.lang.Override
-      public org.herostory.protobuf.bean.GameMessageProto.UserDieResult buildPartial() {
-        org.herostory.protobuf.bean.GameMessageProto.UserDieResult result = new org.herostory.protobuf.bean.GameMessageProto.UserDieResult(this);
+      public org.herostory.protobuf.bean.GameMessageProto.HeroDieResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.HeroDieResult result = new org.herostory.protobuf.bean.GameMessageProto.HeroDieResult(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.UserDieResult result) {
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.HeroDieResult result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.targetUserId_ = targetUserId_;
@@ -9595,16 +9638,16 @@ public final class GameMessageProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.UserDieResult) {
-          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.UserDieResult)other);
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.HeroDieResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.HeroDieResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.UserDieResult other) {
-        if (other == org.herostory.protobuf.bean.GameMessageProto.UserDieResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.HeroDieResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.HeroDieResult.getDefaultInstance()) return this;
         if (other.getTargetUserId() != 0) {
           setTargetUserId(other.getTargetUserId());
         }
@@ -9700,23 +9743,23 @@ public final class GameMessageProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.UserDieResult)
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.HeroDieResult)
     }
 
-    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.UserDieResult)
-    private static final org.herostory.protobuf.bean.GameMessageProto.UserDieResult DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.HeroDieResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.HeroDieResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.UserDieResult();
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.HeroDieResult();
     }
 
-    public static org.herostory.protobuf.bean.GameMessageProto.UserDieResult getDefaultInstance() {
+    public static org.herostory.protobuf.bean.GameMessageProto.HeroDieResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserDieResult>
-        PARSER = new com.google.protobuf.AbstractParser<UserDieResult>() {
+    private static final com.google.protobuf.Parser<HeroDieResult>
+        PARSER = new com.google.protobuf.AbstractParser<HeroDieResult>() {
       @java.lang.Override
-      public UserDieResult parsePartialFrom(
+      public HeroDieResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9735,17 +9778,17 @@ public final class GameMessageProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UserDieResult> parser() {
+    public static com.google.protobuf.Parser<HeroDieResult> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserDieResult> getParserForType() {
+    public com.google.protobuf.Parser<HeroDieResult> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.herostory.protobuf.bean.GameMessageProto.UserDieResult getDefaultInstanceForType() {
+    public org.herostory.protobuf.bean.GameMessageProto.HeroDieResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11308,81 +11351,1182 @@ public final class GameMessageProto {
 
   }
 
+  public interface SelectHeroCmdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.SelectHeroCmd)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 英雄形象
+     * </pre>
+     *
+     * <code>string heroAvatar = 1;</code>
+     * @return The heroAvatar.
+     */
+    java.lang.String getHeroAvatar();
+    /**
+     * <pre>
+     * 英雄形象
+     * </pre>
+     *
+     * <code>string heroAvatar = 1;</code>
+     * @return The bytes for heroAvatar.
+     */
+    com.google.protobuf.ByteString
+        getHeroAvatarBytes();
+  }
+  /**
+   * Protobuf type {@code org.herostory.protobuf.SelectHeroCmd}
+   */
+  public static final class SelectHeroCmd extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.SelectHeroCmd)
+      SelectHeroCmdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SelectHeroCmd.class.getName());
+    }
+    // Use SelectHeroCmd.newBuilder() to construct.
+    private SelectHeroCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private SelectHeroCmd() {
+      heroAvatar_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroCmd_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroCmd_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd.class, org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd.Builder.class);
+    }
+
+    public static final int HEROAVATAR_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object heroAvatar_ = "";
+    /**
+     * <pre>
+     * 英雄形象
+     * </pre>
+     *
+     * <code>string heroAvatar = 1;</code>
+     * @return The heroAvatar.
+     */
+    @java.lang.Override
+    public java.lang.String getHeroAvatar() {
+      java.lang.Object ref = heroAvatar_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        heroAvatar_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 英雄形象
+     * </pre>
+     *
+     * <code>string heroAvatar = 1;</code>
+     * @return The bytes for heroAvatar.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHeroAvatarBytes() {
+      java.lang.Object ref = heroAvatar_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        heroAvatar_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(heroAvatar_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, heroAvatar_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(heroAvatar_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, heroAvatar_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd)) {
+        return super.equals(obj);
+      }
+      org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd other = (org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd) obj;
+
+      if (!getHeroAvatar()
+          .equals(other.getHeroAvatar())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getHeroAvatar().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.herostory.protobuf.SelectHeroCmd}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.SelectHeroCmd)
+        org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroCmd_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroCmd_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd.class, org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd.Builder.class);
+      }
+
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        heroAvatar_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroCmd_descriptor;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd build() {
+        org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd result = new org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.heroAvatar_ = heroAvatar_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd.getDefaultInstance()) return this;
+        if (!other.getHeroAvatar().isEmpty()) {
+          heroAvatar_ = other.heroAvatar_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                heroAvatar_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object heroAvatar_ = "";
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @return The heroAvatar.
+       */
+      public java.lang.String getHeroAvatar() {
+        java.lang.Object ref = heroAvatar_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          heroAvatar_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @return The bytes for heroAvatar.
+       */
+      public com.google.protobuf.ByteString
+          getHeroAvatarBytes() {
+        java.lang.Object ref = heroAvatar_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          heroAvatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @param value The heroAvatar to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeroAvatar(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        heroAvatar_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeroAvatar() {
+        heroAvatar_ = getDefaultInstance().getHeroAvatar();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @param value The bytes for heroAvatar to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeroAvatarBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        heroAvatar_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.SelectHeroCmd)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.SelectHeroCmd)
+    private static final org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd();
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SelectHeroCmd>
+        PARSER = new com.google.protobuf.AbstractParser<SelectHeroCmd>() {
+      @java.lang.Override
+      public SelectHeroCmd parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<SelectHeroCmd> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SelectHeroCmd> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.herostory.protobuf.bean.GameMessageProto.SelectHeroCmd getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SelectHeroResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.SelectHeroResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 英雄形象,
+     * 如果是空字符串则说明失败
+     * </pre>
+     *
+     * <code>string heroAvatar = 1;</code>
+     * @return The heroAvatar.
+     */
+    java.lang.String getHeroAvatar();
+    /**
+     * <pre>
+     * 英雄形象,
+     * 如果是空字符串则说明失败
+     * </pre>
+     *
+     * <code>string heroAvatar = 1;</code>
+     * @return The bytes for heroAvatar.
+     */
+    com.google.protobuf.ByteString
+        getHeroAvatarBytes();
+  }
+  /**
+   * Protobuf type {@code org.herostory.protobuf.SelectHeroResult}
+   */
+  public static final class SelectHeroResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.SelectHeroResult)
+      SelectHeroResultOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SelectHeroResult.class.getName());
+    }
+    // Use SelectHeroResult.newBuilder() to construct.
+    private SelectHeroResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private SelectHeroResult() {
+      heroAvatar_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult.class, org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult.Builder.class);
+    }
+
+    public static final int HEROAVATAR_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object heroAvatar_ = "";
+    /**
+     * <pre>
+     * 英雄形象,
+     * 如果是空字符串则说明失败
+     * </pre>
+     *
+     * <code>string heroAvatar = 1;</code>
+     * @return The heroAvatar.
+     */
+    @java.lang.Override
+    public java.lang.String getHeroAvatar() {
+      java.lang.Object ref = heroAvatar_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        heroAvatar_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 英雄形象,
+     * 如果是空字符串则说明失败
+     * </pre>
+     *
+     * <code>string heroAvatar = 1;</code>
+     * @return The bytes for heroAvatar.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHeroAvatarBytes() {
+      java.lang.Object ref = heroAvatar_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        heroAvatar_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(heroAvatar_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, heroAvatar_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(heroAvatar_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, heroAvatar_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult)) {
+        return super.equals(obj);
+      }
+      org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult other = (org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult) obj;
+
+      if (!getHeroAvatar()
+          .equals(other.getHeroAvatar())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getHeroAvatar().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.herostory.protobuf.SelectHeroResult}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.SelectHeroResult)
+        org.herostory.protobuf.bean.GameMessageProto.SelectHeroResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult.class, org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult.Builder.class);
+      }
+
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        heroAvatar_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_SelectHeroResult_descriptor;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult result = new org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.heroAvatar_ = heroAvatar_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult.getDefaultInstance()) return this;
+        if (!other.getHeroAvatar().isEmpty()) {
+          heroAvatar_ = other.heroAvatar_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                heroAvatar_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object heroAvatar_ = "";
+      /**
+       * <pre>
+       * 英雄形象,
+       * 如果是空字符串则说明失败
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @return The heroAvatar.
+       */
+      public java.lang.String getHeroAvatar() {
+        java.lang.Object ref = heroAvatar_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          heroAvatar_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 英雄形象,
+       * 如果是空字符串则说明失败
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @return The bytes for heroAvatar.
+       */
+      public com.google.protobuf.ByteString
+          getHeroAvatarBytes() {
+        java.lang.Object ref = heroAvatar_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          heroAvatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 英雄形象,
+       * 如果是空字符串则说明失败
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @param value The heroAvatar to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeroAvatar(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        heroAvatar_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 英雄形象,
+       * 如果是空字符串则说明失败
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeroAvatar() {
+        heroAvatar_ = getDefaultInstance().getHeroAvatar();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 英雄形象,
+       * 如果是空字符串则说明失败
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       * @param value The bytes for heroAvatar to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeroAvatarBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        heroAvatar_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.SelectHeroResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.SelectHeroResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult();
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SelectHeroResult>
+        PARSER = new com.google.protobuf.AbstractParser<SelectHeroResult>() {
+      @java.lang.Override
+      public SelectHeroResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<SelectHeroResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SelectHeroResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.herostory.protobuf.bean.GameMessageProto.SelectHeroResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserLoginCmd_descriptor;
+    internal_static_org_herostory_protobuf_HeroEntryCmd_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserLoginCmd_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroEntryCmd_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserLoginResult_descriptor;
+    internal_static_org_herostory_protobuf_HeroEntryResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserLoginResult_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroEntryResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_OnlineUserCmd_descriptor;
+    internal_static_org_herostory_protobuf_OnlineHeroCmd_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_OnlineUserCmd_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_OnlineHeroCmd_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_OnlineUserResult_descriptor;
+    internal_static_org_herostory_protobuf_OnlineHeroResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_OnlineUserResult_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_OnlineHeroResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor;
+    internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor;
+    internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserMoveCmd_descriptor;
+    internal_static_org_herostory_protobuf_HeroMoveCmd_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserMoveCmd_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroMoveCmd_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserMoveResult_descriptor;
+    internal_static_org_herostory_protobuf_HeroMoveResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserMoveResult_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroMoveResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor;
+    internal_static_org_herostory_protobuf_HeroDisconnectResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroDisconnectResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserStopCmd_descriptor;
+    internal_static_org_herostory_protobuf_HeroStopCmd_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserStopCmd_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroStopCmd_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserStopResult_descriptor;
+    internal_static_org_herostory_protobuf_HeroStopResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserStopResult_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroStopResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserAttackCmd_descriptor;
+    internal_static_org_herostory_protobuf_HeroAttackCmd_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserAttackCmd_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroAttackCmd_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserAttackResult_descriptor;
+    internal_static_org_herostory_protobuf_HeroAttackResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserAttackResult_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroAttackResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserSubtractHpResult_descriptor;
+    internal_static_org_herostory_protobuf_HeroSubtractHpResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserSubtractHpResult_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroSubtractHpResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_herostory_protobuf_UserDieResult_descriptor;
+    internal_static_org_herostory_protobuf_HeroDieResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_herostory_protobuf_UserDieResult_fieldAccessorTable;
+      internal_static_org_herostory_protobuf_HeroDieResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_herostory_protobuf_HeroLoginCmd_descriptor;
   private static final 
@@ -11393,6 +12537,16 @@ public final class GameMessageProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_herostory_protobuf_HeroLoginResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_herostory_protobuf_SelectHeroCmd_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_herostory_protobuf_SelectHeroCmd_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_herostory_protobuf_SelectHeroResult_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_herostory_protobuf_SelectHeroResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -11403,139 +12557,142 @@ public final class GameMessageProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026GameMessageProto.proto\022\026org.herostory." +
-      "protobuf\"2\n\014UserLoginCmd\022\016\n\006userId\030\001 \001(\r" +
-      "\022\022\n\nheroAvatar\030\002 \001(\t\"5\n\017UserLoginResult\022" +
+      "protobuf\"2\n\014HeroEntryCmd\022\016\n\006userId\030\001 \001(\r" +
+      "\022\022\n\nheroAvatar\030\002 \001(\t\"5\n\017HeroEntryResult\022" +
       "\016\n\006userId\030\001 \001(\r\022\022\n\nheroAvatar\030\002 \001(\t\"\017\n\rO" +
-      "nlineUserCmd\"\274\002\n\020OnlineUserResult\022C\n\010use" +
+      "nlineHeroCmd\"\274\002\n\020OnlineHeroResult\022C\n\010use" +
       "rInfo\030\001 \003(\01321.org.herostory.protobuf.Onl" +
-      "ineUserResult.UserInfo\032\342\001\n\010UserInfo\022\016\n\006u" +
+      "ineHeroResult.HeroInfo\032\342\001\n\010HeroInfo\022\016\n\006u" +
       "serId\030\001 \001(\r\022\022\n\nheroAvatar\030\002 \001(\t\022N\n\tmoveS" +
       "tate\030\003 \001(\0132;.org.herostory.protobuf.Onli" +
-      "neUserResult.UserInfo.MoveState\032b\n\tMoveS" +
+      "neHeroResult.HeroInfo.MoveState\032b\n\tMoveS" +
       "tate\022\020\n\010fromPosX\030\001 \001(\002\022\020\n\010fromPosY\030\002 \001(\002" +
       "\022\016\n\006toPosX\030\003 \001(\002\022\016\n\006toPosY\030\004 \001(\002\022\021\n\tstar" +
-      "tTime\030\005 \001(\004\"a\n\013UserMoveCmd\022\024\n\014moveFromPo" +
+      "tTime\030\005 \001(\004\"a\n\013HeroMoveCmd\022\024\n\014moveFromPo" +
       "sX\030\001 \001(\002\022\024\n\014moveFromPosY\030\002 \001(\002\022\022\n\nmoveTo" +
-      "PosX\030\003 \001(\002\022\022\n\nmoveToPosY\030\004 \001(\002\"\217\001\n\016UserM" +
+      "PosX\030\003 \001(\002\022\022\n\nmoveToPosY\030\004 \001(\002\"\217\001\n\016HeroM" +
       "oveResult\022\022\n\nmoveUserId\030\001 \001(\r\022\024\n\014moveFro" +
       "mPosX\030\002 \001(\002\022\024\n\014moveFromPosY\030\003 \001(\002\022\022\n\nmov" +
       "eToPosX\030\004 \001(\002\022\022\n\nmoveToPosY\030\005 \001(\002\022\025\n\rmov" +
-      "eStartTime\030\006 \001(\004\"*\n\024UserDisconnectResult" +
-      "\022\022\n\nquitUserId\030\001 \001(\r\"\r\n\013UserStopCmd\"L\n\016U" +
-      "serStopResult\022\022\n\nstopUserId\030\001 \001(\r\022\022\n\nsto" +
-      "pAtPosX\030\002 \001(\002\022\022\n\nstopAtPosY\030\003 \001(\002\"%\n\rUse" +
-      "rAttackCmd\022\024\n\014targetUserId\030\001 \001(\r\"<\n\020User" +
+      "eStartTime\030\006 \001(\004\"*\n\024HeroDisconnectResult" +
+      "\022\022\n\nquitUserId\030\001 \001(\r\"\r\n\013HeroStopCmd\"L\n\016H" +
+      "eroStopResult\022\022\n\nstopUserId\030\001 \001(\r\022\022\n\nsto" +
+      "pAtPosX\030\002 \001(\002\022\022\n\nstopAtPosY\030\003 \001(\002\"%\n\rHer" +
+      "oAttackCmd\022\024\n\014targetUserId\030\001 \001(\r\"<\n\020Hero" +
       "AttackResult\022\022\n\nattkUserId\030\001 \001(\r\022\024\n\014targ" +
-      "etUserId\030\002 \001(\r\"@\n\024UserSubtractHpResult\022\024" +
+      "etUserId\030\002 \001(\r\"@\n\024HeroSubtractHpResult\022\024" +
       "\n\014targetUserId\030\001 \001(\r\022\022\n\nsubtractHp\030\002 \001(\r" +
-      "\"%\n\rUserDieResult\022\024\n\014targetUserId\030\001 \001(\r\"" +
+      "\"%\n\rHeroDieResult\022\024\n\014targetUserId\030\001 \001(\r\"" +
       "2\n\014HeroLoginCmd\022\020\n\010userName\030\001 \001(\t\022\020\n\010pas" +
       "sword\030\002 \001(\t\"G\n\017HeroLoginResult\022\016\n\006userId" +
       "\030\001 \001(\r\022\020\n\010userName\030\002 \001(\t\022\022\n\nheroAvatar\030\003" +
-      " \001(\t*\333\002\n\tGameMsgId\022\022\n\016USER_LOGIN_CMD\020\000\022\025" +
-      "\n\021USER_LOGIN_RESULT\020\001\022\023\n\017ONLINE_USER_CMD" +
-      "\020\002\022\026\n\022ONLINE_USER_RESULT\020\003\022\021\n\rUSER_MOVE_" +
-      "CMD\020\004\022\024\n\020USER_MOVE_RESULT\020\005\022\032\n\026USER_DISC" +
-      "ONNECT_RESULT\020\006\022\021\n\rUSER_STOP_CMD\020\007\022\024\n\020US" +
-      "ER_STOP_RESULT\020\010\022\023\n\017USER_ATTACK_CMD\020\t\022\026\n" +
-      "\022USER_ATTACK_RESULT\020\n\022\033\n\027USER_SUBTRACT_H" +
-      "P_RESULT\020\013\022\023\n\017USER_DIE_RESULT\020\014\022\022\n\016HERO_" +
-      "LOGIN_CMD\020\r\022\025\n\021HERO_LOGIN_RESULT\020\016B\035\n\033or" +
-      "g.herostory.protobuf.beanb\006proto3"
+      " \001(\t\"#\n\rSelectHeroCmd\022\022\n\nheroAvatar\030\001 \001(" +
+      "\t\"&\n\020SelectHeroResult\022\022\n\nheroAvatar\030\001 \001(" +
+      "\t*\210\003\n\tGameCmdId\022\022\n\016HERO_ENTRY_CMD\020\000\022\025\n\021H" +
+      "ERO_ENTRY_RESULT\020\001\022\023\n\017ONLINE_HERO_CMD\020\002\022" +
+      "\026\n\022ONLINE_HERO_RESULT\020\003\022\021\n\rHERO_MOVE_CMD" +
+      "\020\004\022\024\n\020HERO_MOVE_RESULT\020\005\022\032\n\026HERO_DISCONN" +
+      "ECT_RESULT\020\006\022\021\n\rHERO_STOP_CMD\020\007\022\024\n\020HERO_" +
+      "STOP_RESULT\020\010\022\023\n\017HERO_ATTACK_CMD\020\t\022\026\n\022HE" +
+      "RO_ATTACK_RESULT\020\n\022\033\n\027HERO_SUBTRACT_HP_R" +
+      "ESULT\020\013\022\023\n\017HERO_DIE_RESULT\020\014\022\022\n\016HERO_LOG" +
+      "IN_CMD\020\r\022\025\n\021HERO_LOGIN_RESULT\020\016\022\023\n\017SELEC" +
+      "T_HERO_CMD\020\017\022\026\n\022SELECT_HERO_RESULT\020\020B\035\n\033" +
+      "org.herostory.protobuf.beanb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_org_herostory_protobuf_UserLoginCmd_descriptor =
+    internal_static_org_herostory_protobuf_HeroEntryCmd_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_org_herostory_protobuf_UserLoginCmd_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroEntryCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserLoginCmd_descriptor,
+        internal_static_org_herostory_protobuf_HeroEntryCmd_descriptor,
         new java.lang.String[] { "UserId", "HeroAvatar", });
-    internal_static_org_herostory_protobuf_UserLoginResult_descriptor =
+    internal_static_org_herostory_protobuf_HeroEntryResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_org_herostory_protobuf_UserLoginResult_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroEntryResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserLoginResult_descriptor,
+        internal_static_org_herostory_protobuf_HeroEntryResult_descriptor,
         new java.lang.String[] { "UserId", "HeroAvatar", });
-    internal_static_org_herostory_protobuf_OnlineUserCmd_descriptor =
+    internal_static_org_herostory_protobuf_OnlineHeroCmd_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_org_herostory_protobuf_OnlineUserCmd_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_OnlineHeroCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_OnlineUserCmd_descriptor,
+        internal_static_org_herostory_protobuf_OnlineHeroCmd_descriptor,
         new java.lang.String[] { });
-    internal_static_org_herostory_protobuf_OnlineUserResult_descriptor =
+    internal_static_org_herostory_protobuf_OnlineHeroResult_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_org_herostory_protobuf_OnlineUserResult_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_OnlineHeroResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_OnlineUserResult_descriptor,
+        internal_static_org_herostory_protobuf_OnlineHeroResult_descriptor,
         new java.lang.String[] { "UserInfo", });
-    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor =
-      internal_static_org_herostory_protobuf_OnlineUserResult_descriptor.getNestedTypes().get(0);
-    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_descriptor =
+      internal_static_org_herostory_protobuf_OnlineHeroResult_descriptor.getNestedTypes().get(0);
+    internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor,
+        internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_descriptor,
         new java.lang.String[] { "UserId", "HeroAvatar", "MoveState", });
-    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor =
-      internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_descriptor.getNestedTypes().get(0);
-    internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_descriptor =
+      internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_descriptor.getNestedTypes().get(0);
+    internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_OnlineUserResult_UserInfo_MoveState_descriptor,
+        internal_static_org_herostory_protobuf_OnlineHeroResult_HeroInfo_MoveState_descriptor,
         new java.lang.String[] { "FromPosX", "FromPosY", "ToPosX", "ToPosY", "StartTime", });
-    internal_static_org_herostory_protobuf_UserMoveCmd_descriptor =
+    internal_static_org_herostory_protobuf_HeroMoveCmd_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_org_herostory_protobuf_UserMoveCmd_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroMoveCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserMoveCmd_descriptor,
+        internal_static_org_herostory_protobuf_HeroMoveCmd_descriptor,
         new java.lang.String[] { "MoveFromPosX", "MoveFromPosY", "MoveToPosX", "MoveToPosY", });
-    internal_static_org_herostory_protobuf_UserMoveResult_descriptor =
+    internal_static_org_herostory_protobuf_HeroMoveResult_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_org_herostory_protobuf_UserMoveResult_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroMoveResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserMoveResult_descriptor,
+        internal_static_org_herostory_protobuf_HeroMoveResult_descriptor,
         new java.lang.String[] { "MoveUserId", "MoveFromPosX", "MoveFromPosY", "MoveToPosX", "MoveToPosY", "MoveStartTime", });
-    internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor =
+    internal_static_org_herostory_protobuf_HeroDisconnectResult_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_org_herostory_protobuf_UserDisconnectResult_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroDisconnectResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserDisconnectResult_descriptor,
+        internal_static_org_herostory_protobuf_HeroDisconnectResult_descriptor,
         new java.lang.String[] { "QuitUserId", });
-    internal_static_org_herostory_protobuf_UserStopCmd_descriptor =
+    internal_static_org_herostory_protobuf_HeroStopCmd_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_org_herostory_protobuf_UserStopCmd_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroStopCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserStopCmd_descriptor,
+        internal_static_org_herostory_protobuf_HeroStopCmd_descriptor,
         new java.lang.String[] { });
-    internal_static_org_herostory_protobuf_UserStopResult_descriptor =
+    internal_static_org_herostory_protobuf_HeroStopResult_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_org_herostory_protobuf_UserStopResult_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroStopResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserStopResult_descriptor,
+        internal_static_org_herostory_protobuf_HeroStopResult_descriptor,
         new java.lang.String[] { "StopUserId", "StopAtPosX", "StopAtPosY", });
-    internal_static_org_herostory_protobuf_UserAttackCmd_descriptor =
+    internal_static_org_herostory_protobuf_HeroAttackCmd_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_org_herostory_protobuf_UserAttackCmd_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroAttackCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserAttackCmd_descriptor,
+        internal_static_org_herostory_protobuf_HeroAttackCmd_descriptor,
         new java.lang.String[] { "TargetUserId", });
-    internal_static_org_herostory_protobuf_UserAttackResult_descriptor =
+    internal_static_org_herostory_protobuf_HeroAttackResult_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_org_herostory_protobuf_UserAttackResult_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroAttackResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserAttackResult_descriptor,
+        internal_static_org_herostory_protobuf_HeroAttackResult_descriptor,
         new java.lang.String[] { "AttkUserId", "TargetUserId", });
-    internal_static_org_herostory_protobuf_UserSubtractHpResult_descriptor =
+    internal_static_org_herostory_protobuf_HeroSubtractHpResult_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_org_herostory_protobuf_UserSubtractHpResult_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroSubtractHpResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserSubtractHpResult_descriptor,
+        internal_static_org_herostory_protobuf_HeroSubtractHpResult_descriptor,
         new java.lang.String[] { "TargetUserId", "SubtractHp", });
-    internal_static_org_herostory_protobuf_UserDieResult_descriptor =
+    internal_static_org_herostory_protobuf_HeroDieResult_descriptor =
       getDescriptor().getMessageTypes().get(12);
-    internal_static_org_herostory_protobuf_UserDieResult_fieldAccessorTable = new
+    internal_static_org_herostory_protobuf_HeroDieResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_herostory_protobuf_UserDieResult_descriptor,
+        internal_static_org_herostory_protobuf_HeroDieResult_descriptor,
         new java.lang.String[] { "TargetUserId", });
     internal_static_org_herostory_protobuf_HeroLoginCmd_descriptor =
       getDescriptor().getMessageTypes().get(13);
@@ -11549,6 +12706,18 @@ public final class GameMessageProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_herostory_protobuf_HeroLoginResult_descriptor,
         new java.lang.String[] { "UserId", "UserName", "HeroAvatar", });
+    internal_static_org_herostory_protobuf_SelectHeroCmd_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_org_herostory_protobuf_SelectHeroCmd_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_herostory_protobuf_SelectHeroCmd_descriptor,
+        new java.lang.String[] { "HeroAvatar", });
+    internal_static_org_herostory_protobuf_SelectHeroResult_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_org_herostory_protobuf_SelectHeroResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_herostory_protobuf_SelectHeroResult_descriptor,
+        new java.lang.String[] { "HeroAvatar", });
     descriptor.resolveAllFeaturesImmutable();
   }
 
