@@ -63,11 +63,15 @@ public class MongoDBUtils {
     }
 
     public static <T> List<T> findDocuments(String collectionName, Bson filter, Class<T> clazz) {
-        logger.info("当前线程:{}",Thread.currentThread().getName());
         MongoCollection<T> collection = getCollection(collectionName, clazz);
         List<T> results = new ArrayList<>();
         collection.find(filter).into(results);
         return results;
+    }
+
+    public static <T> T findDocument(String collectionName, Bson filter, Class<T> clazz) {
+        MongoCollection<T> collection = getCollection(collectionName, clazz);
+        return collection.find(filter).first();
     }
 
 

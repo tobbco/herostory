@@ -50,7 +50,6 @@ public final class MainProcessor {
         }
         executorService.submit(() -> {
             Class<? extends GeneratedMessage> messageClass = message.getClass();
-            logger.info("接收到的客户端消息 {}", messageClass.getName());
             ICmdHandler<? extends GeneratedMessage> cmdHandler = CmdHandlerFactory.getCmdHandler(messageClass);
             if (null == cmdHandler) {
                 logger.error("未找到响应的消息指令 {}", messageClass.getName());

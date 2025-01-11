@@ -5,9 +5,9 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;
 import org.herostory.BroadCaster;
-import org.herostory.processor.MainProcessor;
 import org.herostory.constants.HeroConstant;
-import org.herostory.model.HeroStore;
+import org.herostory.model.HeroCache;
+import org.herostory.processor.MainProcessor;
 import org.herostory.protobuf.bean.GameMessageProto;
 import org.slf4j.Logger;
 
@@ -33,7 +33,8 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
             return;
         }
         logger.info("{} 断开连接", userId);
-        HeroStore.removeHero(userId);
+        //断开连接时删除缓存的英雄信息
+        HeroCache.removeHero(userId);
         GameMessageProto.HeroDisconnectResult.Builder builder = GameMessageProto.HeroDisconnectResult.newBuilder();
         builder.setQuitUserId(userId);
         GameMessageProto.HeroDisconnectResult result = builder.build();

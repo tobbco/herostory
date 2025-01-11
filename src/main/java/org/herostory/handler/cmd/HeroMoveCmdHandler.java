@@ -5,7 +5,7 @@ import io.netty.util.AttributeKey;
 import org.herostory.BroadCaster;
 import org.herostory.constants.HeroConstant;
 import org.herostory.model.Hero;
-import org.herostory.model.HeroStore;
+import org.herostory.model.HeroCache;
 import org.herostory.protobuf.bean.GameMessageProto;
 
 /**
@@ -22,7 +22,7 @@ public class HeroMoveCmdHandler implements ICmdHandler<GameMessageProto.HeroMove
         if (null == userId) {
             return;
         }
-        Hero hero = HeroStore.getHero(userId);
+        Hero hero = HeroCache.getHero(userId);
         if (null == hero) {
             return;
         }

@@ -1,15 +1,12 @@
 package org.herostory.handler.cmd;
 
-import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.Updates;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
-import org.bson.conversions.Bson;
 import org.herostory.BroadCaster;
 import org.herostory.constants.HeroConstant;
-import org.herostory.db.mongo.MongoDBUtils;
+import org.herostory.db.mongo.HeroRepository;
 import org.herostory.model.Hero;
-import org.herostory.model.HeroStore;
+import org.herostory.model.HeroCache;
 import org.herostory.protobuf.bean.GameMessageProto;
 
 /**
@@ -23,20 +20,22 @@ public class HeroSelectCmdHandler implements ICmdHandler<GameMessageProto.Select
         if (null == cmd) {
             return;
         }
-        logger.info("Hero select cmd: {}", cmd);
         AttributeKey<Integer> attributeKey = AttributeKey.valueOf(HeroConstant.HERO_ID_KEY);
         Integer userId = channelHandlerContext.channel().attr(attributeKey).get();
         if (null == userId) {
+            logger.warn("英雄选择警告::当前用户没有缓存信息");
             return;
         }
-        Hero hero = HeroStore.getHero(userId);
+        Hero hero = HeroCache.getHero(userId);
         if (null == hero) {
+            logger.warn("英雄选择警告::当前用户没有缓存信息,userId={}", userId);
             return;
         }
+        //更新缓存中的英雄形象
         String heroAvatar = cmd.getHeroAvatar();
         hero.setHeroAvatar(heroAvatar);
-        Bson update = Updates.set("heroAvatar", heroAvatar);
-        MongoDBUtils.updateDocument("hero", Filters.eq("userId", userId), update, Hero.class);
+        HeroRepository.getInstance().updateHeroAvatar(userId, heroAvatar);
+        // 构建返回结果
         GameMessageProto.SelectHeroResult result = GameMessageProto.SelectHeroResult.newBuilder()
                 .setHeroAvatar(hero.getHeroAvatar())
                 .build();

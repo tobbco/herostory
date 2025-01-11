@@ -6,7 +6,7 @@ import org.herostory.BroadCaster;
 import org.herostory.HeroDeadException;
 import org.herostory.constants.HeroConstant;
 import org.herostory.model.Hero;
-import org.herostory.model.HeroStore;
+import org.herostory.model.HeroCache;
 import org.herostory.protobuf.bean.GameMessageProto;
 import org.slf4j.Logger;
 
@@ -21,7 +21,6 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.HeroAt
         if (null == cmd) {
             return;
         }
-        logger.info("攻击英雄 {}", cmd);
         AttributeKey<Integer> attributeKey = AttributeKey.valueOf(HeroConstant.HERO_ID_KEY);
         //获取当前通道绑定的用户ID
         Integer userId = channelHandlerContext.channel().attr(attributeKey).get();
@@ -41,7 +40,7 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.HeroAt
                 .setTargetUserId(cmd.getTargetUserId())
                 .setSubtractHp(HeroConstant.DEFAULT_SUBTRACT_HP)
                 .build();
-        Hero hero = HeroStore.getHero(cmd.getTargetUserId());
+        Hero hero = HeroCache.getHero(cmd.getTargetUserId());
         try {
             if (null== hero) {
                 return;

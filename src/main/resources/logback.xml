@@ -5,7 +5,7 @@
         </encoder>
     </appender>
     <!-- 设置org.mongodb.driver.client包下的日志级别为DEBUG additivity="false" -->
-    <logger name="org.mongodb.driver" level="debug"  additivity="false">
+    <logger name="org.mongodb.driver" level="info"  additivity="false">
         <appender-ref ref="Console"/>
     </logger>
     <root level="info">

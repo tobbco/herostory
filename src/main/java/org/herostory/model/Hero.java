@@ -7,13 +7,18 @@ import io.netty.channel.Channel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.codecs.pojo.annotations.BsonIgnore;
 import org.bson.conversions.Bson;
 import org.herostory.HeroDeadException;
 import org.herostory.UsernamePasswordException;
+import org.herostory.db.mongo.HeroRepository;
 import org.herostory.db.mongo.MongoDBUtils;
 import org.herostory.processor.AsyncProcessor;
 import org.herostory.processor.IAsyncOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.beans.Transient;
 import java.util.List;
 
 /**
@@ -23,9 +28,10 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 public class Hero {
-    public Hero(Integer userId, String heroAvatar, Channel channel) {
-        this.userId = userId;
-        this.heroAvatar = heroAvatar;
+    private static final Logger logger = LoggerFactory.getLogger(Hero.class);
+    public Hero(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     /**
@@ -49,7 +55,10 @@ public class Hero {
      */
     private Integer hp = 100;
 
-
+    /**
+     * 英雄移动属性
+     */
+    @BsonIgnore
     private MoveState moveState = new MoveState();
 
     /**
@@ -104,20 +113,9 @@ public class Hero {
 
             @Override
             public void async() {
-                Bson bson = Filters.and(Filters.eq("username", username));
-                List<Hero> heroList =
-                        MongoDBUtils.findDocuments("hero", bson, Hero.class);
-                if (heroList.isEmpty()) {
-                    hero = new Hero();
-                    hero.setUserId(MongoDBUtils.getNextSequence("hero"));
-                    hero.setUsername(username);
-                    hero.setPassword(password);
-                    MongoDBUtils.insertDocument("hero", hero);
-                } else {
-                    if (!heroList.get(0).getPassword().equals(password)) {
-                        throw new UsernamePasswordException("用户名或密码错误");
-                    }
-                    hero = heroList.get(0);
+                this.hero = HeroRepository.getInstance().findOrCreate(new Hero(username, password));
+                if (!this.hero.getPassword().equals(password)) {
+                    throw new UsernamePasswordException();
                 }
             }
 

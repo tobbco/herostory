@@ -2,18 +2,25 @@ package org.herostory.handler.cmd;
 
 import io.netty.channel.ChannelHandlerContext;
 import org.herostory.model.Hero;
-import org.herostory.model.HeroStore;
+import org.herostory.model.HeroCache;
 import org.herostory.protobuf.bean.GameMessageProto;
+import org.slf4j.Logger;
+
+import java.util.Collection;
 
 /**
  * 获取已经登录的用户
  */
 public class HeroOnlineCmdHandler implements ICmdHandler<GameMessageProto.OnlineHeroCmd> {
+    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(HeroOnlineCmdHandler.class);
+
     @Override
     public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.OnlineHeroCmd cmd) {
         //在线用户请求
         GameMessageProto.OnlineHeroResult.Builder builder = GameMessageProto.OnlineHeroResult.newBuilder();
-        for (Hero hero : HeroStore.heroes()) {
+        Collection<Hero> heroes = HeroCache.heroes();
+        logger.info("当前在线的英雄列表:{}", heroes);
+        for (Hero hero : heroes) {
             if (null == hero) {
                 continue;
             }
