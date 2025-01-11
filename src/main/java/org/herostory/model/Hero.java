@@ -79,6 +79,7 @@ public class Hero {
     }
 
     public static Hero login(String username, String password) {
+
         Bson bson = Filters.and(Filters.eq("username", username));
         List<Hero> heroList =
                 MongoDBUtils.findDocuments("hero", bson, Hero.class);

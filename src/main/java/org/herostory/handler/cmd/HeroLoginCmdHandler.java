@@ -4,6 +4,7 @@ package org.herostory.handler.cmd;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
 import org.herostory.BroadCaster;
+import org.herostory.OperateThreadProcess;
 import org.herostory.constants.HeroConstant;
 import org.herostory.model.Hero;
 import org.herostory.model.HeroStore;
@@ -23,27 +24,29 @@ public class HeroLoginCmdHandler implements ICmdHandler<GameMessageProto.HeroLog
             return;
         }
         logger.info("Hero login cmd: {}", cmd);
-        String userName = cmd.getUserName();
-        String password = cmd.getPassword();
+        OperateThreadProcess.getInstance().process(()->{
+            String userName = cmd.getUserName();
+            String password = cmd.getPassword();
 
-        Hero hero = null;
-        try {
-            hero = Hero.login(userName, password);
-        } catch (Exception e) {
-            logger.error(e.getMessage(), e);
-        }
-        if (null == hero) {
-            logger.error("英雄登录异常,cmd: {}", cmd);
-            return;
-        }
-        channelHandlerContext.channel().attr(AttributeKey.valueOf(HeroConstant.HERO_ID_KEY)).set(hero.getUserId());
-        GameMessageProto.HeroLoginResult.Builder builder = GameMessageProto.HeroLoginResult.newBuilder();
-        builder.setUserId(hero.getUserId());
+            Hero hero = null;
+            try {
+                hero = Hero.login(userName, password);
+            } catch (Exception e) {
+                logger.error(e.getMessage(), e);
+            }
+            if (null == hero) {
+                logger.error("英雄登录异常,cmd: {}", cmd);
+                return;
+            }
+            channelHandlerContext.channel().attr(AttributeKey.valueOf(HeroConstant.HERO_ID_KEY)).set(hero.getUserId());
+            GameMessageProto.HeroLoginResult.Builder builder = GameMessageProto.HeroLoginResult.newBuilder();
+            builder.setUserId(hero.getUserId());
 //        builder.setHeroAvatar(hero.getHeroAvatar());
-        //将登录结果封装成到全局登录用户中
-        HeroStore.addHero(hero);
-        GameMessageProto.HeroLoginResult result = builder.build();
-        //广播登录结果到所有客户端,但是有个问题，只会将当前登录的用户广播到已经登录的用户，但是当前用户不会显示已经登录的其他用户
-        BroadCaster.broadcast(result);
+            //将登录结果封装成到全局登录用户中
+            HeroStore.addHero(hero);
+            GameMessageProto.HeroLoginResult result = builder.build();
+            //广播登录结果到所有客户端,但是有个问题，只会将当前登录的用户广播到已经登录的用户，但是当前用户不会显示已经登录的其他用户
+            BroadCaster.broadcast(result);
+        });
     }
 }
