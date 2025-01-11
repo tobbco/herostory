@@ -5,7 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;
 import org.herostory.BroadCaster;
-import org.herostory.MainThreadProcess;
+import org.herostory.processor.MainProcessor;
 import org.herostory.constants.HeroConstant;
 import org.herostory.model.HeroStore;
 import org.herostory.protobuf.bean.GameMessageProto;
@@ -43,7 +43,7 @@ public class DefaultMessageHandler extends SimpleChannelInboundHandler<Object> {
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object message) {
         if (message instanceof GeneratedMessage generatedMessage) {
-            MainThreadProcess.getInstance().process(channelHandlerContext, generatedMessage);
+            MainProcessor.getInstance().process(channelHandlerContext, generatedMessage);
         }
     }
 

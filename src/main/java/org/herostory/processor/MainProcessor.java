@@ -1,4 +1,4 @@
-package org.herostory;
+package org.herostory.processor;
 
 import com.google.protobuf.GeneratedMessage;
 import io.netty.channel.ChannelHandlerContext;
@@ -11,8 +11,8 @@ import java.util.concurrent.Executors;
 /**
  * 主线程处理
  */
-public final class MainThreadProcess {
-    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(MainThreadProcess.class);
+public final class MainProcessor {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(MainProcessor.class);
     /**
      * 单线程池
      */
@@ -22,10 +22,10 @@ public final class MainThreadProcess {
      * 使用静态内部类实现单例模式
      */
     private static class Holder {
-        private static final MainThreadProcess INSTANCE = new MainThreadProcess();
+        private static final MainProcessor INSTANCE = new MainProcessor();
     }
 
-    private MainThreadProcess() {
+    private MainProcessor() {
 
     }
 
@@ -34,7 +34,7 @@ public final class MainThreadProcess {
      *
      * @return 实例
      */
-    public static MainThreadProcess getInstance() {
+    public static MainProcessor getInstance() {
         return Holder.INSTANCE;
     }
 
@@ -62,6 +62,18 @@ public final class MainThreadProcess {
                 logger.error("处理业务异常", e);
             }
         });
+    }
+
+    /**
+     * 提交任务
+     *
+     * @param runnable 线程接口
+     */
+    public void process(Runnable runnable) {
+        if (null == runnable) {
+            return;
+        }
+        executorService.submit(runnable);
     }
 
 

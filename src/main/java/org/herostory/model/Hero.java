@@ -1,6 +1,7 @@
 package org.herostory.model;
 
 
+import com.mongodb.Function;
 import com.mongodb.client.model.Filters;
 import io.netty.channel.Channel;
 import lombok.AllArgsConstructor;
@@ -10,8 +11,9 @@ import org.bson.conversions.Bson;
 import org.herostory.HeroDeadException;
 import org.herostory.UsernamePasswordException;
 import org.herostory.db.mongo.MongoDBUtils;
+import org.herostory.processor.AsyncProcessor;
+import org.herostory.processor.IAsyncOperation;
 
-import java.beans.Transient;
 import java.util.List;
 
 /**
@@ -78,23 +80,43 @@ public class Hero {
         return this.hp <= 0;
     }
 
-    public static Hero login(String username, String password) {
+    /**
+     * 登录
+     *
+     * @param username 用户名
+     * @param password 密码
+     * @param callback 回调
+     * @return 英雄信息
+     */
+    public static void login(String username, String password, Function<Hero, Void> callback) {
+        IAsyncOperation operation = new IAsyncOperation() {
+            private Hero hero;
 
-        Bson bson = Filters.and(Filters.eq("username", username));
-        List<Hero> heroList =
-                MongoDBUtils.findDocuments("hero", bson, Hero.class);
-        if (heroList.isEmpty()) {
-            Hero hero = new Hero();
-            hero.setUserId(MongoDBUtils.getNextSequence("hero"));
-            hero.setUsername(username);
-            hero.setPassword(password);
-            MongoDBUtils.insertDocument("hero", hero);
-            return hero;
-        }else {
-            if (!heroList.get(0).getPassword().equals(password)) {
-                throw new UsernamePasswordException("用户名或密码错误");
+            @Override
+            public void async() {
+                Bson bson = Filters.and(Filters.eq("username", username));
+                List<Hero> heroList =
+                        MongoDBUtils.findDocuments("hero", bson, Hero.class);
+                if (heroList.isEmpty()) {
+                    hero = new Hero();
+                    hero.setUserId(MongoDBUtils.getNextSequence("hero"));
+                    hero.setUsername(username);
+                    hero.setPassword(password);
+                    MongoDBUtils.insertDocument("hero", hero);
+                } else {
+                    if (!heroList.get(0).getPassword().equals(password)) {
+                        throw new UsernamePasswordException("用户名或密码错误");
+                    }
+                    hero = heroList.get(0);
+                }
             }
-        }
-        return heroList.get(0);
+
+            @Override
+            public void callback() {
+                callback.apply(hero);
+            }
+        };
+        AsyncProcessor.getInstance().process(operation);
+
     }
 }
