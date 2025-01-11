@@ -9,9 +9,9 @@ import java.util.concurrent.Executors;
 public final class AsyncProcessor {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(AsyncProcessor.class);
     /**
-     * 单线程池
+     * 固定线程池 8个线程
      */
-    private static final ExecutorService executorService = Executors.newSingleThreadExecutor((r) -> new Thread(r, "AsyncOperateProcess"));
+    private static final ExecutorService executorService = Executors.newFixedThreadPool(8);
 
     /**
      * 使用静态内部类实现单例模式
