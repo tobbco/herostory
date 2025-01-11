@@ -16,7 +16,7 @@ public final class MainProcessor {
     /**
      * 单线程池
      */
-    private static final ExecutorService executorService = Executors.newSingleThreadExecutor((r) -> new Thread(r, "MainThreadProcess"));
+    private static final ExecutorService executorService = Executors.newSingleThreadExecutor((r) -> new Thread(r, "main-process"));
 
     /**
      * 使用静态内部类实现单例模式

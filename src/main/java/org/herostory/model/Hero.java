@@ -86,11 +86,21 @@ public class Hero {
      * @param username 用户名
      * @param password 密码
      * @param callback 回调
-     * @return 英雄信息
      */
     public static void login(String username, String password, Function<Hero, Void> callback) {
         IAsyncOperation operation = new IAsyncOperation() {
             private Hero hero;
+
+            @Override
+            public int bindId() {
+                //计算绑定id，绑定id为用户名最后一个字符的ascii码
+                try {
+                    return username.charAt(username.length() - 1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return 0;
+            }
 
             @Override
             public void async() {

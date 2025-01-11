@@ -9,11 +9,10 @@ import java.util.concurrent.Executors;
 public final class AsyncProcessor {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(AsyncProcessor.class);
     /**
-     * 固定线程池 8个线程
-     * 使用Executors.newFixedThreadPool解决单线程下多个io阻塞问题，但是这样会存在另外一个问题，以登录为例：点击两次登录，假设同时进来，会在两个线程中执行，
-     * 两个线程会创建两次用户（极端情况），除非在创建用户之前加锁，但是锁的时间不确定。
+     * 线程池集合，默认为CPU核数*2
      */
-    private static final ExecutorService executorService = Executors.newFixedThreadPool(8);
+    private static final ExecutorService[] executors = new ExecutorService[Runtime.getRuntime().availableProcessors() * 2];
+
 
     /**
      * 使用静态内部类实现单例模式
@@ -23,7 +22,11 @@ public final class AsyncProcessor {
     }
 
     private AsyncProcessor() {
-
+        //创建单例线程池
+        for (int i = 0; i < executors.length; i++) {
+            String name = "async-processor-" + i;
+            executors[i] = Executors.newSingleThreadExecutor((r) -> new Thread(r, name));
+        }
     }
 
     /**
@@ -42,6 +45,9 @@ public final class AsyncProcessor {
         if (null == operation) {
             return;
         }
+        int bindId = operation.bindId();
+        //获取线程池, 根据绑定id取模,保证同一个用户登录操作能够落到同一个线程池，保证操作并发安全问题
+        ExecutorService executorService = executors[bindId % executors.length];
         //提交任务
         executorService.submit(() -> {
             try {
