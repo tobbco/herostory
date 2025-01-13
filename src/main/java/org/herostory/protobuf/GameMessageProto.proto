@@ -56,10 +56,12 @@ message HeroEntryCmd {
 
 //英雄入口响应
 message  HeroEntryResult {
-  //用户id
+  // 用户 Id
   uint32 userId = 1;
-  //英雄形象
-  string heroAvatar = 2;
+  // 用户名称
+  string userName = 2;
+  // 英雄形象
+  string heroAvatar = 3;
 }
 
 //在线用户请求
@@ -73,12 +75,14 @@ message  OnlineHeroResult {
 
   //英雄信息
   message HeroInfo {
-    //用户id
+    // 用户 Id
     uint32 userId = 1;
-    //英雄形象
-    string heroAvatar = 2;
+    // 用户名称
+    string userName = 2;
+    // 英雄形象
+    string heroAvatar = 3;
     // 移动状态
-    MoveState moveState = 3;
+    MoveState moveState = 4;
 
     // 移动状态
     message MoveState {

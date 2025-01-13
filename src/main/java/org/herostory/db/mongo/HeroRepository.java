@@ -3,9 +3,11 @@ package org.herostory.db.mongo;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 import org.bson.conversions.Bson;
+import org.herostory.constants.HeroConstant;
 import org.herostory.model.Hero;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * 英雄仓库
@@ -53,6 +55,7 @@ public class HeroRepository {
         Hero existHero = getByUsername(hero.getUsername());
         if (null == existHero) {
             hero.setUserId(MongoDBUtils.getNextSequence("hero"));
+            hero.setHeroAvatar(HeroConstant.HERO_AVATAR[new Random().nextInt(HeroConstant.HERO_AVATAR.length)]);
             MongoDBUtils.insertDocument("hero", hero);
         } else {
             hero = existHero;

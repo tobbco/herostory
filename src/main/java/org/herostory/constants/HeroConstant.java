@@ -35,5 +35,15 @@ public class HeroConstant {
     /**
      * 数据库查询英雄
      */
-    public static final String TEST_GAME_URL_STEP030 = "http://cdn0001.afrxvk.cn/hero_story/demo/step030/index.html?serverAddr=127.0.0.1:%s&userId=1";
+    public static final String TEST_GAME_URL_STEP030 = "http://cdn0001.afrxvk.cn/hero_story/demo/step030/index.html?serverAddr=127.0.0.1:%s";
+    /**
+     * 增加了排行榜
+     */
+    public static final String TEST_GAME_URL_STEP040 = "http://cdn0001.afrxvk.cn/hero_story/demo/step040/index.html?serverAddr=127.0.0.1:%s";
+
+    public static final String[] HERO_AVATAR = {
+            "Hero_Shaman",
+            "Hero_Skeleton"
+
+    };
 }

@@ -18,22 +18,24 @@ public class HeroLoginCmdHandler implements ICmdHandler<GameMessageProto.HeroLog
     private static final Logger logger = LoggerFactory.getLogger(HeroLoginCmdHandler.class);
 
     @Override
-    public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.HeroLoginCmd cmd) {
+    public void handle(ChannelHandlerContext ctx, GameMessageProto.HeroLoginCmd cmd) {
         if (null == cmd) {
             return;
         }
         try {
             Hero.login(cmd.getUserName(), cmd.getPassword(), hero -> {
                 //将用户id绑定到channel中
-                channelHandlerContext.channel().attr(AttributeKey.valueOf(HeroConstant.HERO_ID_KEY)).set(hero.getUserId());
+                ctx.channel().attr(AttributeKey.valueOf(HeroConstant.HERO_ID_KEY)).set(hero.getUserId());
                 //构建登录结果
                 GameMessageProto.HeroLoginResult.Builder builder = GameMessageProto.HeroLoginResult.newBuilder();
                 builder.setUserId(hero.getUserId());
+                builder.setUserName(hero.getUsername());
+                builder.setHeroAvatar(hero.getHeroAvatar());
                 //将登录结果封装成到全局登录用户中
                 HeroCache.addHero(hero);
                 GameMessageProto.HeroLoginResult result = builder.build();
-                //广播登录结果
-                channelHandlerContext.writeAndFlush(result);
+                //登录结果
+                ctx.writeAndFlush(result);
                 return null;
             });
         } catch (Exception e) {

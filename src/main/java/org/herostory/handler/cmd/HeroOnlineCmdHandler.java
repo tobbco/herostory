@@ -15,7 +15,7 @@ public class HeroOnlineCmdHandler implements ICmdHandler<GameMessageProto.Online
     private static final Logger logger = org.slf4j.LoggerFactory.getLogger(HeroOnlineCmdHandler.class);
 
     @Override
-    public void handle(ChannelHandlerContext channelHandlerContext, GameMessageProto.OnlineHeroCmd cmd) {
+    public void handle(ChannelHandlerContext ctx, GameMessageProto.OnlineHeroCmd cmd) {
         //在线用户请求
         GameMessageProto.OnlineHeroResult.Builder builder = GameMessageProto.OnlineHeroResult.newBuilder();
         Collection<Hero> heroes = HeroCache.heroes();
@@ -27,6 +27,7 @@ public class HeroOnlineCmdHandler implements ICmdHandler<GameMessageProto.Online
             GameMessageProto.OnlineHeroResult.HeroInfo userInfo = GameMessageProto.OnlineHeroResult.HeroInfo.newBuilder()
                     .setUserId(hero.getUserId())
                     .setHeroAvatar(hero.getHeroAvatar())
+                    .setUserName(hero.getUsername())
                     .setMoveState(GameMessageProto.OnlineHeroResult.HeroInfo.MoveState.newBuilder()
                             .setFromPosX(hero.getMoveState().getFromPosX())
                             .setFromPosY(hero.getMoveState().getFromPosY())
@@ -38,6 +39,6 @@ public class HeroOnlineCmdHandler implements ICmdHandler<GameMessageProto.Online
             builder.addUserInfo(userInfo);
         }
         GameMessageProto.OnlineHeroResult result = builder.build();
-        channelHandlerContext.writeAndFlush(result);
+        ctx.writeAndFlush(result);
     }
 }

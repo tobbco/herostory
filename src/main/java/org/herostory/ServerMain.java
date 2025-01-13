@@ -58,7 +58,7 @@ public class ServerMain {
             ChannelFuture future = bootstrap.bind(PORT).sync();
             if (future.isSuccess()) {
                 logger.info("服务端启动成功,PORT: {}", PORT);
-                logger.info("游戏前端页面访问地址:\n{}", String.format(HeroConstant.TEST_GAME_URL_STEP030, PORT));
+                logger.info("游戏前端页面访问地址:\n{}", String.format(HeroConstant.TEST_GAME_URL_STEP040, PORT));
             }
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
