@@ -33,7 +33,7 @@ public class HeroLoginCmdHandler implements ICmdHandler<GameMessageProto.HeroLog
                 HeroCache.addHero(hero);
                 GameMessageProto.HeroLoginResult result = builder.build();
                 //广播登录结果
-                BroadCaster.broadcast(result);
+                channelHandlerContext.writeAndFlush(result);
                 return null;
             });
         } catch (Exception e) {

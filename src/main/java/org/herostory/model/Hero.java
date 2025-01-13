@@ -1,25 +1,21 @@
 package org.herostory.model;
 
 
+import com.alibaba.fastjson.JSONObject;
 import com.mongodb.Function;
-import com.mongodb.client.model.Filters;
-import io.netty.channel.Channel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bson.codecs.pojo.annotations.BsonIgnore;
-import org.bson.conversions.Bson;
 import org.herostory.HeroDeadException;
 import org.herostory.UsernamePasswordException;
+import org.herostory.db.jedis.RedisUtil;
 import org.herostory.db.mongo.HeroRepository;
-import org.herostory.db.mongo.MongoDBUtils;
 import org.herostory.processor.AsyncProcessor;
 import org.herostory.processor.IAsyncOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.beans.Transient;
-import java.util.List;
+import redis.clients.jedis.Jedis;
 
 /**
  * 英雄
@@ -29,6 +25,7 @@ import java.util.List;
 @Data
 public class Hero {
     private static final Logger logger = LoggerFactory.getLogger(Hero.class);
+
     public Hero(String username, String password) {
         this.username = username;
         this.password = password;
@@ -117,6 +114,7 @@ public class Hero {
                 if (!this.hero.getPassword().equals(password)) {
                     throw new UsernamePasswordException();
                 }
+                hero.updateRankCache(hero);
             }
 
             @Override
@@ -126,5 +124,17 @@ public class Hero {
         };
         AsyncProcessor.getInstance().process(operation);
 
+    }
+
+    public void updateRankCache(Hero hero) {
+        try (Jedis redis = RedisUtil.getRedis()) {
+            JSONObject json = new JSONObject();
+            json.put("userId", hero.getUserId());
+            json.put("heroAvatar", hero.getHeroAvatar());
+            json.put("userName", hero.getUsername());
+            redis.hset("hero_" + hero.userId, "HeroInfo", json.toJSONString());
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
     }
 }

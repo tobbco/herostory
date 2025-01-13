@@ -171,6 +171,22 @@ public final class GameMessageProto {
      * <code>SELECT_HERO_RESULT = 16;</code>
      */
     SELECT_HERO_RESULT(16),
+    /**
+     * <pre>
+     * 获取排行榜请求id
+     * </pre>
+     *
+     * <code>GET_RANK_CMD = 17;</code>
+     */
+    GET_RANK_CMD(17),
+    /**
+     * <pre>
+     * 获取排行榜响应id
+     * </pre>
+     *
+     * <code>GET_RANK_RESULT = 18;</code>
+     */
+    GET_RANK_RESULT(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -319,6 +335,22 @@ public final class GameMessageProto {
      * <code>SELECT_HERO_RESULT = 16;</code>
      */
     public static final int SELECT_HERO_RESULT_VALUE = 16;
+    /**
+     * <pre>
+     * 获取排行榜请求id
+     * </pre>
+     *
+     * <code>GET_RANK_CMD = 17;</code>
+     */
+    public static final int GET_RANK_CMD_VALUE = 17;
+    /**
+     * <pre>
+     * 获取排行榜响应id
+     * </pre>
+     *
+     * <code>GET_RANK_RESULT = 18;</code>
+     */
+    public static final int GET_RANK_RESULT_VALUE = 18;
 
 
     public final int getNumber() {
@@ -362,6 +394,8 @@ public final class GameMessageProto {
         case 14: return HERO_LOGIN_RESULT;
         case 15: return SELECT_HERO_CMD;
         case 16: return SELECT_HERO_RESULT;
+        case 17: return GET_RANK_CMD;
+        case 18: return GET_RANK_RESULT;
         default: return null;
       }
     }
@@ -12452,6 +12486,2243 @@ public final class GameMessageProto {
 
   }
 
+  public interface GetRankCmdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.GetRankCmd)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * 获取排行榜请求
+   * </pre>
+   *
+   * Protobuf type {@code org.herostory.protobuf.GetRankCmd}
+   */
+  public static final class GetRankCmd extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.GetRankCmd)
+      GetRankCmdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetRankCmd.class.getName());
+    }
+    // Use GetRankCmd.newBuilder() to construct.
+    private GetRankCmd(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetRankCmd() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankCmd_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankCmd_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.herostory.protobuf.bean.GameMessageProto.GetRankCmd.class, org.herostory.protobuf.bean.GameMessageProto.GetRankCmd.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.GetRankCmd)) {
+        return super.equals(obj);
+      }
+      org.herostory.protobuf.bean.GameMessageProto.GetRankCmd other = (org.herostory.protobuf.bean.GameMessageProto.GetRankCmd) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.GetRankCmd prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 获取排行榜请求
+     * </pre>
+     *
+     * Protobuf type {@code org.herostory.protobuf.GetRankCmd}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.GetRankCmd)
+        org.herostory.protobuf.bean.GameMessageProto.GetRankCmdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankCmd_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankCmd_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.herostory.protobuf.bean.GameMessageProto.GetRankCmd.class, org.herostory.protobuf.bean.GameMessageProto.GetRankCmd.Builder.class);
+      }
+
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.GetRankCmd.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankCmd_descriptor;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankCmd getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.GetRankCmd.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankCmd build() {
+        org.herostory.protobuf.bean.GameMessageProto.GetRankCmd result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankCmd buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.GetRankCmd result = new org.herostory.protobuf.bean.GameMessageProto.GetRankCmd(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.GetRankCmd) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.GetRankCmd)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.GetRankCmd other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.GetRankCmd.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.GetRankCmd)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.GetRankCmd)
+    private static final org.herostory.protobuf.bean.GameMessageProto.GetRankCmd DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.GetRankCmd();
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankCmd getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetRankCmd>
+        PARSER = new com.google.protobuf.AbstractParser<GetRankCmd>() {
+      @java.lang.Override
+      public GetRankCmd parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetRankCmd> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetRankCmd> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.herostory.protobuf.bean.GameMessageProto.GetRankCmd getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetRankResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.GetRankResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    java.util.List<org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem> 
+        getRankItemList();
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem getRankItem(int index);
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    int getRankItemCount();
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder> 
+        getRankItemOrBuilderList();
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder getRankItemOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 获取排行榜响应
+   * </pre>
+   *
+   * Protobuf type {@code org.herostory.protobuf.GetRankResult}
+   */
+  public static final class GetRankResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:org.herostory.protobuf.GetRankResult)
+      GetRankResultOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetRankResult.class.getName());
+    }
+    // Use GetRankResult.newBuilder() to construct.
+    private GetRankResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetRankResult() {
+      rankItem_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.herostory.protobuf.bean.GameMessageProto.GetRankResult.class, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.Builder.class);
+    }
+
+    public interface RankItemOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:org.herostory.protobuf.GetRankResult.RankItem)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * 排名 Id
+       * </pre>
+       *
+       * <code>uint32 rankId = 1;</code>
+       * @return The rankId.
+       */
+      int getRankId();
+
+      /**
+       * <pre>
+       * 用户 Id
+       * </pre>
+       *
+       * <code>uint32 userId = 2;</code>
+       * @return The userId.
+       */
+      int getUserId();
+
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 3;</code>
+       * @return The userName.
+       */
+      java.lang.String getUserName();
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 3;</code>
+       * @return The bytes for userName.
+       */
+      com.google.protobuf.ByteString
+          getUserNameBytes();
+
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 4;</code>
+       * @return The heroAvatar.
+       */
+      java.lang.String getHeroAvatar();
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 4;</code>
+       * @return The bytes for heroAvatar.
+       */
+      com.google.protobuf.ByteString
+          getHeroAvatarBytes();
+
+      /**
+       * <pre>
+       * 胜利次数
+       * </pre>
+       *
+       * <code>uint32 win = 5;</code>
+       * @return The win.
+       */
+      int getWin();
+    }
+    /**
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * Protobuf type {@code org.herostory.protobuf.GetRankResult.RankItem}
+     */
+    public static final class RankItem extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:org.herostory.protobuf.GetRankResult.RankItem)
+        RankItemOrBuilder {
+    private static final long serialVersionUID = 0L;
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 29,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          RankItem.class.getName());
+      }
+      // Use RankItem.newBuilder() to construct.
+      private RankItem(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+      private RankItem() {
+        userName_ = "";
+        heroAvatar_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_RankItem_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_RankItem_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.class, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder.class);
+      }
+
+      public static final int RANKID_FIELD_NUMBER = 1;
+      private int rankId_ = 0;
+      /**
+       * <pre>
+       * 排名 Id
+       * </pre>
+       *
+       * <code>uint32 rankId = 1;</code>
+       * @return The rankId.
+       */
+      @java.lang.Override
+      public int getRankId() {
+        return rankId_;
+      }
+
+      public static final int USERID_FIELD_NUMBER = 2;
+      private int userId_ = 0;
+      /**
+       * <pre>
+       * 用户 Id
+       * </pre>
+       *
+       * <code>uint32 userId = 2;</code>
+       * @return The userId.
+       */
+      @java.lang.Override
+      public int getUserId() {
+        return userId_;
+      }
+
+      public static final int USERNAME_FIELD_NUMBER = 3;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object userName_ = "";
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 3;</code>
+       * @return The userName.
+       */
+      @java.lang.Override
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 3;</code>
+       * @return The bytes for userName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int HEROAVATAR_FIELD_NUMBER = 4;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object heroAvatar_ = "";
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 4;</code>
+       * @return The heroAvatar.
+       */
+      @java.lang.Override
+      public java.lang.String getHeroAvatar() {
+        java.lang.Object ref = heroAvatar_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          heroAvatar_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 4;</code>
+       * @return The bytes for heroAvatar.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getHeroAvatarBytes() {
+        java.lang.Object ref = heroAvatar_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          heroAvatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int WIN_FIELD_NUMBER = 5;
+      private int win_ = 0;
+      /**
+       * <pre>
+       * 胜利次数
+       * </pre>
+       *
+       * <code>uint32 win = 5;</code>
+       * @return The win.
+       */
+      @java.lang.Override
+      public int getWin() {
+        return win_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (rankId_ != 0) {
+          output.writeUInt32(1, rankId_);
+        }
+        if (userId_ != 0) {
+          output.writeUInt32(2, userId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, userName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(heroAvatar_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 4, heroAvatar_);
+        }
+        if (win_ != 0) {
+          output.writeUInt32(5, win_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (rankId_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(1, rankId_);
+        }
+        if (userId_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(2, userId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(3, userName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(heroAvatar_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(4, heroAvatar_);
+        }
+        if (win_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(5, win_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem)) {
+          return super.equals(obj);
+        }
+        org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem other = (org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem) obj;
+
+        if (getRankId()
+            != other.getRankId()) return false;
+        if (getUserId()
+            != other.getUserId()) return false;
+        if (!getUserName()
+            .equals(other.getUserName())) return false;
+        if (!getHeroAvatar()
+            .equals(other.getHeroAvatar())) return false;
+        if (getWin()
+            != other.getWin()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + RANKID_FIELD_NUMBER;
+        hash = (53 * hash) + getRankId();
+        hash = (37 * hash) + USERID_FIELD_NUMBER;
+        hash = (53 * hash) + getUserId();
+        hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getUserName().hashCode();
+        hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+        hash = (53 * hash) + getHeroAvatar().hashCode();
+        hash = (37 * hash) + WIN_FIELD_NUMBER;
+        hash = (53 * hash) + getWin();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * Protobuf type {@code org.herostory.protobuf.GetRankResult.RankItem}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.GetRankResult.RankItem)
+          org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_RankItem_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_RankItem_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.class, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder.class);
+        }
+
+        // Construct using org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          rankId_ = 0;
+          userId_ = 0;
+          userName_ = "";
+          heroAvatar_ = "";
+          win_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_RankItem_descriptor;
+        }
+
+        @java.lang.Override
+        public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem getDefaultInstanceForType() {
+          return org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem build() {
+          org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem buildPartial() {
+          org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem result = new org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.rankId_ = rankId_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.userId_ = userId_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.userName_ = userName_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.heroAvatar_ = heroAvatar_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.win_ = win_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem) {
+            return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem other) {
+          if (other == org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.getDefaultInstance()) return this;
+          if (other.getRankId() != 0) {
+            setRankId(other.getRankId());
+          }
+          if (other.getUserId() != 0) {
+            setUserId(other.getUserId());
+          }
+          if (!other.getUserName().isEmpty()) {
+            userName_ = other.userName_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          if (!other.getHeroAvatar().isEmpty()) {
+            heroAvatar_ = other.heroAvatar_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          if (other.getWin() != 0) {
+            setWin(other.getWin());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  rankId_ = input.readUInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+                case 16: {
+                  userId_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  userName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 34: {
+                  heroAvatar_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                case 40: {
+                  win_ = input.readUInt32();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+        private int bitField0_;
+
+        private int rankId_ ;
+        /**
+         * <pre>
+         * 排名 Id
+         * </pre>
+         *
+         * <code>uint32 rankId = 1;</code>
+         * @return The rankId.
+         */
+        @java.lang.Override
+        public int getRankId() {
+          return rankId_;
+        }
+        /**
+         * <pre>
+         * 排名 Id
+         * </pre>
+         *
+         * <code>uint32 rankId = 1;</code>
+         * @param value The rankId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRankId(int value) {
+
+          rankId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 排名 Id
+         * </pre>
+         *
+         * <code>uint32 rankId = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRankId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          rankId_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int userId_ ;
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 2;</code>
+         * @return The userId.
+         */
+        @java.lang.Override
+        public int getUserId() {
+          return userId_;
+        }
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 2;</code>
+         * @param value The userId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUserId(int value) {
+
+          userId_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearUserId() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          userId_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object userName_ = "";
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         * @return The userName.
+         */
+        public java.lang.String getUserName() {
+          java.lang.Object ref = userName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            userName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         * @return The bytes for userName.
+         */
+        public com.google.protobuf.ByteString
+            getUserNameBytes() {
+          java.lang.Object ref = userName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            userName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         * @param value The userName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUserName(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          userName_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearUserName() {
+          userName_ = getDefaultInstance().getUserName();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         * @param value The bytes for userName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUserNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          checkByteStringIsUtf8(value);
+          userName_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object heroAvatar_ = "";
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         * @return The heroAvatar.
+         */
+        public java.lang.String getHeroAvatar() {
+          java.lang.Object ref = heroAvatar_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            heroAvatar_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         * @return The bytes for heroAvatar.
+         */
+        public com.google.protobuf.ByteString
+            getHeroAvatarBytes() {
+          java.lang.Object ref = heroAvatar_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            heroAvatar_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         * @param value The heroAvatar to set.
+         * @return This builder for chaining.
+         */
+        public Builder setHeroAvatar(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          heroAvatar_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearHeroAvatar() {
+          heroAvatar_ = getDefaultInstance().getHeroAvatar();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         * @param value The bytes for heroAvatar to set.
+         * @return This builder for chaining.
+         */
+        public Builder setHeroAvatarBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          checkByteStringIsUtf8(value);
+          heroAvatar_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private int win_ ;
+        /**
+         * <pre>
+         * 胜利次数
+         * </pre>
+         *
+         * <code>uint32 win = 5;</code>
+         * @return The win.
+         */
+        @java.lang.Override
+        public int getWin() {
+          return win_;
+        }
+        /**
+         * <pre>
+         * 胜利次数
+         * </pre>
+         *
+         * <code>uint32 win = 5;</code>
+         * @param value The win to set.
+         * @return This builder for chaining.
+         */
+        public Builder setWin(int value) {
+
+          win_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 胜利次数
+         * </pre>
+         *
+         * <code>uint32 win = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearWin() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          win_ = 0;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.GetRankResult.RankItem)
+      }
+
+      // @@protoc_insertion_point(class_scope:org.herostory.protobuf.GetRankResult.RankItem)
+      private static final org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem();
+      }
+
+      public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RankItem>
+          PARSER = new com.google.protobuf.AbstractParser<RankItem>() {
+        @java.lang.Override
+        public RankItem parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<RankItem> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RankItem> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int RANKITEM_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem> rankItem_;
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem> getRankItemList() {
+      return rankItem_;
+    }
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder> 
+        getRankItemOrBuilderList() {
+      return rankItem_;
+    }
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    @java.lang.Override
+    public int getRankItemCount() {
+      return rankItem_.size();
+    }
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    @java.lang.Override
+    public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem getRankItem(int index) {
+      return rankItem_.get(index);
+    }
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    @java.lang.Override
+    public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder getRankItemOrBuilder(
+        int index) {
+      return rankItem_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < rankItem_.size(); i++) {
+        output.writeMessage(1, rankItem_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < rankItem_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, rankItem_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.herostory.protobuf.bean.GameMessageProto.GetRankResult)) {
+        return super.equals(obj);
+      }
+      org.herostory.protobuf.bean.GameMessageProto.GetRankResult other = (org.herostory.protobuf.bean.GameMessageProto.GetRankResult) obj;
+
+      if (!getRankItemList()
+          .equals(other.getRankItemList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRankItemCount() > 0) {
+        hash = (37 * hash) + RANKITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getRankItemList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.herostory.protobuf.bean.GameMessageProto.GetRankResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 获取排行榜响应
+     * </pre>
+     *
+     * Protobuf type {@code org.herostory.protobuf.GetRankResult}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.herostory.protobuf.GetRankResult)
+        org.herostory.protobuf.bean.GameMessageProto.GetRankResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.herostory.protobuf.bean.GameMessageProto.GetRankResult.class, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.Builder.class);
+      }
+
+      // Construct using org.herostory.protobuf.bean.GameMessageProto.GetRankResult.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (rankItemBuilder_ == null) {
+          rankItem_ = java.util.Collections.emptyList();
+        } else {
+          rankItem_ = null;
+          rankItemBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.internal_static_org_herostory_protobuf_GetRankResult_descriptor;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult getDefaultInstanceForType() {
+        return org.herostory.protobuf.bean.GameMessageProto.GetRankResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult build() {
+        org.herostory.protobuf.bean.GameMessageProto.GetRankResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult buildPartial() {
+        org.herostory.protobuf.bean.GameMessageProto.GetRankResult result = new org.herostory.protobuf.bean.GameMessageProto.GetRankResult(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(org.herostory.protobuf.bean.GameMessageProto.GetRankResult result) {
+        if (rankItemBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            rankItem_ = java.util.Collections.unmodifiableList(rankItem_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.rankItem_ = rankItem_;
+        } else {
+          result.rankItem_ = rankItemBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(org.herostory.protobuf.bean.GameMessageProto.GetRankResult result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.herostory.protobuf.bean.GameMessageProto.GetRankResult) {
+          return mergeFrom((org.herostory.protobuf.bean.GameMessageProto.GetRankResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.herostory.protobuf.bean.GameMessageProto.GetRankResult other) {
+        if (other == org.herostory.protobuf.bean.GameMessageProto.GetRankResult.getDefaultInstance()) return this;
+        if (rankItemBuilder_ == null) {
+          if (!other.rankItem_.isEmpty()) {
+            if (rankItem_.isEmpty()) {
+              rankItem_ = other.rankItem_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRankItemIsMutable();
+              rankItem_.addAll(other.rankItem_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rankItem_.isEmpty()) {
+            if (rankItemBuilder_.isEmpty()) {
+              rankItemBuilder_.dispose();
+              rankItemBuilder_ = null;
+              rankItem_ = other.rankItem_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              rankItemBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getRankItemFieldBuilder() : null;
+            } else {
+              rankItemBuilder_.addAllMessages(other.rankItem_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem m =
+                    input.readMessage(
+                        org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.parser(),
+                        extensionRegistry);
+                if (rankItemBuilder_ == null) {
+                  ensureRankItemIsMutable();
+                  rankItem_.add(m);
+                } else {
+                  rankItemBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem> rankItem_ =
+        java.util.Collections.emptyList();
+      private void ensureRankItemIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          rankItem_ = new java.util.ArrayList<org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem>(rankItem_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder> rankItemBuilder_;
+
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public java.util.List<org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem> getRankItemList() {
+        if (rankItemBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rankItem_);
+        } else {
+          return rankItemBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public int getRankItemCount() {
+        if (rankItemBuilder_ == null) {
+          return rankItem_.size();
+        } else {
+          return rankItemBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem getRankItem(int index) {
+        if (rankItemBuilder_ == null) {
+          return rankItem_.get(index);
+        } else {
+          return rankItemBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder setRankItem(
+          int index, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem value) {
+        if (rankItemBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRankItemIsMutable();
+          rankItem_.set(index, value);
+          onChanged();
+        } else {
+          rankItemBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder setRankItem(
+          int index, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder builderForValue) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          rankItem_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rankItemBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addRankItem(org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem value) {
+        if (rankItemBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRankItemIsMutable();
+          rankItem_.add(value);
+          onChanged();
+        } else {
+          rankItemBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addRankItem(
+          int index, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem value) {
+        if (rankItemBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRankItemIsMutable();
+          rankItem_.add(index, value);
+          onChanged();
+        } else {
+          rankItemBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addRankItem(
+          org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder builderForValue) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          rankItem_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rankItemBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addRankItem(
+          int index, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder builderForValue) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          rankItem_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rankItemBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addAllRankItem(
+          java.lang.Iterable<? extends org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem> values) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, rankItem_);
+          onChanged();
+        } else {
+          rankItemBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder clearRankItem() {
+        if (rankItemBuilder_ == null) {
+          rankItem_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          rankItemBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder removeRankItem(int index) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          rankItem_.remove(index);
+          onChanged();
+        } else {
+          rankItemBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder getRankItemBuilder(
+          int index) {
+        return getRankItemFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder getRankItemOrBuilder(
+          int index) {
+        if (rankItemBuilder_ == null) {
+          return rankItem_.get(index);  } else {
+          return rankItemBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public java.util.List<? extends org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder> 
+           getRankItemOrBuilderList() {
+        if (rankItemBuilder_ != null) {
+          return rankItemBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rankItem_);
+        }
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder addRankItemBuilder() {
+        return getRankItemFieldBuilder().addBuilder(
+            org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder addRankItemBuilder(
+          int index) {
+        return getRankItemFieldBuilder().addBuilder(
+            index, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .org.herostory.protobuf.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public java.util.List<org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder> 
+           getRankItemBuilderList() {
+        return getRankItemFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder> 
+          getRankItemFieldBuilder() {
+        if (rankItemBuilder_ == null) {
+          rankItemBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItem.Builder, org.herostory.protobuf.bean.GameMessageProto.GetRankResult.RankItemOrBuilder>(
+                  rankItem_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          rankItem_ = null;
+        }
+        return rankItemBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.herostory.protobuf.GetRankResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.herostory.protobuf.GetRankResult)
+    private static final org.herostory.protobuf.bean.GameMessageProto.GetRankResult DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.herostory.protobuf.bean.GameMessageProto.GetRankResult();
+    }
+
+    public static org.herostory.protobuf.bean.GameMessageProto.GetRankResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetRankResult>
+        PARSER = new com.google.protobuf.AbstractParser<GetRankResult>() {
+      @java.lang.Override
+      public GetRankResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetRankResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetRankResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.herostory.protobuf.bean.GameMessageProto.GetRankResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_herostory_protobuf_HeroEntryCmd_descriptor;
   private static final 
@@ -12547,6 +14818,21 @@ public final class GameMessageProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_herostory_protobuf_SelectHeroResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_herostory_protobuf_GetRankCmd_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_herostory_protobuf_GetRankCmd_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_herostory_protobuf_GetRankResult_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_herostory_protobuf_GetRankResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_herostory_protobuf_GetRankResult_RankItem_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_herostory_protobuf_GetRankResult_RankItem_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12588,17 +14874,23 @@ public final class GameMessageProto {
       "\030\001 \001(\r\022\020\n\010userName\030\002 \001(\t\022\022\n\nheroAvatar\030\003" +
       " \001(\t\"#\n\rSelectHeroCmd\022\022\n\nheroAvatar\030\001 \001(" +
       "\t\"&\n\020SelectHeroResult\022\022\n\nheroAvatar\030\001 \001(" +
-      "\t*\210\003\n\tGameCmdId\022\022\n\016HERO_ENTRY_CMD\020\000\022\025\n\021H" +
-      "ERO_ENTRY_RESULT\020\001\022\023\n\017ONLINE_HERO_CMD\020\002\022" +
-      "\026\n\022ONLINE_HERO_RESULT\020\003\022\021\n\rHERO_MOVE_CMD" +
-      "\020\004\022\024\n\020HERO_MOVE_RESULT\020\005\022\032\n\026HERO_DISCONN" +
-      "ECT_RESULT\020\006\022\021\n\rHERO_STOP_CMD\020\007\022\024\n\020HERO_" +
-      "STOP_RESULT\020\010\022\023\n\017HERO_ATTACK_CMD\020\t\022\026\n\022HE" +
-      "RO_ATTACK_RESULT\020\n\022\033\n\027HERO_SUBTRACT_HP_R" +
-      "ESULT\020\013\022\023\n\017HERO_DIE_RESULT\020\014\022\022\n\016HERO_LOG" +
-      "IN_CMD\020\r\022\025\n\021HERO_LOGIN_RESULT\020\016\022\023\n\017SELEC" +
-      "T_HERO_CMD\020\017\022\026\n\022SELECT_HERO_RESULT\020\020B\035\n\033" +
-      "org.herostory.protobuf.beanb\006proto3"
+      "\t\"\014\n\nGetRankCmd\"\260\001\n\rGetRankResult\022@\n\010ran" +
+      "kItem\030\001 \003(\0132..org.herostory.protobuf.Get" +
+      "RankResult.RankItem\032]\n\010RankItem\022\016\n\006rankI" +
+      "d\030\001 \001(\r\022\016\n\006userId\030\002 \001(\r\022\020\n\010userName\030\003 \001(" +
+      "\t\022\022\n\nheroAvatar\030\004 \001(\t\022\013\n\003win\030\005 \001(\r*\257\003\n\tG" +
+      "ameCmdId\022\022\n\016HERO_ENTRY_CMD\020\000\022\025\n\021HERO_ENT" +
+      "RY_RESULT\020\001\022\023\n\017ONLINE_HERO_CMD\020\002\022\026\n\022ONLI" +
+      "NE_HERO_RESULT\020\003\022\021\n\rHERO_MOVE_CMD\020\004\022\024\n\020H" +
+      "ERO_MOVE_RESULT\020\005\022\032\n\026HERO_DISCONNECT_RES" +
+      "ULT\020\006\022\021\n\rHERO_STOP_CMD\020\007\022\024\n\020HERO_STOP_RE" +
+      "SULT\020\010\022\023\n\017HERO_ATTACK_CMD\020\t\022\026\n\022HERO_ATTA" +
+      "CK_RESULT\020\n\022\033\n\027HERO_SUBTRACT_HP_RESULT\020\013" +
+      "\022\023\n\017HERO_DIE_RESULT\020\014\022\022\n\016HERO_LOGIN_CMD\020" +
+      "\r\022\025\n\021HERO_LOGIN_RESULT\020\016\022\023\n\017SELECT_HERO_" +
+      "CMD\020\017\022\026\n\022SELECT_HERO_RESULT\020\020\022\020\n\014GET_RAN" +
+      "K_CMD\020\021\022\023\n\017GET_RANK_RESULT\020\022B\035\n\033org.hero" +
+      "story.protobuf.beanb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12718,6 +15010,24 @@ public final class GameMessageProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_herostory_protobuf_SelectHeroResult_descriptor,
         new java.lang.String[] { "HeroAvatar", });
+    internal_static_org_herostory_protobuf_GetRankCmd_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_org_herostory_protobuf_GetRankCmd_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_herostory_protobuf_GetRankCmd_descriptor,
+        new java.lang.String[] { });
+    internal_static_org_herostory_protobuf_GetRankResult_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_org_herostory_protobuf_GetRankResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_herostory_protobuf_GetRankResult_descriptor,
+        new java.lang.String[] { "RankItem", });
+    internal_static_org_herostory_protobuf_GetRankResult_RankItem_descriptor =
+      internal_static_org_herostory_protobuf_GetRankResult_descriptor.getNestedTypes().get(0);
+    internal_static_org_herostory_protobuf_GetRankResult_RankItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_herostory_protobuf_GetRankResult_RankItem_descriptor,
+        new java.lang.String[] { "RankId", "UserId", "UserName", "HeroAvatar", "Win", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

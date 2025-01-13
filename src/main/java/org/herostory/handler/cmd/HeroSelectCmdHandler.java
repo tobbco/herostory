@@ -39,6 +39,6 @@ public class HeroSelectCmdHandler implements ICmdHandler<GameMessageProto.Select
         GameMessageProto.SelectHeroResult result = GameMessageProto.SelectHeroResult.newBuilder()
                 .setHeroAvatar(hero.getHeroAvatar())
                 .build();
-        BroadCaster.broadcast(result);
+        channelHandlerContext.writeAndFlush(result);
     }
 }
