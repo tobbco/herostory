@@ -5,9 +5,10 @@ package org.herostory.processor;
  */
 public interface IAsyncOperation {
 
-    default int bindId(){
+    default int bindId() {
         return 0;
     }
+
     /**
      * 异步操作逻辑
      */
@@ -16,5 +17,6 @@ public interface IAsyncOperation {
     /**
      * 异步之后的操作逻辑
      */
-    default void callback(){};
+    default void callback() {
+    }
 }

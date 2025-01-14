@@ -119,13 +119,21 @@ public class Hero {
 
             @Override
             public void callback() {
-                callback.apply(hero);
+                try {
+                    callback.apply(hero);
+                } catch (Exception e) {
+                    logger.error("登录失败:{}",e.getMessage(),e);
+                }
             }
         };
         AsyncProcessor.getInstance().process(operation);
 
     }
 
+    /**
+     * 更新缓存中的英雄信息
+     * @param hero 英雄信息
+     */
     public void updateRankCache(Hero hero) {
         try (Jedis redis = RedisUtil.getRedis()) {
             JSONObject json = new JSONObject();

@@ -1,5 +1,6 @@
 package org.herostory.rank;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.herostory.db.jedis.RedisUtil;
 import org.herostory.model.RankItem;
@@ -56,7 +57,7 @@ public final class RankService {
                         if (null == heroInfo) {
                             continue;
                         }
-                        JSONObject jsonObject = JSONObject.parseObject(heroInfo);
+                        JSONObject jsonObject = JSON.parseObject(heroInfo);
                         rankItem.setUserName(jsonObject.getString("userName"));
                         rankItem.setHeroAvatar(jsonObject.getString("heroAvatar"));
                         rankItem.setWin(win);
@@ -69,7 +70,11 @@ public final class RankService {
 
             @Override
             public void callback() {
-                callback.apply(this.rankList);
+                try {
+                    callback.apply(this.rankList);
+                } catch (Exception e) {
+                    logger.error("获取排行榜数据失败:{}",e.getMessage(),e);
+                }
             }
         };
         AsyncProcessor.getInstance().process(operation);

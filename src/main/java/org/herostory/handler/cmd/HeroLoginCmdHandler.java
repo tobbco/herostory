@@ -30,7 +30,10 @@ public class HeroLoginCmdHandler implements ICmdHandler<GameMessageProto.HeroLog
                 GameMessageProto.HeroLoginResult.Builder builder = GameMessageProto.HeroLoginResult.newBuilder();
                 builder.setUserId(hero.getUserId());
                 builder.setUserName(hero.getUsername());
-                builder.setHeroAvatar(hero.getHeroAvatar());
+                // 游戏前端做了处理，如果在登录时返回heroAvatar，则游戏客户端会显示这个英雄头像，但是如果heroAvatar为空，则游戏客户端会多一步选择英雄逻辑的页面
+                if (null != hero.getHeroAvatar()) {
+                    builder.setHeroAvatar(hero.getHeroAvatar());
+                }
                 //将登录结果封装成到全局登录用户中
                 HeroCache.addHero(hero);
                 GameMessageProto.HeroLoginResult result = builder.build();

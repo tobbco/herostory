@@ -55,7 +55,8 @@ public class HeroRepository {
         Hero existHero = getByUsername(hero.getUsername());
         if (null == existHero) {
             hero.setUserId(MongoDBUtils.getNextSequence("hero"));
-            hero.setHeroAvatar(HeroConstant.HERO_AVATAR[new Random().nextInt(HeroConstant.HERO_AVATAR.length)]);
+            //040版本不需要设置默认英雄形象,会在登录后选择
+            //hero.setHeroAvatar(HeroConstant.HERO_AVATAR[new Random().nextInt(HeroConstant.HERO_AVATAR.length)]);
             MongoDBUtils.insertDocument("hero", hero);
         } else {
             hero = existHero;
