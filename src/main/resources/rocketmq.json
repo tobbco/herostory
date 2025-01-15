@@ -1,5 +1,5 @@
 {
-  "namesrvAddr": "127.0.0.1:9876",
+  "nameSrvAddr": "127.0.0.1:9876",
   "producerGroup": "MyProducerGroup",
   "consumerGroup": "MyConsumerGroup",
   "topic": "MyTopic"

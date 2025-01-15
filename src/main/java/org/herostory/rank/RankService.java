@@ -6,6 +6,7 @@ import org.herostory.db.jedis.RedisUtil;
 import org.herostory.model.RankItem;
 import org.herostory.processor.AsyncProcessor;
 import org.herostory.processor.IAsyncOperation;
+import org.herostory.rocketmq.RankMessage;
 import org.slf4j.Logger;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.resps.Tuple;
@@ -20,6 +21,29 @@ import java.util.function.Function;
 public final class RankService {
     private static final Logger logger = org.slf4j.LoggerFactory.getLogger(RankService.class);
     private RankService() {}
+
+    /**
+     * 刷新排行榜
+     * @param rankMessage
+     */
+    public  void refreshRankList(RankMessage rankMessage) {
+        Integer winnerId = rankMessage.getWinnerId();
+        Integer loserId = rankMessage.getLoserId();
+
+        try (Jedis redis = RedisUtil.getRedis()) {
+            //存储战绩
+            redis.hincrBy("hero_" + winnerId, "win", 1);
+            redis.hincrBy("hero_" + loserId, "lose", 1);
+
+            String winCache = redis.hget("hero_" + winnerId, "win");
+            int win = Integer.parseInt(winCache);
+
+            //更新排行
+            redis.zadd("RankWin", win, winnerId + "");
+        } catch (Exception e) {
+            logger.error(e.getMessage(),e);
+        }
+    }
 
     private static class Holder {
         static RankService instance = new RankService();

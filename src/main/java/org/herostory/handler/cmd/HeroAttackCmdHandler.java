@@ -2,12 +2,16 @@ package org.herostory.handler.cmd;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
+import org.apache.rocketmq.client.apis.ClientException;
 import org.herostory.BroadCaster;
 import org.herostory.HeroDeadException;
 import org.herostory.constants.HeroConstant;
 import org.herostory.model.Hero;
 import org.herostory.model.HeroCache;
 import org.herostory.protobuf.bean.GameMessageProto;
+import org.herostory.rocketmq.MqProducer;
+import org.herostory.rocketmq.RankMessage;
+import org.herostory.util.JsonUtil;
 import org.slf4j.Logger;
 
 /**
@@ -42,15 +46,15 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.HeroAt
                 .build();
         Hero hero = HeroCache.getHero(cmd.getTargetUserId());
         try {
-            if (null== hero) {
+            if (null == hero) {
                 return;
             }
             hero.subHp(HeroConstant.DEFAULT_SUBTRACT_HP);
             if (hero.isDead()) {
-                deadBroadcast(cmd.getTargetUserId());
+                deadBroadcast(userId, cmd.getTargetUserId());
             }
         } catch (HeroDeadException e) {
-            deadBroadcast(cmd.getTargetUserId());
+            deadBroadcast(userId, cmd.getTargetUserId());
         }
         //广播减血结果到所有客户端
         BroadCaster.broadcast(subtractHpResult);
@@ -59,13 +63,20 @@ public class HeroAttackCmdHandler implements ICmdHandler<GameMessageProto.HeroAt
     /**
      * 英雄死亡广播
      *
+     * @param userId       攻击的用户
      * @param targetUserId 死亡的用户ID
      */
-    private void deadBroadcast(Integer targetUserId) {
+    private void deadBroadcast(int userId, Integer targetUserId) {
         //构建英雄死亡结果
         GameMessageProto.HeroDieResult dieResult = GameMessageProto.HeroDieResult.newBuilder()
                 .setTargetUserId(targetUserId)
                 .build();
         BroadCaster.broadcast(dieResult);
+        RankMessage message = new RankMessage(userId, targetUserId);
+        try {
+            MqProducer.sendMessage(JsonUtil.toJsonString(message));
+        } catch (ClientException e) {
+            logger.error("发送MQ消息失败,消息内容:{}", message, e);
+        }
     }
 }
